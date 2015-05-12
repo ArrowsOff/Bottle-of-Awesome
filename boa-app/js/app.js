@@ -5,9 +5,18 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', [
     'ionic',
-
+    'ngCordova',
+    
     'starter.controllers.AppCtrl',
-    'starter.controllers.HomeCtrl'
+    'starter.controllers.HomeCtrl',
+    'starter.controllers.PrivateCtrl',
+    'starter.controllers.PublicCtrl',
+    'starter.controllers.CreateCtrl',
+    'starter.controllers.LoginCtrl',
+    'starter.controllers.SignupCtrl',
+
+    'starter.services.LocationService',
+    'starter.services.AuthenticationService'
 
 ])
 
@@ -35,19 +44,19 @@ angular.module('starter', [
     .state('private', {
         url: '/private',
         templateUrl: 'templates/private.html',
-        controller: 'privateCtrl'
+        controller: 'PrivateCtrl'
     })
     .state('create', {
         url: '/private/create',
         templateUrl: 'templates/private/create.html',
-        controller: 'createCtrl'
+        controller: 'CreateCtrl'
     })
 
     // Public
     .state('public', {
         url: '/public',
         templateUrl: 'templates/public.html',
-        controller: 'publicCtrl'
+        controller: 'PublicCtrl'
     })
 
 
@@ -55,7 +64,7 @@ angular.module('starter', [
     .state('signup', {
         url: '/signup',
         templateUrl: 'templates/authentication/signup.html',
-        controller: 'signupCtrl'
+        controller: 'SignupCtrl'
     })
     .state('login', {
         url: '/login',

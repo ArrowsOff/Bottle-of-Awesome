@@ -1,8 +1,20 @@
 <ion-view view-title="Home">
   <ion-content class="padding">
-    
     <p>
       Home
     </p>
+
+    <button class="button button-full button-positive" ng-click="getLocation()">
+    	Gps locatie
+    </button>
+
+	{{ location }}
+
+	<a ng-href="#/login">Login</a>
+	<a ng-href="#/signup">signup</a>
+	<a ng-href="#/private/create">create</a>
+	<a ng-href="#/private">private</a>
+	<a ng-href="#/public">public</a>
+
   </ion-content>
 </ion-view>

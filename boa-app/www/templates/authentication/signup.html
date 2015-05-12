@@ -1,0 +1,22 @@
+<ion-view view-title="Signup">
+  <ion-content class="padding">
+    
+
+	<a ng-href="#/private/create">create</a>
+	<a ng-href="#/private">private</a>
+	<a ng-href="#/public">public</a>
+
+	<div class="list list-inset">
+	  	<label class="item item-input">
+	    	<input type="email" placeholder="Email" ng-model="account.email">
+	  	</label>
+	  	<label class="item item-input">
+	    	<input type="password" placeholder="Password" ng-model="account.password">
+	 	</label>
+	</div>
+
+	<button class="button button-full button-assertive">Signup</button>
+	<p class="text-center">Do you already have an account? <a ng-href="#/signup">Click here to login</a>.</p>
+
+  </ion-content>
+</ion-view>

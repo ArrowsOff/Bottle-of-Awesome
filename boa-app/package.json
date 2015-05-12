@@ -27,5 +27,7 @@
     "org.apache.cordova.network-information",
     "com.ionic.keyboard"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [
+    "android"
+  ]
 }
