@@ -2,10 +2,12 @@
   "name": "boa-app",
   "app_id": "",
   "gulpStartupTasks": [
-    "sass",
+    "default",
     "watch"
   ],
   "watchPatterns": [
+    "scss/**/*",
+    "js/**/*",
     "www/**/*",
     "!www/lib/**/*"
   ]
