@@ -22,6 +22,9 @@
   "cordovaPlugins": [
     "org.apache.cordova.device",
     "org.apache.cordova.console",
+    "org.apache.cordova.geolocation",
+    "de.appplant.cordova.plugin.local-notification",
+    "org.apache.cordova.network-information",
     "com.ionic.keyboard"
   ],
   "cordovaPlatforms": []
