@@ -34,7 +34,7 @@ gulp.task('scripts', ['scripts-lint'], function() {
   return gulp.src('./js/**/*.js')
     .pipe($.concat('app.js'))
     .pipe($.ngAnnotate())
-    .pipe(gulp.dest('./www'));
+    .pipe(gulp.dest('./www/js'));
 });
 
 gulp.task('images', function(){
