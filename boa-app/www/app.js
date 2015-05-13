@@ -20,7 +20,7 @@ angular.module('starter', [
 
 ])
 
-.run(function($ionicPlatform) {
+.run(["$ionicPlatform", function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -31,9 +31,9 @@ angular.module('starter', [
       StatusBar.styleDefault();
     }
   });
-})
+}])
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('home', {
         url: '/',
@@ -75,16 +75,16 @@ angular.module('starter', [
     
 
     $urlRouterProvider.otherwise('/');
-})
+}])
 
 
 angular.module('starter.controllers.AppCtrl', [])
-.controller('AppCtrl', function ($scope) {
+.controller('AppCtrl', ["$scope", function ($scope) {
 
 
-});
+}]);
 angular.module('starter.controllers.CreateCtrl', [])
-.controller('CreateCtrl', function ($scope, $ionicPopup) {
+.controller('CreateCtrl', ["$scope", "$ionicPopup", function ($scope, $ionicPopup) {
 
 	$scope.addMedia = function() {
 
@@ -104,9 +104,9 @@ angular.module('starter.controllers.CreateCtrl', [])
 
  	};
 
-});
+}]);
 angular.module('starter.controllers.HomeCtrl', [])
-.controller('HomeCtrl', function ($scope, LocationService) {
+.controller('HomeCtrl', ["$scope", "LocationService", function ($scope, LocationService) {
 
 	$scope.getLocation = function() {
 		LocationService.getPosition().then(function(data){
@@ -114,29 +114,29 @@ angular.module('starter.controllers.HomeCtrl', [])
 		});
 	}
 
-});
+}]);
 angular.module('starter.controllers.LoginCtrl', [])
-.controller('LoginCtrl', function ($scope) {
+.controller('LoginCtrl', ["$scope", function ($scope) {
 
 
-});
+}]);
 angular.module('starter.controllers.PrivateCtrl', [])
-.controller('PrivateCtrl', function ($scope) {
+.controller('PrivateCtrl', ["$scope", function ($scope) {
 
 
-});
+}]);
 angular.module('starter.controllers.PublicCtrl', [])
-.controller('PublicCtrl', function ($scope) {
+.controller('PublicCtrl', ["$scope", function ($scope) {
 
 
-});
+}]);
 angular.module('starter.controllers.SignupCtrl', [])
-.controller('SignupCtrl', function ($scope) {
+.controller('SignupCtrl', ["$scope", function ($scope) {
 
 
-});
+}]);
 angular.module('starter.services.AuthenticationService', [])
-    .service('AuthService', function ($q, $http, $cordovaOauth) {
+    .service('AuthService', ["$q", "$http", "$cordovaOauth", function ($q, $http, $cordovaOauth) {
 
         var AuthService = this;
 
@@ -276,9 +276,9 @@ angular.module('starter.services.AuthenticationService', [])
         loadUserCredentials();
      
         return AuthService;
-    })
+    }])
 
-    .factory('AuthInterceptor', function ($rootScope, $q) {
+    .factory('AuthInterceptor', ["$rootScope", "$q", function ($rootScope, $q) {
 
         return {
             responseError: function (response) {
@@ -290,13 +290,13 @@ angular.module('starter.services.AuthenticationService', [])
             }
         };
 
-    })
+    }])
  
-    .config(function ($httpProvider) {
+    .config(["$httpProvider", function ($httpProvider) {
         $httpProvider.interceptors.push('AuthInterceptor');
-    });
+    }]);
 angular.module('starter.services.LocationService', [])
-	.factory('LocationService', function ($q){
+	.factory('LocationService', ["$q", function ($q){
 
 	    var location = null;
 
@@ -332,4 +332,4 @@ angular.module('starter.services.LocationService', [])
 	    return {
 	        getPosition : getPosition
 	    };
-	});
+	}]);

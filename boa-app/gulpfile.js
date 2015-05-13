@@ -24,10 +24,23 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts-lint', function() {
+	return gulp.src('./js/**/*.js')
+		.pipe($.jshint())
+		.pipe($.jshint.reporter('jshint-stylish'));
+});
+
+gulp.task('scripts', ['scripts-lint'], function() {
   return gulp.src('./js/**/*.js')
     .pipe($.concat('app.js'))
+    .pipe($.ngAnnotate())
     .pipe(gulp.dest('./www'));
+});
+
+gulp.task('images', function(){
+	return gulp.src('./www/img/**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)')
+		.pipe($.imagemin())
+		.pipe(gulp.dest('./www/img'));
 });
 
 gulp.task('watch', function() {
