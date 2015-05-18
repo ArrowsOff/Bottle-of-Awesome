@@ -1,24 +1,19 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
 var app = angular.module('starter', [
     'ionic',
     'ngCordova'
 ]);
 
 app.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
+    $ionicPlatform.ready(function() {
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        if(window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if(window.StatusBar) {
+            StatusBar.styleDefault();
+        }
+    });
 });
 
 app.config(function ($stateProvider, $urlRouterProvider) {
@@ -28,7 +23,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/home.html',
         controller: 'HomeCtrl'
     })
-    // Private
+
     .state('private', {
         url: '/private',
         templateUrl: 'templates/private.html',
@@ -40,78 +35,80 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         controller: 'CreateCtrl'
     })
 
-    // Public
     .state('public', {
         url: '/public',
         templateUrl: 'templates/public.html',
         controller: 'PublicCtrl'
     })
-
-
-    // Authentication
-    .state('signup', {
-        url: '/signup',
-        templateUrl: 'templates/authentication/signup.html',
-        controller: 'SignupCtrl'
-    })
-    .state('login', {
-        url: '/login',
-        templateUrl: 'templates/authentication/login.html',
-        controller: 'LoginCtrl'
+    .state('host',{
+        url:'/artist/:id',
+        controller:'ArtistCtrl',
+        templateUrl:'templates/artist.html',
     });
 
     $urlRouterProvider.otherwise('/');
 });
 
 
-app.controller('AppCtrl', function ($scope) {
+app.service('ArtistService', function ($q, $http) {
 
+    var ArtistService = this;
 
-});
-app.controller('CreateCtrl', function ($scope, $ionicPopup) {
+    var artists = null;
 
-	$scope.addMedia = function() {
+    ArtistService.getArtist = function(id) {
+        var defer = $q.defer();
 
-		// popup
-		var popup = $ionicPopup.show({
-    		title: 'Choose source',
-    		subTitle: 'Select the source of the content you want to upload',
-    		buttons: [
-      			{ text: '<i class="icon ion-close"></i>' },
-      			{ text: '<i class="icon ion-earth"></i>' },
-      			{ text: '<i class="icon ion-images"></i>'}
-    		]
-  		});
-  		popup.then(function(res) {
-    		console.log('Tapped!', res);
-  		});
+        console.log(id);
 
- 	};
+        ArtistService.getAllArtists().then(function(data){
+            for (var i =  0; i <= artists.length; i++) {
 
-});
-app.controller('HomeCtrl', function ($scope, LocationService) {
+                if (artists[i]._id === parseInt(id)) {
 
-	$scope.getLocation = function() {
-		LocationService.getPosition().then(function(data){
-			$scope.location = data;
-		});
-	};
+                    defer.resolve(artists[i]);
+                } else {
+                    defer.reject('Failed to receive artist');
+                }
 
-});
-app.controller('LoginCtrl', function ($scope) {
+                // console.log(artists[i]._id);
+                // if(artists[i]._id === parseInt(id)) {
+                //     console.log('success');
+                // }
 
+            }
+        }, function(err){
+            defer.reject('Failed to receive artists.json');
+        });
 
-});
-app.controller('PrivateCtrl', function ($scope) {
+        return defer.promise;
+    };
 
+    ArtistService.getAllArtists = function() {
+        var defer = $q.defer();
 
-});
-app.controller('PublicCtrl', function ($scope) {
+        if( artists === null || refresh ) {
 
+            $http.get('http://localhost:8100/data/artists.json')
+            .success(function(data, status, headers, config){
+                console.log('Received artists.json');
+            })
+            .error(function(data, status, headers, config){
+                defer.reject('Failed to receive artists.json');
+            })
+            .then(function(result){
+                artists = result.data;
+                defer.resolve(artists);
+            });
 
-});
-app.controller('SignupCtrl', function ($scope) {
+        } else {
+            deferred.resolve(artists);
+        }
 
+        return defer.promise;
+    };
+
+    return ArtistService;
 
 });
 app.service('AuthService', function ($q, $http, $cordovaOauth) {
@@ -309,5 +306,61 @@ app.factory('LocationService', function ($q){
     return {
         getPosition : getPosition
     };
+});
+app.controller('AppCtrl', function ($scope) {
+
+
+});
+app.controller('ArtistCtrl', function ($scope) {
+
+	ArtistService.getArtist('555a5f4e0039d2f388a86c70').then(function(data){
+		$scope.artist = data;
+	});
+
+});
+app.controller('CreateCtrl', function ($scope, $ionicPopup) {
+
+	$scope.addMedia = function() {
+
+		// popup
+		var popup = $ionicPopup.show({
+    		title: 'Choose source',
+    		subTitle: 'Select the source of the content you want to upload',
+    		buttons: [
+      			{ text: '<i class="icon ion-close"></i>' },
+      			{ text: '<i class="icon ion-earth"></i>' },
+      			{ text: '<i class="icon ion-images"></i>'}
+    		]
+  		});
+  		popup.then(function(res) {
+    		console.log('Tapped!', res);
+  		});
+
+ 	};
+
+});
+app.controller('HomeCtrl', function ($scope, LocationService) {
+
+	$scope.getLocation = function() {
+		LocationService.getPosition().then(function(data){
+			$scope.location = data;
+		});
+	};
+
+});
+app.controller('PrivateCtrl', function ($scope) {
+
+
+});
+app.controller('PublicCtrl', function ($scope, $http, ArtistService) {
+
+	// ArtistService.getAllArtists().then(function(data){
+	// 	$scope.artists = data;
+	// });
+
+	ArtistService.getArtist('555a5f4e0039d2f388a86c70').then(function(data){
+		$scope.artist = data;
+	});
+
 });
 //# sourceMappingURL=app.js.map

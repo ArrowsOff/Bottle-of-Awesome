@@ -7659,6 +7659,8 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+/**  Here will our custom styles go
+**************************************************************/
 .bar.bar-clear, .bar.bar-clear .button, .bar.bar-clear .title {
   color: #444; }
 
