@@ -4,6 +4,6 @@ app.controller('HomeCtrl', function ($scope, LocationService) {
 		LocationService.getPosition().then(function(data){
 			$scope.location = data;
 		});
-	}
+	};
 
 });

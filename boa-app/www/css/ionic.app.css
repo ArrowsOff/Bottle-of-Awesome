@@ -7659,4 +7659,7 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.bar.bar-clear, .bar.bar-clear .button, .bar.bar-clear .title {
+  color: #444; }
+
 /*# sourceMappingURL=ionic.app.css.map */

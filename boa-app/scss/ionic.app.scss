@@ -21,3 +21,9 @@ $ionicons-font-path: "../lib/ionic/release/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+// If we use a clear header 
+.bar.bar-clear,
+.bar.bar-clear .button, 
+.bar.bar-clear .title {
+  color: $dark;
+}

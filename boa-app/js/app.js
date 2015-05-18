@@ -58,7 +58,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         url: '/login',
         templateUrl: 'templates/authentication/login.html',
         controller: 'LoginCtrl'
-    })
+    });
 
     $urlRouterProvider.otherwise('/');
 });
