@@ -1,5 +1,4 @@
-angular.module('starter.controllers.PublicCtrl', [])
-.controller('PublicCtrl', function ($scope) {
+app.controller('PublicCtrl', function ($scope) {
 
 
 });

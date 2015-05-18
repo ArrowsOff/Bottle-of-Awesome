@@ -10,20 +10,20 @@ var paths = {
 
 gulp.task('default', ['sass', 'scripts']);
 
+/* Styles
+========================================================*/
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
-    .pipe($.sass({
-      errLogToConsole: true
-    }))
-    .pipe(gulp.dest('./www/css/'))
-    .pipe($.minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe($.rename({ extname: '.min.css' }))
+    .pipe($.sass({ errLogToConsole: true }))
+    .pipe($.sourcemaps.init())
+    .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest('./www/css/'))
     .on('end', done);
 });
 
+
+/* Scripts
+========================================================*/
 gulp.task('scripts-lint', function() {
 	return gulp.src('./js/**/*.js')
 		.pipe($.jshint())
@@ -32,22 +32,23 @@ gulp.task('scripts-lint', function() {
 
 gulp.task('scripts', ['scripts-lint'], function() {
   return gulp.src('./js/**/*.js')
+    .pipe($.sourcemaps.init())
     .pipe($.concat('app.js'))
-    .pipe($.ngAnnotate())
+    .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest('./www/js'));
 });
 
-gulp.task('images', function(){
-	return gulp.src('./www/img/**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)')
-		.pipe($.imagemin())
-		.pipe(gulp.dest('./www/img'));
-});
 
+/* Watch
+========================================================*/
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
   gulp.watch('./js/**/*.js', ['scripts'])
 });
 
+
+/* Other
+========================================================*/
 gulp.task('install', ['git-check'], function() {
   return bower.commands.install()
     .on('log', function(data) {

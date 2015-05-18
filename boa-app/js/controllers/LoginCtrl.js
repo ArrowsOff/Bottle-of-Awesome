@@ -1,5 +1,4 @@
-angular.module('starter.controllers.LoginCtrl', [])
-.controller('LoginCtrl', function ($scope) {
+app.controller('LoginCtrl', function ($scope) {
 
 
 });

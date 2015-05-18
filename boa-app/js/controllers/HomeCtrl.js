@@ -1,5 +1,4 @@
-angular.module('starter.controllers.HomeCtrl', [])
-.controller('HomeCtrl', function ($scope, LocationService) {
+app.controller('HomeCtrl', function ($scope, LocationService) {
 
 	$scope.getLocation = function() {
 		LocationService.getPosition().then(function(data){

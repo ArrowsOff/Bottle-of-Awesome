@@ -3,24 +3,12 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', [
+var app = angular.module('starter', [
     'ionic',
-    'ngCordova',
-    
-    'starter.controllers.AppCtrl',
-    'starter.controllers.HomeCtrl',
-    'starter.controllers.PrivateCtrl',
-    'starter.controllers.PublicCtrl',
-    'starter.controllers.CreateCtrl',
-    'starter.controllers.LoginCtrl',
-    'starter.controllers.SignupCtrl',
+    'ngCordova'
+]);
 
-    'starter.services.LocationService',
-    'starter.services.AuthenticationService'
-
-])
-
-.run(function($ionicPlatform) {
+app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -31,9 +19,9 @@ angular.module('starter', [
       StatusBar.styleDefault();
     }
   });
-})
+});
 
-.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('home', {
         url: '/',
@@ -72,8 +60,6 @@ angular.module('starter', [
         controller: 'LoginCtrl'
     })
 
-    
-
     $urlRouterProvider.otherwise('/');
-})
+});
 

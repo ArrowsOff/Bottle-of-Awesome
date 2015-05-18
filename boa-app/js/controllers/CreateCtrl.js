@@ -1,5 +1,4 @@
-angular.module('starter.controllers.CreateCtrl', [])
-.controller('CreateCtrl', function ($scope, $ionicPopup) {
+app.controller('CreateCtrl', function ($scope, $ionicPopup) {
 
 	$scope.addMedia = function() {
 
