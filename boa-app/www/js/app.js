@@ -64,56 +64,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 });
 
 
-app.controller('AppCtrl', function ($scope) {
-
-
-});
-app.controller('CreateCtrl', function ($scope, $ionicPopup) {
-
-	$scope.addMedia = function() {
-
-		// popup
-		var popup = $ionicPopup.show({
-    		title: 'Choose source',
-    		subTitle: 'Select the source of the content you want to upload',
-    		buttons: [
-      			{ text: '<i class="icon ion-close"></i>' },
-      			{ text: '<i class="icon ion-earth"></i>' },
-      			{ text: '<i class="icon ion-images"></i>'}
-    		]
-  		});
-  		popup.then(function(res) {
-    		console.log('Tapped!', res);
-  		});
-
- 	};
-
-});
-app.controller('HomeCtrl', function ($scope, LocationService) {
-
-	$scope.getLocation = function() {
-		LocationService.getPosition().then(function(data){
-			$scope.location = data;
-		});
-	}
-
-});
-app.controller('LoginCtrl', function ($scope) {
-
-
-});
-app.controller('PrivateCtrl', function ($scope) {
-
-
-});
-app.controller('PublicCtrl', function ($scope) {
-
-
-});
-app.controller('SignupCtrl', function ($scope) {
-
-
-});
 app.service('AuthService', function ($q, $http, $cordovaOauth) {
 
     var AuthService = this;
@@ -309,5 +259,55 @@ app.factory('LocationService', function ($q){
     return {
         getPosition : getPosition
     };
+});
+app.controller('AppCtrl', function ($scope) {
+
+
+});
+app.controller('CreateCtrl', function ($scope, $ionicPopup) {
+
+	$scope.addMedia = function() {
+
+		// popup
+		var popup = $ionicPopup.show({
+    		title: 'Choose source',
+    		subTitle: 'Select the source of the content you want to upload',
+    		buttons: [
+      			{ text: '<i class="icon ion-close"></i>' },
+      			{ text: '<i class="icon ion-earth"></i>' },
+      			{ text: '<i class="icon ion-images"></i>'}
+    		]
+  		});
+  		popup.then(function(res) {
+    		console.log('Tapped!', res);
+  		});
+
+ 	};
+
+});
+app.controller('HomeCtrl', function ($scope, LocationService) {
+
+	$scope.getLocation = function() {
+		LocationService.getPosition().then(function(data){
+			$scope.location = data;
+		});
+	}
+
+});
+app.controller('LoginCtrl', function ($scope) {
+
+
+});
+app.controller('PrivateCtrl', function ($scope) {
+
+
+});
+app.controller('PublicCtrl', function ($scope) {
+
+
+});
+app.controller('SignupCtrl', function ($scope) {
+
+
 });
 //# sourceMappingURL=app.js.map
