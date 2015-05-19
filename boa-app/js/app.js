@@ -1,6 +1,7 @@
 var app = angular.module('starter', [
     'ionic',
-    'ngCordova'
+    'ngCordova',
+    'ngResource'
 ]);
 
 app.run(function($ionicPlatform) {

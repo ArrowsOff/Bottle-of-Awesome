@@ -1,6 +1,7 @@
 var app = angular.module('starter', [
     'ionic',
-    'ngCordova'
+    'ngCordova',
+    'ngResource'
 ]);
 
 app.run(function($ionicPlatform) {
@@ -50,11 +51,86 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 });
 
 
-app.service('ArtistService', function ($q, $http) {
+app.controller('AppCtrl', function ($scope) {
+
+
+});
+app.controller('ArtistCtrl', function ($scope, $stateParams, ArtistService) {
+
+	// ArtistService.getArtist('1').then(function(data){
+	// 	$scope.artist = data;
+	// });
+
+	// $scope.artist = ArtistService.get().get(1);
+
+	$scope.artist = ArtistService.get().get({user: $stateParams.id});
+
+
+	// Add to favorites
+	// $scope.addToFavorites = ArtistService.addToFavorites($stateParams.id);
+});
+app.controller('CreateCtrl', function ($scope, $ionicPopup) {
+
+	$scope.addMedia = function() {
+
+		// popup
+		var popup = $ionicPopup.show({
+    		title: 'Choose source',
+    		subTitle: 'Select the source of the content you want to upload',
+    		buttons: [
+      			{ text: '<i class="icon ion-close"></i>' },
+      			{ text: '<i class="icon ion-earth"></i>' },
+      			{ text: '<i class="icon ion-images"></i>'}
+    		]
+  		});
+  		popup.then(function(res) {
+    		console.log('Tapped!', res);
+  		});
+
+ 	};
+
+});
+app.controller('HomeCtrl', function ($scope, LocationService) {
+
+	$scope.getLocation = function() {
+		LocationService.getPosition().then(function(data){
+			$scope.location = data;
+		});
+	};
+
+});
+app.controller('LoginCtrl', function ($scope) {
+
+
+});
+app.controller('PrivateCtrl', function ($scope) {
+
+
+});
+app.controller('PublicCtrl', function ($scope, $http, ArtistService) {
+
+	// ArtistService.getAllArtists().then(function(data){
+	// 	$scope.artists = data;
+	// });
+
+	// ArtistService.getArtist('1').then(function(data){
+	// 	$scope.artist = data;
+	// });
+
+
+	$scope.artists = ArtistService.get().query();
+});
+app.controller('SignupCtrl', function ($scope) {
+
+
+});
+app.service('ArtistService', function ($q, $http, $resource) {
 
     var ArtistService = this;
 
     var artists = null;
+
+    var id;
 
     ArtistService.getArtist = function(id) {
         var defer = $q.defer();
@@ -64,18 +140,18 @@ app.service('ArtistService', function ($q, $http) {
         ArtistService.getAllArtists().then(function(data){
             for (var i =  0; i <= artists.length; i++) {
 
-                if (artists[i]._id === parseInt(id)) {
+                // console.log(artists[i]._id);
+                id = artists[i].index;
+
+                if (id === parseInt(id)) {
 
                     defer.resolve(artists[i]);
+
                 } else {
+
                     defer.reject('Failed to receive artist');
+
                 }
-
-                // console.log(artists[i]._id);
-                // if(artists[i]._id === parseInt(id)) {
-                //     console.log('success');
-                // }
-
             }
         }, function(err){
             defer.reject('Failed to receive artists.json');
@@ -83,6 +159,10 @@ app.service('ArtistService', function ($q, $http) {
 
         return defer.promise;
     };
+
+    ArtistService.get = function(){
+        return $resource('http://jsonplaceholder.typicode.com/users/:user', {user: '@user'});
+    }
 
     ArtistService.getAllArtists = function() {
         var defer = $q.defer();
@@ -306,61 +386,5 @@ app.factory('LocationService', function ($q){
     return {
         getPosition : getPosition
     };
-});
-app.controller('AppCtrl', function ($scope) {
-
-
-});
-app.controller('ArtistCtrl', function ($scope) {
-
-	ArtistService.getArtist('555a5f4e0039d2f388a86c70').then(function(data){
-		$scope.artist = data;
-	});
-
-});
-app.controller('CreateCtrl', function ($scope, $ionicPopup) {
-
-	$scope.addMedia = function() {
-
-		// popup
-		var popup = $ionicPopup.show({
-    		title: 'Choose source',
-    		subTitle: 'Select the source of the content you want to upload',
-    		buttons: [
-      			{ text: '<i class="icon ion-close"></i>' },
-      			{ text: '<i class="icon ion-earth"></i>' },
-      			{ text: '<i class="icon ion-images"></i>'}
-    		]
-  		});
-  		popup.then(function(res) {
-    		console.log('Tapped!', res);
-  		});
-
- 	};
-
-});
-app.controller('HomeCtrl', function ($scope, LocationService) {
-
-	$scope.getLocation = function() {
-		LocationService.getPosition().then(function(data){
-			$scope.location = data;
-		});
-	};
-
-});
-app.controller('PrivateCtrl', function ($scope) {
-
-
-});
-app.controller('PublicCtrl', function ($scope, $http, ArtistService) {
-
-	// ArtistService.getAllArtists().then(function(data){
-	// 	$scope.artists = data;
-	// });
-
-	ArtistService.getArtist('555a5f4e0039d2f388a86c70').then(function(data){
-		$scope.artist = data;
-	});
-
 });
 //# sourceMappingURL=app.js.map

@@ -1,8 +1,10 @@
-app.service('ArtistService', function ($q, $http) {
+app.service('ArtistService', function ($q, $http, $resource) {
 
     var ArtistService = this;
 
     var artists = null;
+
+    var id;
 
     ArtistService.getArtist = function(id) {
         var defer = $q.defer();
@@ -12,7 +14,10 @@ app.service('ArtistService', function ($q, $http) {
         ArtistService.getAllArtists().then(function(data){
             for (var i =  0; i <= artists.length; i++) {
 
-                if (artists[i]._id === parseInt(id)) {
+                // console.log(artists[i]._id);
+                id = artists[i].index;
+
+                if (id === parseInt(id)) {
 
                     defer.resolve(artists[i]);
 
@@ -28,6 +33,10 @@ app.service('ArtistService', function ($q, $http) {
 
         return defer.promise;
     };
+
+    ArtistService.get = function(){
+        return $resource('http://jsonplaceholder.typicode.com/users/:user', {user: '@user'});
+    }
 
     ArtistService.getAllArtists = function() {
         var defer = $q.defer();

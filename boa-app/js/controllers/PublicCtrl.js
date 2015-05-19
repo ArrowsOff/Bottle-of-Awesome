@@ -4,8 +4,10 @@ app.controller('PublicCtrl', function ($scope, $http, ArtistService) {
 	// 	$scope.artists = data;
 	// });
 
-	ArtistService.getArtist('555a5f4e0039d2f388a86c70').then(function(data){
-		$scope.artist = data;
-	});
+	// ArtistService.getArtist('1').then(function(data){
+	// 	$scope.artist = data;
+	// });
 
+
+	$scope.artists = ArtistService.get().query();
 });
