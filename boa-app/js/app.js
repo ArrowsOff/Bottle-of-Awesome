@@ -4,7 +4,7 @@ var app = angular.module('starter', [
     'ngResource'
 ]);
 
-app.run(function($ionicPlatform) {
+app.run(function($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -14,6 +14,21 @@ app.run(function($ionicPlatform) {
         if(window.StatusBar) {
             StatusBar.styleDefault();
         }
+
+        //set up and init image caching
+        // write log to console
+        ImgCache.options.debug = true;
+
+        // increase allocated space on Chrome to 50MB, default was 10MB
+        ImgCache.options.chromeQuota = 50*1024*1024;
+        ImgCache.init(function(){
+          //small hack to dispatch an event when imgCache is 
+          //full initialized.
+          $rootScope.$broadcast('ImgCacheReady');
+        }, function(){
+            alert('ImgCache init: error! Check the log for errors');
+        });
+
     });
 });
 

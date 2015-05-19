@@ -36,7 +36,7 @@ app.service('ArtistService', function ($q, $http, $resource) {
 
     ArtistService.get = function(){
         return $resource('http://jsonplaceholder.typicode.com/users/:user', {user: '@user'});
-    }
+    };
 
     ArtistService.getAllArtists = function() {
         var defer = $q.defer();

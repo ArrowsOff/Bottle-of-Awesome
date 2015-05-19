@@ -4,7 +4,7 @@ var app = angular.module('starter', [
     'ngResource'
 ]);
 
-app.run(function($ionicPlatform) {
+app.run(function($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -14,6 +14,21 @@ app.run(function($ionicPlatform) {
         if(window.StatusBar) {
             StatusBar.styleDefault();
         }
+
+        //set up and init image caching
+        // write log to console
+        ImgCache.options.debug = true;
+
+        // increase allocated space on Chrome to 50MB, default was 10MB
+        ImgCache.options.chromeQuota = 50*1024*1024;
+        ImgCache.init(function(){
+          //small hack to dispatch an event when imgCache is 
+          //full initialized.
+          $rootScope.$broadcast('ImgCacheReady');
+        }, function(){
+            alert('ImgCache init: error! Check the log for errors');
+        });
+
     });
 });
 
@@ -99,10 +114,6 @@ app.controller('HomeCtrl', function ($scope, LocationService) {
 	};
 
 });
-app.controller('LoginCtrl', function ($scope) {
-
-
-});
 app.controller('PrivateCtrl', function ($scope) {
 
 
@@ -120,10 +131,29 @@ app.controller('PublicCtrl', function ($scope, $http, ArtistService) {
 
 	$scope.artists = ArtistService.get().query();
 });
-app.controller('SignupCtrl', function ($scope) {
-
-
-});
+app.directive('imgCache', function ($document) {
+    return {
+        link: function (scope, ele, attrs) {
+            var target = (ele);
+            //waits for the event to be triggered,
+            //before executing d call back
+            scope.$on('ImgCacheReady', function () {
+                //this checks if we have a cached copy.
+                ImgCache.isCached(attrs.src, function(path, success){
+                    if(success){
+                        // already cached
+                        ImgCache.useCachedFile(target);
+                    } else {
+                        // not there, need to cache the image
+                        ImgCache.cacheFile(attrs.src, function(){
+                            ImgCache.useCachedFile(target);
+                        });
+                    }
+                });
+            }, false);
+        }
+    };
+}); 
 app.service('ArtistService', function ($q, $http, $resource) {
 
     var ArtistService = this;
@@ -162,7 +192,7 @@ app.service('ArtistService', function ($q, $http, $resource) {
 
     ArtistService.get = function(){
         return $resource('http://jsonplaceholder.typicode.com/users/:user', {user: '@user'});
-    }
+    };
 
     ArtistService.getAllArtists = function() {
         var defer = $q.defer();

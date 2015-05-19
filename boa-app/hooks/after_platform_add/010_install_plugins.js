@@ -4,17 +4,16 @@
  
 // add your plugins to this list--either 
 // the identifier, the filesystem location 
-// or the URL
+// or the URL 
+    
 var pluginlist = [
+    "com.ionic.keyboard",
     "org.apache.cordova.device",
+    "org.apache.cordova.console",
     "org.apache.cordova.geolocation",
     "cordova plugin add https://github.com/phonegap-build/PushPlugin.git",
-    "cordova plugin add de.appplant.cordova.plugin.local-notification",
-    "cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git",
-    "cordova plugin add org.apache.cordova.network-information", 
-    "cordova plugin add https://github.com/katzer/cordova-plugin-badge.git",
-    "cordova plugin add org.apache.cordova.camera",
-    "cordova plugin add org.apache.cordova.media-capture"
+    "https://github.com/apache/cordova-plugin-file.git",
+    "org.apache.cordova.file-transfer" 
 ];
  
 // no need to configure below
