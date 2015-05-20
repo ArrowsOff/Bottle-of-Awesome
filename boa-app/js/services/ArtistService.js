@@ -1,66 +1,66 @@
-app.service('ArtistService', function ($q, $http, $resource) {
+app.service('ArtistService', function ($q, $http, $resource, lodash) {
 
     var ArtistService = this;
 
     var artists = null;
 
-    var id;
+    var refresh = false;
 
-    ArtistService.getArtist = function(id) {
-        var defer = $q.defer();
+    function requestArtists() {
 
-        console.log(id);
-
-        ArtistService.getAllArtists().then(function(data){
-            for (var i =  0; i <= artists.length; i++) {
-
-                // console.log(artists[i]._id);
-                id = artists[i].index;
-
-                if (id === parseInt(id)) {
-
-                    defer.resolve(artists[i]);
-
-                } else {
-
-                    defer.reject('Failed to receive artist');
-
-                }
-            }
-        }, function(err){
-            defer.reject('Failed to receive artists.json');
-        });
-
-        return defer.promise;
-    };
-
-    ArtistService.get = function(){
-        return $resource('http://jsonplaceholder.typicode.com/users/:user', {user: '@user'});
-    };
-
-    ArtistService.getAllArtists = function() {
         var defer = $q.defer();
 
         if( artists === null || refresh ) {
 
-            $http.get('http://localhost:8100/data/artists.json')
-            .success(function(data, status, headers, config){
-                console.log('Received artists.json');
-            })
-            .error(function(data, status, headers, config){
-                defer.reject('Failed to receive artists.json');
-            })
-            .then(function(result){
-                artists = result.data;
-                defer.resolve(artists);
-            });
+            $http.get("/data/artists.xml").success(function (data) {
+                var x2js = new X2JS();
+                var jsonData = x2js.xml_str2json(data);
 
+                artists = jsonData.artists;
+
+                defer.resolve(jsonData.artists);
+
+            }).error(function(err){
+
+                defer.reject('Error: ', err)
+
+            })
         } else {
-            deferred.resolve(artists);
+            defer.resolve(artists);
         }
 
         return defer.promise;
-    };
+    }
+
+
+    ArtistService.getArtists = function() {
+
+        var defer = $q.defer();
+
+        requestArtists().then(function(data){
+            defer.resolve(data);
+        })
+
+        return defer.promise;
+
+    }
+
+    ArtistService.getArtist = function(id) {
+
+        var defer = $q.defer();
+
+        requestArtists().then(function(data){
+            lodash.findIndex(data.artist, function(artist) {
+                
+                if (artist._id == id) {
+                    defer.resolve(artist)
+                }
+            });
+
+        });
+
+        return defer.promise;
+    }
 
     return ArtistService;
 

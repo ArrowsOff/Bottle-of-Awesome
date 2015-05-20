@@ -2,7 +2,8 @@ var app = angular.module('starter', [
     'ionic',
     'ngCordova',
     'ngResource',
-    'cb.x2js'
+    'cb.x2js',
+    'ngLodash'
 ]);
 
 app.run(function($ionicPlatform, $rootScope) {
@@ -79,18 +80,26 @@ app.controller('ArtistCtrl', function ($scope, $stateParams, ArtistService, $htt
 
 	// $scope.artist = ArtistService.get().get(1);
 
-	$scope.artist = ArtistService.get().get({user: $stateParams.id});
+	// $scope.artist = ArtistService.get().get({user: $stateParams.id});
 
-	$http.get("/data/appdata.xml").success(function (data) {
-      	var x2js = new X2JS();
-      	var jsonData = x2js.xml_str2json(data);
+	// $http.get("/data/artists.xml").success(function (data) {
+ //      	var x2js = new X2JS();
+ //      	var jsonData = x2js.xml_str2json(data);
 
-      	console.log(jsonData.note)
-  	});
+ //      	// console.log(jsonData.artists)
+ //      	$scope.artists = jsonData.artists;
+ //  	});
 
 
 	// Add to favorites
 	// $scope.addToFavorites = ArtistService.addToFavorites($stateParams.id);
+
+	ArtistService.getArtist($stateParams.id).then(function(data){
+
+		console.log(data);
+		$scope.artist = data;
+
+	});
 });
 app.controller('CreateCtrl', function ($scope, $ionicPopup) {
 
@@ -128,17 +137,13 @@ app.controller('PrivateCtrl', function ($scope) {
 });
 app.controller('PublicCtrl', function ($scope, $http, ArtistService) {
 
-	// ArtistService.getAllArtists().then(function(data){
-	// 	$scope.artists = data;
-	// });
-
-	// ArtistService.getArtist('1').then(function(data){
-	// 	$scope.artist = data;
-	// });
-
-
-	$scope.artists = ArtistService.get().query();
+	ArtistService.getArtists().then(function(data){
+		$scope.artists = data.artist;
+		console.log($scope.artists);
+	});
+	
 });
+
 app.directive('imgCache', function ($document) {
     return {
         link: function (scope, ele, attrs) {
@@ -162,69 +167,69 @@ app.directive('imgCache', function ($document) {
         }
     };
 }); 
-app.service('ArtistService', function ($q, $http, $resource) {
+app.service('ArtistService', function ($q, $http, $resource, lodash) {
 
     var ArtistService = this;
 
     var artists = null;
 
-    var id;
+    var refresh = false;
 
-    ArtistService.getArtist = function(id) {
-        var defer = $q.defer();
+    function requestArtists() {
 
-        console.log(id);
-
-        ArtistService.getAllArtists().then(function(data){
-            for (var i =  0; i <= artists.length; i++) {
-
-                // console.log(artists[i]._id);
-                id = artists[i].index;
-
-                if (id === parseInt(id)) {
-
-                    defer.resolve(artists[i]);
-
-                } else {
-
-                    defer.reject('Failed to receive artist');
-
-                }
-            }
-        }, function(err){
-            defer.reject('Failed to receive artists.json');
-        });
-
-        return defer.promise;
-    };
-
-    ArtistService.get = function(){
-        return $resource('http://jsonplaceholder.typicode.com/users/:user', {user: '@user'});
-    };
-
-    ArtistService.getAllArtists = function() {
         var defer = $q.defer();
 
         if( artists === null || refresh ) {
 
-            $http.get('http://localhost:8100/data/artists.json')
-            .success(function(data, status, headers, config){
-                console.log('Received artists.json');
-            })
-            .error(function(data, status, headers, config){
-                defer.reject('Failed to receive artists.json');
-            })
-            .then(function(result){
-                artists = result.data;
-                defer.resolve(artists);
-            });
+            $http.get("/data/artists.xml").success(function (data) {
+                var x2js = new X2JS();
+                var jsonData = x2js.xml_str2json(data);
 
+                artists = jsonData.artists;
+
+                defer.resolve(jsonData.artists);
+
+            }).error(function(err){
+
+                defer.reject('Error: ', err)
+
+            })
         } else {
-            deferred.resolve(artists);
+            defer.resolve(artists);
         }
 
         return defer.promise;
-    };
+    }
+
+
+    ArtistService.getArtists = function() {
+
+        var defer = $q.defer();
+
+        requestArtists().then(function(data){
+            defer.resolve(data);
+        })
+
+        return defer.promise;
+
+    }
+
+    ArtistService.getArtist = function(id) {
+
+        var defer = $q.defer();
+
+        requestArtists().then(function(data){
+            lodash.findIndex(data.artist, function(artist) {
+                
+                if (artist._id == id) {
+                    defer.resolve(artist)
+                }
+            });
+
+        });
+
+        return defer.promise;
+    }
 
     return ArtistService;
 

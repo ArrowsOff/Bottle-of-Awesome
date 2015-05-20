@@ -6,16 +6,24 @@ app.controller('ArtistCtrl', function ($scope, $stateParams, ArtistService, $htt
 
 	// $scope.artist = ArtistService.get().get(1);
 
-	$scope.artist = ArtistService.get().get({user: $stateParams.id});
+	// $scope.artist = ArtistService.get().get({user: $stateParams.id});
 
-	$http.get("/data/appdata.xml").success(function (data) {
-      	var x2js = new X2JS();
-      	var jsonData = x2js.xml_str2json(data);
+	// $http.get("/data/artists.xml").success(function (data) {
+ //      	var x2js = new X2JS();
+ //      	var jsonData = x2js.xml_str2json(data);
 
-      	console.log(jsonData.note)
-  	});
+ //      	// console.log(jsonData.artists)
+ //      	$scope.artists = jsonData.artists;
+ //  	});
 
 
 	// Add to favorites
 	// $scope.addToFavorites = ArtistService.addToFavorites($stateParams.id);
+
+	ArtistService.getArtist($stateParams.id).then(function(data){
+
+		console.log(data);
+		$scope.artist = data;
+
+	});
 });
