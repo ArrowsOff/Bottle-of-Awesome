@@ -58,7 +58,7 @@ angular.module('starter', ['ionic'])
         $log.info('Pushnotification.register succeeded');
       }
       function errorHandler(error) {
-        $log.info('Pushnotification.register Failed', error);
+        $log.error('Pushnotification.register Failed', error);
       }
       function unregister() {
         $log.info('Pushnotification unregister');
@@ -67,8 +67,32 @@ angular.module('starter', ['ionic'])
             $log.info('Pushnotification unregister success')
           })
         }
+      } 
+    }
+
+    function onNotificationGCM(e) {
+      $log.info("Event received: " + e.event + '');
+
+      switch( e.event ) {
+
+        case 'registed' {
+          $log.info('EVENT -> Registered');
+          break;
+        }
+        case 'message' {
+          $log.info('EVENT -> Message');
+          break;
+        }
+        case 'error' {
+          $log.error('EVENT -> Error');
+          break;
+        }
+        default {
+          $log.error('EVENT -> Unknown, an event was received and we do not know what it is');
+          break;
+        }
       }
     }
-    
+  
   });
 })
