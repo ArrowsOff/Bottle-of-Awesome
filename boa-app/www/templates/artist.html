@@ -1,23 +1,26 @@
 <ion-view view-title="{{artist.name.__cdata}}">
-    <ion-content class="padding">
-        <img ng-src="{{artist.image.__cdata}}">
+	<ion-nav-title>{{artist.name.__cdata}}</ion-nav-title>
+    <ion-content>
+    	
+        <img img-cache ng-src="{{artist.image.__cdata}}" width="100%">
+		<div class="padding">
+			<h1>Artiest: {{artist.name.__cdata}}</h1>
+	        <p>ID: {{artist._id}}</p>
+	        <p>Biography: {{artist.biography.__cdata}}</p>
 
-		<h1>Artiest: {{artist.name.__cdata}}</h1>
-        <p>ID: {{artist._id}}</p>
-        <p>Biography: {{artist.biography.__cdata}}</p>
-
-        <p>StartTime: {{artist.start_time}}</p>
-        <p>Endtime: {{artist.endtime}}</p>
-        <p>Stage: {{artist.stage_id}}</p>
-       	<p>Summary: {{artist.summary}}</p>
-        
-        <p>Url: {{artist.url.__cdata}}</p>
-        <p>Website: {{artist.website.__cdata}}</p>
-        <p>Youtube: {{artist.youtube.__cdata}}</p>
-        <p>Facbook: {{artist.facebook.__cdata}}</p>
-        <p>Twitter: {{artist.twitter.__cdata}}</p>
-        <p>LastFM: {{artist.lastfm.__cdata}}</p>
-        <p>MySpace: {{artist.myspace.__cdata}}</p>
-        <p>Soundcloud: {{artist.soundcloud.__cdata}}</p>
+	        <p>StartTime: {{artist.start_time}}</p>
+	        <p>Endtime: {{artist.endtime}}</p>
+	        <p>Stage: {{artist.stage_id}}</p>
+	       	<p>Summary: {{artist.summary}}</p>
+	        
+	        <p>Url: {{artist.url.__cdata}}</p>
+	        <p>Website: {{artist.website.__cdata}}</p>
+	        <p>Youtube: {{artist.youtube.__cdata}}</p>
+	        <p>Facbook: {{artist.facebook.__cdata}}</p>
+	        <p>Twitter: {{artist.twitter.__cdata}}</p>
+	        <p>LastFM: {{artist.lastfm.__cdata}}</p>
+	        <p>MySpace: {{artist.myspace.__cdata}}</p>
+	        <p>Soundcloud: {{artist.soundcloud.__cdata}}</p>
+        </div>
     </ion-content>
 </ion-view>

@@ -72,24 +72,7 @@ app.controller('AppCtrl', function ($scope) {
 
 
 });
-app.controller('ArtistCtrl', function ($scope, $stateParams, ArtistService, $http, x2js) {
-
-	// ArtistService.getArtist('1').then(function(data){
-	// 	$scope.artist = data;
-	// });
-
-	// $scope.artist = ArtistService.get().get(1);
-
-	// $scope.artist = ArtistService.get().get({user: $stateParams.id});
-
-	// $http.get("/data/artists.xml").success(function (data) {
- //      	var x2js = new X2JS();
- //      	var jsonData = x2js.xml_str2json(data);
-
- //      	// console.log(jsonData.artists)
- //      	$scope.artists = jsonData.artists;
- //  	});
-
+app.controller('ArtistCtrl', function ($scope, $stateParams, $ionicNavBarDelegate, ArtistService, $http, x2js) {
 
 	// Add to favorites
 	// $scope.addToFavorites = ArtistService.addToFavorites($stateParams.id);
@@ -98,7 +81,6 @@ app.controller('ArtistCtrl', function ($scope, $stateParams, ArtistService, $htt
 
 		console.log(data);
 		$scope.artist = data;
-
 	});
 });
 app.controller('CreateCtrl', function ($scope, $ionicPopup) {
@@ -181,7 +163,7 @@ app.service('ArtistService', function ($q, $http, $resource, lodash) {
 
         if( artists === null || refresh ) {
 
-            $http.get("/data/artists.xml").success(function (data) {
+            $http.get("data/artists.xml").success(function (data) {
                 var x2js = new X2JS();
                 var jsonData = x2js.xml_str2json(data);
 
@@ -208,7 +190,7 @@ app.service('ArtistService', function ($q, $http, $resource, lodash) {
 
         requestArtists().then(function(data){
             defer.resolve(data);
-        })
+        });
 
         return defer.promise;
 
