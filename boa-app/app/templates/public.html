@@ -1,0 +1,16 @@
+<ion-view view-title="Public">
+  	<ion-content class="padding">
+    
+		<!-- <a ng-href="#/private/create">create</a>
+		<a ng-href="#/private">private</a>
+		<a ng-href="#/public">public</a> -->
+
+
+		<ion-item collection-repeat="artist in artists">
+
+	    	<a ng-href="#/artist/{{artist.id}}">{{artist.name}}</a>
+
+	  	</ion-item>
+
+  	</ion-content>
+</ion-view>
