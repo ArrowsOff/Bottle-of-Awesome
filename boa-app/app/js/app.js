@@ -3,10 +3,11 @@ var app = angular.module('starter', [
     'ngCordova',
     'ngResource',
     'cb.x2js',
-    'ngLodash'
+    'ngLodash',
+    'pouchdb'
 ]);
 
-app.run(function($ionicPlatform, $rootScope) {
+app.run(function($ionicPlatform, $rootScope, $log) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -16,20 +17,26 @@ app.run(function($ionicPlatform, $rootScope) {
         if(window.StatusBar) {
             StatusBar.styleDefault();
         }
+        if (typeof analytics !== 'undefined') {
+            $log.debug('starting analytics');
+            analytics.startTrackerWithId("UA-16476871-20");
+        } else {
+            $log.warn('Analytics API not available...');
+        }
 
-        //set up and init image caching
-        // write log to console
-        ImgCache.options.debug = true;
+        // //set up and init image caching
+        // // write log to console
+        // ImgCache.options.debug = true;
 
-        // increase allocated space on Chrome to 50MB, default was 10MB
-        ImgCache.options.chromeQuota = 50*1024*1024;
-        ImgCache.init(function(){
-          //small hack to dispatch an event when imgCache is 
-          //full initialized.
-          $rootScope.$broadcast('ImgCacheReady');
-        }, function(){
-            alert('ImgCache init: error! Check the log for errors');
-        });
+        // // increase allocated space on Chrome to 50MB, default was 10MB
+        // ImgCache.options.chromeQuota = 50*1024*1024;
+        // ImgCache.init(function(){
+        //     //small hack to dispatch an event when imgCache is 
+        //     //full initialized.
+        //     $rootScope.$broadcast('ImgCacheReady');
+        // }, function(){
+        //     alert('ImgCache init: error! Check the log for errors');
+        // });
 
     });
 });
@@ -53,8 +60,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         controller: 'CreateCtrl'
     })
 
-    .state('public', {
-        url: '/public',
+    .state('artists', {
+        url: '/artists',
         templateUrl: 'templates/public.html',
         controller: 'PublicCtrl'
     })

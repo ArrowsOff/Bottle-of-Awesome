@@ -1,16 +1,29 @@
-<ion-view view-title="Public">
-  	<ion-content class="padding">
-    
-		<!-- <a ng-href="#/private/create">create</a>
-		<a ng-href="#/private">private</a>
-		<a ng-href="#/public">public</a> -->
-
-
-		<ion-item collection-repeat="artist in artists">
-
-	    	<a ng-href="#/artist/{{artist.id}}">{{artist.name}}</a>
-
+<ion-view view-title="Artiesten">
+  	<ion-content>
+		
+		<!-- <div class="row">
+			<div class="col">
+				<button class="button button-positive" ng-click="getTopTracks()">Get url</button>
+			</div>
+			<div class="col">
+				<button class="button button-calm" ng-click="playStream()">Play Url</button>
+			</div>
+		</div> -->
+		<ion-item collection-repeat="artist in artists" class="item-icon-right">
+			
+    		<i class="icon ion-ios-heart-outline" ng-click="addToFavorites(artist._id)"></i>
+  
+	    	<a ng-href="#/artist/{{artist._id}}">{{artist.name.__cdata}}</a>
+			
 	  	</ion-item>
+
+	  	<!-- <a class="button button-calm" ng-click="getTopTracks()">Spotify</a>
+
+	  	<a class="button button-positive" ng-click="play()">
+	  		<i class="icon ion-play"></i> Play
+	  	</a>
+
+	  	{{media}} -->
 
   	</ion-content>
 </ion-view>

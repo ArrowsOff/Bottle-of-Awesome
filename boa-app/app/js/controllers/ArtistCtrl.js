@@ -1,11 +1,6 @@
-app.controller('ArtistCtrl', function ($scope, $stateParams, $ionicNavBarDelegate, ArtistService, $http, x2js) {
-
-	// Add to favorites
-	// $scope.addToFavorites = ArtistService.addToFavorites($stateParams.id);
-
+app.controller('ArtistCtrl', function ($scope, $stateParams, ArtistService) {
 	ArtistService.getArtist($stateParams.id).then(function(data){
 
-		console.log(data);
 		$scope.artist = data;
 	});
 });

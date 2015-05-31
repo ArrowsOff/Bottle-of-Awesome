@@ -1,4 +1,4 @@
-app.service('ArtistService', function ($q, $http, $resource, lodash) {
+app.service('ArtistService', function($q, $http, $log, lodash, DatabaseService) {
 
     var ArtistService = this;
 
@@ -7,31 +7,32 @@ app.service('ArtistService', function ($q, $http, $resource, lodash) {
     var refresh = false;
 
     function requestArtists() {
-
         var defer = $q.defer();
 
-        if( artists === null || refresh ) {
-
-            $http.get("data/artists.xml").success(function (data) {
+        if(!window.localStorage['artists'] || refresh) {
+            $http.get("data/artists.xml").success(function(data) {
                 var x2js = new X2JS();
-                var jsonData = x2js.xml_str2json(data);
+                var json = x2js.xml_str2json(data);
 
-                artists = jsonData.artists;
+                artists = json.artists;
+                DatabaseService.post(artists, 'artists');
 
-                defer.resolve(jsonData.artists);
-
+                defer.resolve(artists);
             }).error(function(err){
-
-                defer.reject('Error: ', err)
-
-            })
+                defer.reject('Error: ', err);
+            });
         } else {
-            defer.resolve(artists);
+            DatabaseService.get(window.localStorage['artists'])
+            .then(function(result){
+                defer.resolve(result);
+            })
+            .catch(function(error){
+                defer.reject('Error: ', error);
+            });
         }
-
+        
         return defer.promise;
     }
-
 
     ArtistService.getArtists = function() {
 
@@ -43,7 +44,7 @@ app.service('ArtistService', function ($q, $http, $resource, lodash) {
 
         return defer.promise;
 
-    }
+    };
 
     ArtistService.getArtist = function(id) {
 
@@ -53,14 +54,18 @@ app.service('ArtistService', function ($q, $http, $resource, lodash) {
             lodash.findIndex(data.artist, function(artist) {
                 
                 if (artist._id == id) {
-                    defer.resolve(artist)
+                    defer.resolve(artist);
                 }
             });
 
         });
 
         return defer.promise;
-    }
+    };
+
+    ArtistService.favorite = function(id) {
+        DatabaseService.put(id, 'favorites');
+    };
 
     return ArtistService;
 

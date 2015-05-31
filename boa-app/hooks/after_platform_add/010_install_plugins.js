@@ -8,12 +8,16 @@
     
 var pluginlist = [
     "com.ionic.keyboard",
-    "org.apache.cordova.device",
+    "cordova-plugin-device",
     "org.apache.cordova.console",
-    "org.apache.cordova.geolocation",
-    "cordova plugin add https://github.com/phonegap-build/PushPlugin.git",
-    "https://github.com/apache/cordova-plugin-file.git",
-    "org.apache.cordova.file-transfer" 
+    "cordova-plugin-geolocation",
+    "https://github.com/phonegap-build/PushPlugin.git",
+    // "https://github.com/apache/cordova-plugin-file.git",
+    "cordova-plugin-file",
+    "cordova-plugin-file-transfer",
+    "cordova-plugin-media",
+    "cordova-plugin-whitelist",
+    "https://github.com/danwilson/google-analytics-plugin.git"
 ];
  
 // no need to configure below
@@ -28,5 +32,5 @@ function puts(error, stdout, stderr) {
 }
  
 pluginlist.forEach(function(plug) {
-    exec("cordova plugin add " + plug, puts);
+    exec("ionic plugin add " + plug, puts);
 });

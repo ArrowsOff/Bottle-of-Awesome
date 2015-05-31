@@ -12,6 +12,7 @@
     "imgcache.js": "~0.7.6",
     "angular-x2js": "~0.2.0",
     "ngCordova": "~0.1.15-alpha",
-    "ng-lodash": "~0.2.3"
+    "ng-lodash": "~0.2.3",
+    "angular-pouchdb": "~2.1.0"
   }
 }

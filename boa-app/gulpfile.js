@@ -10,12 +10,16 @@ var paths = {
   html: ['./app/index.html', './app/templates/**/*.html'],
   images: ['./app/img/**/*'],
   data: ['./app/data/**/*'],
-  libraries: ['./app/ionic/release/js/ionic.bundle.js',
+  libraries: ['./app/lib/ionic/release/js/ionic.bundle.js',
               './app/lib/ngCordova/distng-cordova.js',
               './app/lib/angular-resource/angular-resource.js',
               './app/lib/imgcache.js/imgcache.js',
               './app/lib/x2js/xml2json.js',
-              './app/lib/angular-x2js/dist/x2js.min.js'],
+              './app/lib/angular-x2js/dist/x2js.min.js',
+              './app/lib/ngCordova/dist/ng-cordova.js',
+              './app/lib/ng-lodash/build/ng-lodash.js',
+              './app/lib/pouchdb/dist/pouchdb.min.js',
+              './app/lib/angular-pouchdb/angular-pouchdb.js'],
   fonts: ['./app/lib/ionic/release/fonts/**']
 };
 
@@ -68,6 +72,7 @@ gulp.task('scripts', ['scripts-lint'], function() {
 
 gulp.task('scripts:vendor', function() {
   return gulp.src(paths.libraries)
+    .pipe($.changed('./www/vendor.js'))
     .pipe($.sourcemaps.init())
     .pipe($.concat('vendor.js'))
     .pipe($.sourcemaps.write('./'))
