@@ -1,4 +1,4 @@
-app.controller('AppCtrl', function($scope, $http, $ionicNavBarDelegate, $timeout, $cordovaMedia, $log, ArtistService, TrackingService) {
+app.controller('AppCtrl', function($scope, $http, $ionicNavBarDelegate, $timeout, $log, ArtistService, TrackingService) {
 
 	var url;
 	var audio = null;

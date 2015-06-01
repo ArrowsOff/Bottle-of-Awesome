@@ -43,34 +43,83 @@ app.run(function($ionicPlatform, $rootScope, $log) {
 
 app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-    .state('home', {
-        url: '/',
-        templateUrl: 'templates/home.html',
-        controller: 'HomeCtrl'
+
+    .state('app', {
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html',
+        controller: 'AppCtrl'
     })
 
-    .state('private', {
-        url: '/private',
-        templateUrl: 'templates/private.html',
-        controller: 'PrivateCtrl'
+    .state('app.news', {
+        url: '/news',
+        views: {
+            "menuContent": {
+                templateUrl: 'templates/news.html',
+                controller: 'NewsCtrl'
+            }
+        }
     })
-    .state('create', {
-        url: '/private/create',
-        templateUrl: 'templates/private/create.html',
-        controller: 'CreateCtrl'
-    })
-
-    .state('artists', {
+    .state('app.artists', {
         url: '/artists',
-        templateUrl: 'templates/public.html',
-        controller: 'PublicCtrl'
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/artists.html',
+                controller: 'ArtistsCtrl'
+            }
+        }
     })
-    .state('host',{
-        url:'/artist/:id',
-        controller:'ArtistCtrl',
-        templateUrl:'templates/artist.html',
+    .state('app.artists.artist', {
+        url: '/artists/:id',
+        controller: 'ArtistCtrl',
+        templateUrl: 'templates/artist.html'
+    })
+    .state('app.info', {
+        url: '/info',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/info.html',
+                controller: 'InfoCtrl'
+            }
+        }
+    })
+    .state('app.schedule', {
+        url: '/schedule',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/schedule.html',
+                controller: 'ScheduleCtrl'
+            }
+        }
+    })
+    .state('app.map', {
+        url: '/map',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/map.html',
+                controller: 'MapCtrl'
+            }
+        }
+    })
+    .state('app.favorites', {
+        url: '/favorites',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/favorites.html',
+                controller: 'FavoritesCtrl'
+            }
+        }
+    })
+    .state('app.xomemories', {
+        url: '/xomemories',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/xomemories.html',
+                controller: 'XOmemoriesCtrl'
+            }
+        }
     });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/app/news');
 });
 

@@ -16,7 +16,7 @@ app.service('ArtistService', function($q, $http, $log, lodash, DatabaseService) 
 
                 artists = json.artists;
                 DatabaseService.post(artists, 'artists');
-
+                
                 defer.resolve(artists);
             }).error(function(err){
                 defer.reject('Error: ', err);
@@ -39,6 +39,7 @@ app.service('ArtistService', function($q, $http, $log, lodash, DatabaseService) 
         var defer = $q.defer();
 
         requestArtists().then(function(data){
+            $log.debug(data);
             defer.resolve(data);
         });
 

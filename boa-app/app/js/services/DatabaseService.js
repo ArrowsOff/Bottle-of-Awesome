@@ -47,6 +47,12 @@ app.service('DatabaseService', function(pouchDB, $log) {
         });
     };
 
+    DatabaseService.destroy = function() {
+        db.destroy();
+
+        $log.warn('Destroyed database');
+    }
+
     return DatabaseService;
 });
 
