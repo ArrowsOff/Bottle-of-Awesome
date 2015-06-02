@@ -19,8 +19,10 @@ var paths = {
               './app/lib/angular-pouchdb/angular-pouchdb.min.js',
               './app/lib/moment/min/moment.min.js',
               './app/lib/countdownjs/countdown.min.js',
-              './app/lib/moment-countdown/bin/moment-countdown.min.js',],
-  fonts: ['./app/lib/ionic/release/fonts/**']
+              './app/lib/moment-countdown/bin/moment-countdown.min.js',
+              './app/lib/Lawnchair/src/lawnchair.js'],
+  fonts: ['./app/lib/ionic/release/fonts/**', 
+          './app/fonts/**/*']
 };
 
 gulp.task('default', ['sass', 'scripts', 'scripts:vendor', 'html', 'images', 'fonts', 'data']);
@@ -72,7 +74,6 @@ gulp.task('scripts', ['scripts-lint'], function() {
 
 gulp.task('scripts:vendor', function() {
   return gulp.src(paths.libraries)
-    .pipe($.changed('./www/vendor.js'))
     .pipe($.sourcemaps.init())
     .pipe($.concat('vendor.js'))
     .pipe($.sourcemaps.write('./'))
