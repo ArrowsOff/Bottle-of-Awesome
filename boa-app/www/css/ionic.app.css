@@ -7661,6 +7661,34 @@ a.button {
 
 /**  Here will our custom styles go
 **************************************************************/
+@font-face {
+  font-family: 'proxima_nova_regular';
+  src: url('mark_simonson_-_proxima_nova_alt_regular-webfont.eot');
+  src: url('mark_simonson_-_proxima_nova_alt_regular-webfont.eot?#iefix') format('embedded-opentype'), url('mark_simonson_-_proxima_nova_alt_regular-webfont.woff2') format('woff2'), url('mark_simonson_-_proxima_nova_alt_regular-webfont.woff') format('woff'), url('mark_simonson_-_proxima_nova_alt_regular-webfont.ttf') format('truetype'), url('mark_simonson_-_proxima_nova_alt_regular-webfont.svg#proxima_nova_alt_rgregular') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'proxima_nova_semibold';
+  src: url('mark_simonson_-_proxima_nova_alt_semibold-webfont.eot');
+  src: url('mark_simonson_-_proxima_nova_alt_semibold-webfont.eot?#iefix') format('embedded-opentype'), url('mark_simonson_-_proxima_nova_alt_semibold-webfont.woff2') format('woff2'), url('mark_simonson_-_proxima_nova_alt_semibold-webfont.woff') format('woff'), url('mark_simonson_-_proxima_nova_alt_semibold-webfont.ttf') format('truetype'), url('mark_simonson_-_proxima_nova_alt_semibold-webfont.svg#proxima_nova_alt_semibold') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'proxima_nova_bold';
+  src: url('mark_simonson_-_proxima_nova_alt_bold-webfont.eot');
+  src: url('mark_simonson_-_proxima_nova_alt_bold-webfont.eot?#iefix') format('embedded-opentype'), url('mark_simonson_-_proxima_nova_alt_bold-webfont.woff2') format('woff2'), url('mark_simonson_-_proxima_nova_alt_bold-webfont.woff') format('woff'), url('mark_simonson_-_proxima_nova_alt_bold-webfont.ttf') format('truetype'), url('mark_simonson_-_proxima_nova_alt_bold-webfont.svg#proxima_nova_alt_bold') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'proxima_nova_extrabold';
+  src: url('mark_simonson_-_proxima_nova_alt_extrabold-webfont.eot');
+  src: url('mark_simonson_-_proxima_nova_alt_extrabold-webfont.eot?#iefix') format('embedded-opentype'), url('mark_simonson_-_proxima_nova_alt_extrabold-webfont.woff2') format('woff2'), url('mark_simonson_-_proxima_nova_alt_extrabold-webfont.woff') format('woff'), url('mark_simonson_-_proxima_nova_alt_extrabold-webfont.ttf') format('truetype'), url('mark_simonson_-_proxima_nova_alt_extrabold-webfont.svg#proxima_nova_altextrabold') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
 .bar.bar-clear, .bar.bar-clear .button, .bar.bar-clear .title {
   color: #444; }
 
