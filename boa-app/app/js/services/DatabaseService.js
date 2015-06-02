@@ -1,7 +1,5 @@
-app.service('DatabaseService', function($log, pouchDB) {
+app.service('DatabaseService', function($rootScope, $log, pouchDB) {
     var DatabaseService = this;
-
-    // var db = pouchDB('database');
 
     var artists     = pouchDB('artists');
     // var areas       = pouchDB('areas');
@@ -14,12 +12,9 @@ app.service('DatabaseService', function($log, pouchDB) {
 
         doc._id = guid();
 
-        $log.debug("POST function:", doc);
-
         artists.put(doc).then(function(data){
-            $log.info("Successfully put in artist database", data);
+            // $log.info("Successfully put in artist database", data);
             window.localStorage.artists = doc._id;
-            $log.debug("From DatabaseService,", window.localStorage.artists);
         }).catch(function(err){
             $log.error(err);
         });
@@ -34,7 +29,7 @@ app.service('DatabaseService', function($log, pouchDB) {
         });
 
         artists.put(doc).then(function(response){
-            
+            $rootScope.$broadcast("favourited");
         }).catch(function(err){
             $log.error(err);
         });
@@ -45,9 +40,10 @@ app.service('DatabaseService', function($log, pouchDB) {
         return artists.get(id);
     };
 
+    // Removing document from database
     DatabaseService.remove = function() {
         artists.get(window.localStorage.artists).then(function (doc) {
-            $log.debug("Removing:", doc);
+            // $log.debug("Removing:", doc);
 
             localStorage.removeItem('artists');
             return artists.remove(doc);
@@ -64,24 +60,3 @@ app.service('DatabaseService', function($log, pouchDB) {
 
     return DatabaseService;
 });
-
-// }
-//     _id: "310dcbbf4cce62f762a2aaa148d556bd"
-//     biography: Object
-//     end_time: "2014-07-12 :00"
-//     facebook: Object
-//     image: Object
-//     language: "en"
-//     lastfm: Object
-//     myspace: Object
-//     name: Object
-//     soundcloud: Object
-//     stage_id: "1f0e3dad99908345f7439f8ffabdffc4"
-//     start_time: "2014-07-12 5:00"
-//     summary: ""
-//     twitter: Object
-//     url: Object
-//     website: Object
-//     youtube: Object
-//     favorited: false
-// {

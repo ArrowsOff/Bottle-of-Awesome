@@ -1,4 +1,4 @@
-app.service('ArtistService', function($q, $http, $log, lodash, DatabaseService) {
+app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, DatabaseService) {
 
     var ArtistService = this;
 
@@ -16,8 +16,6 @@ app.service('ArtistService', function($q, $http, $log, lodash, DatabaseService) 
 
                 artists = json.artists;
 
-                $log.debug("HTTP data:", artists);
-
                 DatabaseService.post(artists);   
 
                 defer.resolve(artists);
@@ -29,10 +27,10 @@ app.service('ArtistService', function($q, $http, $log, lodash, DatabaseService) 
                 $log.debug("ArtistService calling get form database:", data);
                 defer.resolve(data);
             }).catch(function(err){
-                defer.reject('requestArtists Err:', err)
+                defer.reject('requestArtists Err:', err);
             });            
         }
-        
+
         return defer.promise;
     }
 
@@ -55,7 +53,6 @@ app.service('ArtistService', function($q, $http, $log, lodash, DatabaseService) 
             $log.debug("GetArtist for ID: ", data);
 
             lodash.findIndex(data.artist, function(artist) {
-                
                 if (artist._id == id) {
                     defer.resolve(artist);
                 }
@@ -72,7 +69,7 @@ app.service('ArtistService', function($q, $http, $log, lodash, DatabaseService) 
         }).catch(function(err){
             $log.error(err);
         });
-    }
+    };
 
     return ArtistService;
 });

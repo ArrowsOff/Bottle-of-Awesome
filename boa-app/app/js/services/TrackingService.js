@@ -4,10 +4,10 @@ app.service('TrackingService', function($log){
 
 	TrackingService.trackView = function(viewTitle) {
 		if (typeof analytics !== 'undefined') {
-			$log.debug('Tracking', viewTitle)
-			analytics.trackView(viewTitle)
+			$log.debug('Tracking', viewTitle);
+			analytics.trackView(viewTitle);
 		}
-	}
+	};
 
 	return TrackingService;
 
