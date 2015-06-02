@@ -4,3 +4,23 @@
 .bar.bar-clear .title {
   	color: $dark;
 }
+
+.nopadding {
+	padding: 0;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+// For styling the custom headers
+#logo {
+	position: fixed;
+	width: 100%;
+	height: 100px;
+	background-color: $red;
+	
+	h1.title {
+		line-height: 115px;
+	}
+}

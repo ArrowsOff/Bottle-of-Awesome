@@ -1,20 +1,20 @@
-app.controller('AppCtrl', function($scope, $http, $ionicNavBarDelegate, $timeout, $log, ArtistService, TrackingService) {
-
-	var url;
-	var audio = null;
+app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegate, $timeout, ArtistService, TrackingService) {
 
 	$scope.addToFavorites = function(id) {
 		ArtistService.favorite(id);
+
+		 $rootScope.$broadcast('favorited');
 	};
 
-	$scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-    	$timeout(function(){
-	      	TrackingService.trackView($ionicNavBarDelegate.title());
-	    },500);
+	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+	    $timeout(function(){
+	    	TrackingService.trackView($ionicNavBarDelegate.title());
+	    },500)
   	});
 
-
-	// $scope.getSpotify = function(artist) {
+	// 	var url;
+	// var audio = null;
+ 	// $scope.getSpotify = function(artist) {
 	// 	$http.get('https://api.spotify.com/v1/search?q=' + artist + '&type=artist').then(function(data){
 	// 		console.log(data.data.artists.items[0]);
 	// 	})

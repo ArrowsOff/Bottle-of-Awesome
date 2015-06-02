@@ -24,5 +24,18 @@ $ionicons-font-path: "../fonts" !default;
 /**  Here will our custom styles go
 **************************************************************/
 
+$red: #E64551;
+
 @import "globals";
+@import "menu";
+
+// Pages
+@import "artists";
+@import "artist";
+@import "news";
+@import "favorites";
+@import "info";
+@import "map";
+@import "schedule";
+@import "memories";
 

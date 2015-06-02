@@ -15,8 +15,9 @@ app.service('ArtistService', function($q, $http, $log, lodash, DatabaseService) 
                 var json = x2js.xml_str2json(data);
 
                 artists = json.artists;
-                DatabaseService.post(artists, 'artists');
-                
+
+                DatabaseService.post(artists, 'artists');   
+
                 defer.resolve(artists);
             }).error(function(err){
                 defer.reject('Error: ', err);
@@ -39,7 +40,8 @@ app.service('ArtistService', function($q, $http, $log, lodash, DatabaseService) 
         var defer = $q.defer();
 
         requestArtists().then(function(data){
-            $log.debug(data);
+            DatabaseService.postArtists(data, 'artists');
+
             defer.resolve(data);
         });
 
@@ -67,6 +69,18 @@ app.service('ArtistService', function($q, $http, $log, lodash, DatabaseService) 
     ArtistService.favorite = function(id) {
         DatabaseService.put(id, 'favorites');
     };
+
+    ArtistService.isFavorite = function(id) {
+        var defer = $q.defer();
+
+        DatabaseService.get(id).then(function(data){
+            defer.resolve(data);
+        }).catch(function(err){
+            defer.reject("Err: ", err);
+        });
+
+        return defer.promise;
+    }
 
     return ArtistService;
 

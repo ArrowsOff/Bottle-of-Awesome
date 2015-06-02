@@ -1,16 +1,53 @@
-<ion-view view-title="News">
-    <ion-content class="padding">
-        <p>News</p>
+<ion-view view-title="" id="news">
+    <ion-content>
 
-        <button class="button button-full button-positive" ng-click="getLocation()">
-    	   Gps locatie
-        </button>
+        <div class="list">
+            <div class="item" id="logo">
 
-	   {{ location }}
+            </div>
+            <div class="item text-center" id="counter">
+                <p class="timer">{{counter.days}}:{{counter.hours}}:{{counter.minutes}}:{{counter.seconds}}</p>
+            </div>
 
-    	<a ng-href="#/private/create">create</a>
-    	<a ng-href="#/private">private</a>
-    	<a ng-href="#/artists">public</a>
+            <div class="item nopadding">
+                <div class="row nopadding">
+                    <div class="col col-50">
+
+                        text
+
+                    </div>
+                    <div class="col col-50 nopadding">
+                        <img src="http://lorempixel.com/400/400" alt="" width="100%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="item nopadding">
+                <div class="row nopadding">
+                    <div class="col col-50 nopadding">
+                        <img src="http://lorempixel.com/400/400" alt="" width="100%">
+                    </div>
+                    <div class="col col-50">
+                       
+                        text
+
+                    </div>
+                </div>
+            </div>
+            <div class="item nopadding">
+                <div class="row nopadding">
+                    <div class="col col-50">
+
+                        text
+
+                    </div>
+                    <div class="col col-50 nopadding">
+                        <img src="http://lorempixel.com/400/400" alt="" width="100%">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
 
     </ion-content>
 </ion-view>

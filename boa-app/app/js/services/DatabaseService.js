@@ -3,6 +3,65 @@ app.service('DatabaseService', function(pouchDB, $log) {
 
     var db = pouchDB('database');
 
+    var artists     = pouchDB('artists');
+    var areas       = pouchDB('areas');
+    var favorited   = pouchDB('favorites');
+
+    var test = pouchDB('test');
+
+    function store(doc, database) {
+        // Databases: Artists / Favorites / Areas
+        angular.forEach(doc.artist, function(key, value){
+            key.favorited = false;
+        });
+
+        test.put(doc).then(function(res){
+            $log.info(res);
+        }).catch(function(err){
+            $log.error(err);
+        })
+
+    }
+
+    function update(doc, database) {
+        test.get(doc._id).then(function(doc){
+            $log.debug(doc);
+
+            var object = {
+                _id: doc._id,
+                _rev: doc._rev,
+                artist: doc.artist
+            }
+
+            $log.debug(object);
+
+            return test.put(object);
+        }).then(function(res){
+            $log.info("Response:", res);
+        }).catch(function(err){
+            $log.error(err);
+        })
+    }
+
+    function remove(doc, database) {
+        $log.debug(doc);
+        test.remove(doc).then(function(data){
+            $log.info(data);
+        })
+    }
+
+    DatabaseService.postArtists = function(doc, database) {
+        // $log.debug(doc);
+        store(doc, database);
+
+
+        // test.destroy().then(function () {
+        //   // success
+        // }).catch(function (error) {
+        //   console.log(error);
+        // });
+    }
+
     DatabaseService.post = function(doc, dataName){
         db.post(doc)
         .then(function(res){
@@ -14,7 +73,7 @@ app.service('DatabaseService', function(pouchDB, $log) {
             return db.get(res.id);
         })
         .catch(function(error){
-            console.error(error);
+            $log.error(error);
         });
     };
 
@@ -31,9 +90,9 @@ app.service('DatabaseService', function(pouchDB, $log) {
             $log.debug('Unfavoriting', id);
 
             db.remove(res).then(function(q){
-                console.log(q);
+                $log.info(q);
             }).catch(function(err){
-                console.error(err);
+                $log.error(err);
             });
         })
         .catch(function(error){
@@ -42,7 +101,7 @@ app.service('DatabaseService', function(pouchDB, $log) {
                 _id: id,
                 favorited: true
             }).then(function(res){
-                console.log(res);
+                $log.info(res);
             });
         });
     };

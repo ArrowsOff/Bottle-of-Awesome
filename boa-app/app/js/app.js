@@ -1,7 +1,6 @@
 var app = angular.module('starter', [
     'ionic',
     'ngCordova',
-    'ngResource',
     'cb.x2js',
     'ngLodash',
     'pouchdb'
@@ -17,33 +16,25 @@ app.run(function($ionicPlatform, $rootScope, $log) {
         if(window.StatusBar) {
             StatusBar.styleDefault();
         }
+
+        // Loading Google Analytics
         if (typeof analytics !== 'undefined') {
             $log.debug('starting analytics');
             analytics.startTrackerWithId("UA-16476871-20");
         } else {
             $log.warn('Analytics API not available...');
         }
-
-        // //set up and init image caching
-        // // write log to console
-        // ImgCache.options.debug = true;
-
-        // // increase allocated space on Chrome to 50MB, default was 10MB
-        // ImgCache.options.chromeQuota = 50*1024*1024;
-        // ImgCache.init(function(){
-        //     //small hack to dispatch an event when imgCache is 
-        //     //full initialized.
-        //     $rootScope.$broadcast('ImgCacheReady');
-        // }, function(){
-        //     alert('ImgCache init: error! Check the log for errors');
-        // });
-
     });
 });
 
-app.config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
+app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+    // Enable native scrolling for Android
+    if(!ionic.Platform.isIOS()) {
+        $ionicConfigProvider.scrolling.jsScrolling(false);
+    }
 
+    // Routing Options
+    $stateProvider
     .state('app', {
         url: '/app',
         abstract: true,
@@ -69,10 +60,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
-    .state('app.artists.artist', {
+    .state('app.artist', {
         url: '/artists/:id',
-        controller: 'ArtistCtrl',
-        templateUrl: 'templates/artist.html'
+        views: {
+            "menuContent": {
+                controller: 'ArtistCtrl',
+                templateUrl: 'templates/artist.html'
+            }
+        }
     })
     .state('app.info', {
         url: '/info',
