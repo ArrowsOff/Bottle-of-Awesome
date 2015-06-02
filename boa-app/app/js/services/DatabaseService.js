@@ -1,4 +1,4 @@
-app.service('DatabaseService', function($log, pouchDB, lodash) {
+app.service('DatabaseService', function($log, pouchDB) {
     var DatabaseService = this;
 
     // var db = pouchDB('database');
@@ -14,16 +14,16 @@ app.service('DatabaseService', function($log, pouchDB, lodash) {
 
         doc._id = guid();
 
-        $log.debug("POST function:", doc)
+        $log.debug("POST function:", doc);
 
         artists.put(doc).then(function(data){
             $log.info("Successfully put in artist database", data);
             window.localStorage.artists = doc._id;
+            $log.debug("From DatabaseService,", window.localStorage.artists);
         }).catch(function(err){
             $log.error(err);
-        })
-
-    }
+        });
+    };
 
     // Use this to favorite an ID
     DatabaseService.update = function(id, doc){
@@ -38,12 +38,21 @@ app.service('DatabaseService', function($log, pouchDB, lodash) {
         }).catch(function(err){
             $log.error(err);
         });
-    }
+    };
 
     // Get the artists database
     DatabaseService.get = function(id) {
         return artists.get(id);
-    }
+    };
+
+    DatabaseService.remove = function() {
+        artists.get(window.localStorage.artists).then(function (doc) {
+            $log.debug("Removing:", doc);
+
+            localStorage.removeItem('artists');
+            return artists.remove(doc);
+        });
+    };
 
     // Create unique key
     function guid() {

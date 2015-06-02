@@ -10,6 +10,5 @@
   },
   "_source": "git://github.com/icambron/moment-countdown.git",
   "_target": "~0.0.1",
-  "_originalSource": "icambron/moment-countdown",
-  "_direct": true
+  "_originalSource": "icambron/moment-countdown"
 }
