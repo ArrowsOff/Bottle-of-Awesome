@@ -7766,25 +7766,52 @@ h1, h2, h3, h4, h5, h6, p, span, a, button {
 #menu #newsMB > a {
   border-bottom-color: #E64551;
   color: #E64551;
-  background-image: url("../img/news.svg"); }
+  background-image: url("../img/news.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center center; }
 #menu #artistsMB > a {
   border-bottom-color: #F09202;
-  color: #F09202; }
+  color: #F09202;
+  background-image: url("../img/artists.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center center; }
 #menu #infoMB > a {
   border-bottom-color: #F8DC3B;
-  color: #F8DC3B; }
+  color: #F8DC3B;
+  background-image: url("../img/info.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center center; }
 #menu #scheduleMB > a {
-  border-bottom-color: #4BB8D6;
-  color: #4BB8D6; }
-#menu #mapMB > a {
   border-bottom-color: #78B75A;
-  color: #78B75A; }
-#menu #favouritesMB > a {
+  color: #78B75A;
+  background-image: url("../img/schedule.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center center; }
+#menu #mapMB > a {
   border-bottom-color: #915F9F;
-  color: #915F9F; }
+  color: #915F9F;
+  background-image: url("../img/map.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center center; }
+#menu #favouritesMB > a {
+  border-bottom-color: #4BB8D6;
+  color: #4BB8D6;
+  background-image: url("../img/favourites.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center center; }
 #menu #XOmemoriesMB > a {
   border-bottom-color: #3D3936;
-  color: #3D3936; }
+  color: #3D3936;
+  background-image: url("../img/xomemories.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center center; }
 
 #artists .has-header {
   top: 0; }

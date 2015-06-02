@@ -25,36 +25,63 @@
 		border-bottom-color: $red ;
 		color: $red;
 		background-image: url("../img/news.svg");
+		background-repeat: no-repeat;
+		background-size: 50%;
+		background-position: center center;
 	}
 	
 	#artistsMB > a{
 		border-bottom-color: $orange;	
 		color: $orange;			
+		background-image: url("../img/artists.svg");
+		background-repeat: no-repeat;
+		background-size: 50%;
+		background-position: center center;
 	}
 	
 	#infoMB > a{
 		border-bottom-color: $yellow;
 		color: $yellow;
+		background-image: url("../img/info.svg");
+		background-repeat: no-repeat;
+		background-size: 50%;
+		background-position: center center;
 	}
 	
 	#scheduleMB > a{
-		border-bottom-color: $blue;
-		color: $blue;
+		border-bottom-color: $green;
+		color: $green;
+		background-image: url("../img/schedule.svg");
+		background-repeat: no-repeat;
+		background-size: 50%;
+		background-position: center center;
 	}
 	
 	#mapMB > a{
-		border-bottom-color: $green;
-		color: $green;
+		border-bottom-color: $purple;
+		color: $purple;
+		background-image: url("../img/map.svg");
+		background-repeat: no-repeat;
+		background-size: 50%;
+		background-position: center center;
 	}
 	
 	#favouritesMB > a{
-		border-bottom-color: $purple;
-		color: $purple;
+		border-bottom-color: $blue;
+		color: $blue;
+		background-image: url("../img/favourites.svg");
+		background-repeat: no-repeat;
+		background-size: 50%;
+		background-position: center center;
 	}
 	
 	#XOmemoriesMB > a{
 		border-bottom-color: $black;
 		color: $black;
+		background-image: url("../img/xomemories.svg");
+		background-repeat: no-repeat;
+		background-size: 50%;
+		background-position: center center;
 	}
 	
 	
