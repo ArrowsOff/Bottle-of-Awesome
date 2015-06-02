@@ -75,22 +75,22 @@ angular.module('starter', ['ionic'])
 
       switch( e.event ) {
 
-        case 'registed' {
+        case 'registed' :
           $log.info('EVENT -> Registered');
           break;
-        }
-        case 'message' {
+        
+        case 'message' :
           $log.info('EVENT -> Message');
           break;
-        }
-        case 'error' {
+        
+        case 'error' :
           $log.error('EVENT -> Error');
           break;
-        }
-        default {
+        
+        default :
           $log.error('EVENT -> Unknown, an event was received and we do not know what it is');
           break;
-        }
+        
       }
     }
   
