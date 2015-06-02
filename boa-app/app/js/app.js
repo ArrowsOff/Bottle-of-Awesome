@@ -78,6 +78,15 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
             }
         }
     })
+    .state('app.infoPages', {
+        url: '/info/:id',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/infoPage.html',
+                controller: 'InfoPageCtrl'
+            }
+        }
+    }) 
     .state('app.schedule', {
         url: '/schedule',
         views: {

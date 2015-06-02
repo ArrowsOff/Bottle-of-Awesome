@@ -7671,23 +7671,59 @@ a.button {
 @font-face {
   font-family: 'proxima_nova_semibold';
   src: url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.eot');
-  src: url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.woff2') format('woff2'), url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.woff') format('woff'), url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.ttf') format('truetype'), url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.svg#proxima_nova_alt_semibold') format('svg');
+  src: url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.woff') format('woff'), url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.ttf') format('truetype'), url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.svg#proxima_nova_alt_semibold') format('svg');
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'proxima_nova_bold';
   src: url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.eot');
-  src: url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.woff2') format('woff2'), url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.woff') format('woff'), url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.ttf') format('truetype'), url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.svg#proxima_nova_alt_bold') format('svg');
+  src: url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.woff') format('woff'), url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.ttf') format('truetype'), url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.svg#proxima_nova_alt_bold') format('svg');
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'proxima_nova_extrabold';
   src: url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.eot');
-  src: url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.woff2') format('woff2'), url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.woff') format('woff'), url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.ttf') format('truetype'), url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.svg#proxima_nova_altextrabold') format('svg');
+  src: url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.woff2') format('woff2'), url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.ttf') format('truetype'), url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.svg#proxima_nova_altextrabold') format('svg');
   font-weight: normal;
   font-style: normal; }
+
+h1, h2, h3, h4, h5, h6, p, span, a, button {
+  font-family: 'proxima_nova_regular'; }
+
+.semibold {
+  font-family: 'proxima_nova_semibold'; }
+
+.bold {
+  font-family: 'proxima_nova_bold'; }
+
+.extrabold {
+  font-family: 'proxima_nova_extrabold'; }
+
+.color-red {
+  color: #E64551 !important; }
+
+.color-white {
+  color: #FFFFFF !important; }
+
+.color-purple {
+  color: #915F9F !important; }
+
+.color-black {
+  color: #3D3936 !important; }
+
+.color-green {
+  color: #78B75A !important; }
+
+.color-yellow {
+  color: #F8DC3B !important; }
+
+.color-blue {
+  color: #4BB8D6 !important; }
+
+.color-orange {
+  color: #F09202 !important; }
 
 .bar.bar-clear, .bar.bar-clear .button, .bar.bar-clear .title {
   color: #444; }
@@ -7698,13 +7734,17 @@ a.button {
 .uppercase {
   text-transform: uppercase; }
 
+.full-width {
+  width: 100%;
+  display: block; }
+
 #logo {
   position: fixed;
   width: 100%;
   height: 100px;
   background-color: #E64551; }
   #logo h1.title {
-    line-height: 115px; }
+    line-height: 100px; }
 
 #menu .title, #menu .button-icon {
   color: #fff; }
@@ -7789,22 +7829,41 @@ a.button {
 
 #info .has-header {
   top: 0; }
-#info ion-list {
+#info .crinkles {
+  position: absolute;
+  height: 54%;
+  top: 23%; }
+  #info .crinkles#leftcrinkle {
+    left: 14%; }
+  #info .crinkles#rightcrinkle {
+    right: 14%; }
+#info .list {
   position: relative;
   top: 100px; }
-#info .infoElement {
-  display: block;
-  margin: 0;
-  padding: 0;
-  width: 50%;
-  float: left; }
-  #info .infoElement a {
-    width: 100%;
-    padding: 0;
-    height: 100%;
-    line-height: 20px;
-    text-align: center;
-    color: blue; }
+  #info .list .item {
+    display: block;
+    margin: 0;
+    padding: 13%;
+    padding-top: 7%;
+    width: 50%;
+    float: left;
+    white-space: normal;
+    border-top: none; }
+    #info .list .item img {
+      display: block; }
+    #info .list .item div {
+      font-size: 0.85em;
+      height: 54%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+    #info .list .item:nth-child(even) {
+      border-left: none;
+      border-right: none; }
+    #info .list .item:nth-child(odd) {
+      border-left: none; }
+    #info .list .item:last-child, #info .list .item:nth-child(5) {
+      border-bottom: none; }
 
 #map .has-header {
   top: 0; }

@@ -20,7 +20,8 @@ var paths = {
               './app/lib/moment/min/moment.min.js',
               './app/lib/countdownjs/countdown.min.js',
               './app/lib/moment-countdown/bin/moment-countdown.min.js',
-              './app/lib/Lawnchair/src/lawnchair.js'],
+              './app/lib/localforage/dist/localforage.min.js',
+              './app/lib/angular-localforage/dist/angular-localForage.min.js'],
   fonts: ['./app/lib/ionic/release/fonts/**', 
           './app/fonts/**/*']
 };

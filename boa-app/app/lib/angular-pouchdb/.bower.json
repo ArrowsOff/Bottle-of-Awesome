@@ -39,6 +39,5 @@
   },
   "_source": "git://github.com/angular-pouchdb/bower-angular-pouchdb.git",
   "_target": "~2.1.0",
-  "_originalSource": "angular-pouchdb",
-  "_direct": true
+  "_originalSource": "angular-pouchdb"
 }

@@ -2,34 +2,37 @@
   	<ion-content>
 			
 		<div id="logo">
-			<h1 class="title text-center uppercase">Info</h1>
-			<img src="img/crinkles/trianglesmallup.svg" class="crinkles" alt="crinkles up">
-			<img src="img/crinkles/trianglesmalldown.svg" class="crinkles" alt="crinkles up">
+			<h1 class="title text-center uppercase bold">Info</h1>
+			<img src="img/crinkles/trianglesmallup.svg" class="crinkles" id="leftcrinkle" alt="crinkles up">
+			<img src="img/crinkles/trianglesmalldown.svg" class="crinkles" id="rightcrinkle" alt="crinkles up">
 		</div>
 		
-		<ion-list>
-                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/news">
-                    News {{isHome}}
-                </ion-item>
-                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/artists">
-                    Artists
-                </ion-item>
-                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/info">
-                    Info
-                </ion-item>
-                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/schedule">
-                    Schedule
-                </ion-item>
-                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/map">
-                    Map
-                </ion-item>
-                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/favorites">
-                    Favorites
-                </ion-item>
-                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/xomemories">
-                    XO Memories
-                </ion-item>
-            </ion-list>
+		<div class="list padding">
+                <a class="item text-center color-black bold" ng-style="{'height':calcHeight+'px' }" href="#/app/info/aboutus">
+                    <img src="img/aboutus.svg" alt="About Us">
+                    <div class="uppercase">About us</div>
+                </a>
+                <a class="item text-center color-black bold" ng-style="{'height':calcHeight+'px' }" href="#/app/info/general">
+                    <img src="img/general.svg" alt="General">
+                    <div class="uppercase">General</div>
+                </a>
+                <a class="item text-center color-black bold" ng-style="{'height':calcHeight+'px' }" href="#/app/info/htgt">
+                    <img src="img/howtogetthere.svg" alt="How to get there">
+                    <div class="uppercase">How to get there</div>
+                </a>
+                <a class="item text-center color-black bold" ng-style="{'height':calcHeight+'px' }" href="#/app/info/hotelpackages">
+                    <img src="img/hotelpackages.svg" alt="Hotel Packages">
+                    <div class="uppercase">Hotel packages</div>
+                </a>
+                <a class="item text-center color-black bold" ng-style="{'height':calcHeight+'px' }" href="#/app/info/qa">
+                    <img src="img/qa.svg" alt="Q&amp;A">
+                    <div class="uppercase">Q&amp;A</div>
+                </a>
+                <a class="item text-center color-black bold" ng-style="{'height':calcHeight+'px' }" href="#/app/info/disclaimer">
+                    <img src="img/disclaimer.svg" alt="Disclaimer">
+                    <div class="uppercase">Disclaimer</div>
+                </a>
+            </div>
 		
   	</ion-content>
 </ion-view>
