@@ -1,8 +1,35 @@
-<ion-view view-title="Info" id="info">
+<ion-view view-title="" id="info">
   	<ion-content>
 			
-		<div id="logo"></div>
-
+		<div id="logo">
+			<h1 class="title text-center uppercase">Info</h1>
+			<img src="img/crinkles/trianglesmallup.svg" class="crinkles" alt="crinkles up">
+			<img src="img/crinkles/trianglesmalldown.svg" class="crinkles" alt="crinkles up">
+		</div>
+		
+		<ion-list>
+                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/news">
+                    News {{isHome}}
+                </ion-item>
+                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/artists">
+                    Artists
+                </ion-item>
+                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/info">
+                    Info
+                </ion-item>
+                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/schedule">
+                    Schedule
+                </ion-item>
+                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/map">
+                    Map
+                </ion-item>
+                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/favorites">
+                    Favorites
+                </ion-item>
+                <ion-item class="infoElement" ng-style="{'height':calcHeight+'px' }" href="#/app/xomemories">
+                    XO Memories
+                </ion-item>
+            </ion-list>
 		
   	</ion-content>
 </ion-view>

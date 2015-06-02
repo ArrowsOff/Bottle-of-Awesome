@@ -7765,6 +7765,19 @@ a.button {
 
 #info .has-header {
   top: 0; }
+#info .infoElement {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  float: left; }
+  #info .infoElement a {
+    width: 100%;
+    padding: 0;
+    height: 100%;
+    line-height: 20px;
+    text-align: center;
+    color: blue; }
 
 #map .has-header {
   top: 0; }
