@@ -7725,7 +7725,8 @@ a.button {
     border-bottom: inset 10px blue; }
 #menu #newsMB > a {
   border-bottom-color: #E64551;
-  color: #E64551; }
+  color: #E64551;
+  background-image: url("../img/news.svg"); }
 #menu #artistsMB > a {
   border-bottom-color: #F09202;
   color: #F09202; }
