@@ -11,6 +11,14 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
 	    	TrackingService.trackView($ionicNavBarDelegate.title());
 	    },500)
   	});
+  	
+  	
+  	
+  	//      	calculating height menu buttons             //  			device hoogte - menubalk (nu 44px   33px + (2x 5px padding) + 1px under-border  + een random pixel die ervoor zorgt dat je niet meer kan scrollen )
+  	$scope.calcHeight = ((document.getElementById('sideMenu').offsetHeight)-45)/4;
+  	
+  	
+  	//document.getElementById('sideMenu').style.height = calcHeight + 'px';
 
 	// 	var url;
 	// var audio = null;

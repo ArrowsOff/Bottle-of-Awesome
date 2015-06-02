@@ -22,9 +22,18 @@
     "org.apache.cordova.device",
     "org.apache.cordova.console",
     "org.apache.cordova.geolocation",
-    "com.ionic.keyboard"
+    "com.ionic.keyboard",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-device",
+    "cordova-plugin-geolocation",
+    "cordova-plugin-media",
+    {
+      "locator": "https://github.com/danwilson/google-analytics-plugin.git",
+      "id": "cordova-plugin-google-analytics"
+    }
   ],
   "cordovaPlatforms": [
-    "android"
+    "android",
+    "ios"
   ]
 }
