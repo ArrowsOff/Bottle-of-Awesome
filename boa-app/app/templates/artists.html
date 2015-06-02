@@ -3,52 +3,66 @@
   		<h1 class="title text-center uppercase">Artists</h1>
   	</div>
   	<div id="areas">
-
 		<ion-scroll direction="x" class="wide-as-needed">
-	        <a class="button selected button-clear"> 1</a>
-	        <a class="button button-clear">2</a>
-	        <a class="button button-clear">3</a>
-	        <a class="button button-clear">4</a>
-	        <a class="button button-clear">5</a>
-	        <a class="button button-clear">6</a>
-	        <a class="button button-clear">7</a>
-	        <a class="button button-clear">8</a>
-	        <a class="button button-clear">9</a>
-	        <a class="button button-clear">10</a>
-	        <a class="button button-clear">11</a>
-	        <a class="button button-clear">12</a>
-	        <a class="button button-clear">13</a>
-	        <a class="button button-clear">14</a>
-	        <a class="button button-clear">15</a>
-	        <a class="button button-clear">16</a>
+			<a href="" class="button button-clear selected">
+				All
+			</a>
+	        <a class="button button-clear" ng-repeat="area in areas">
+	        <!-- add class selected to current selected -->
+	        	{{area.title.toString()}}
+	        </a>
   		</ion-scroll>
-		
 	</div>
 
   	<ion-content>	
   		<div id="content">
+			<ion-list ng-init="getArtists()">
 
-	  		
+				<!-- <div class="row nopadding" ng-repeat="artist in artists" ng-if="$index % 2 === 0">
+					<div class="col col-50 nopadding" ng-if="$index < artists.length">
+						<img ng-src="{{artists[$index].image.__cdata}}" alt="" width="100%">
+						<div class="name uppercase">{{artists[$index].name.__cdata}} {{ status(artist._id) }}</div>
+						<br>
+					</div>
+					<div class="col col-50 nopadding" ng-if="$index + 1 < artists.length">
+						<img ng-src="{{artists[$index + 1].image.__cdata}}" alt="" width="100%">
+						<div class="name uppercase">{{artists[$index + 1].name.__cdata}} {{ status(artist._id) }}</div>
+						<br>
+					</div>
 
-  		
-  			
-			<ion-list>
+				</div> -->
 			
-				<ion-item collection-repeat="artist in artists" class="item-icon-right">
-					<i class="icon ion-ios-heart" ng-click="addToFavorites(artist._id)" ng-class="{'ion-ios-heart-outline': artist.favourited}"></i>
-			    	<a ng-href="#/app/artists/{{artist._id}}">{{artist.name.__cdata}} {{ status(artist._id) }}</a>					
-			  	</ion-item>
+				<div collection-repeat="artist in artists" collection-item-height="200px" class="item col col-50 nopadding">
+					<div class="item-content item-artist">
+						<i class="icon" ng-click="addToFavorites(artist._id)" ng-class="artist.favourited ? 'ion-ios-heart' : ' ion-ios-heart-outline'"></i>	
+
+						<a class="img-artist" ng-href="#/app/artists/{{artist._id}}">
+							<img ng-src="{{artist.image.__cdata}}" height="200px">
+						</a>
+						
+						<div class="info color-white">
+
+							<span class="name uppercase">{{artist.name.__cdata}}</span>
+
+						</div>
+
+
+						
+
+						<!-- 
+				    	<a ng-href="#/app/artists/{{artist._id}}">{{artist.name.__cdata}} {{ status(artist._id) }}</a>	 -->
+			    	</div>
+			    										
+			  	</div>
 
 			</ion-list>
 
   		</div>
 
 
-
+		<!-- Debuggin purposes only -->
   		<!-- <button class="button button-positive button-full" ng-click="clear()" style="position: relative; top: 150px;">
   			Clear db
   		</button> -->
-		
-
   	</ion-content>
 </ion-view>

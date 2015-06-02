@@ -1,4 +1,4 @@
-app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, DatabaseService) {
+app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, DatabaseService, AreaService) {
 
 	getArtists();
 
@@ -15,5 +15,14 @@ app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, 
 	$scope.clear = function() {
 		DatabaseService.remove();
 	};
-	
+
+	AreaService.getAreas().then(function(data){
+        $log.debug(data);
+
+        $scope.areas = data.area;
+    }).catch(function(err){
+        $log.error("TEST ERR:", err)
+    })
+
+
 });

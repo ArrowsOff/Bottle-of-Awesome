@@ -1,12 +1,8 @@
-<ion-view view-title="{{artist.name.__cdata}}" id="artist">
-	<ion-nav-title>{{artist.name.__cdata}}</ion-nav-title>
-
+<ion-view view-title="" id="artist">
     <ion-content>
     	
         <img ng-src="{{artist.image.__cdata}}" width="100%">
 		<div class="padding">
-			Favorited: {{artist.favorited}}
-			<i class="icon" ng-click="addToFavorites(artist._id)" ng-class="artist.favorited ? 'ion-ios-heart' : 'ion-ios-heart-outline'"></i>
 
 			<h1>Artiest: {{artist.name.__cdata}}</h1>
 	        <p>ID: {{artist._id}}</p>

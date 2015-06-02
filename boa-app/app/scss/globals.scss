@@ -91,13 +91,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, button {
     color: $orange !important;
 }
 
-// If we use a clear header this will make the text show again
-.bar.bar-clear,
-.bar.bar-clear .button, 
-.bar.bar-clear .title {
-  	color: $dark;
-}
-
 .nopadding {
 	padding: 0;
 }

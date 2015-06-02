@@ -24,6 +24,7 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
         angular.forEach(doc.artist, function(key, value){
             if(key._id == id){
                 key.favourited = !key.favourited;
+
             }
         });
 
@@ -44,6 +45,8 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
         artists.get(window.localStorage.artists).then(function (doc) {
             localStorage.removeItem('artists');
             return artists.remove(doc);
+        }).catch(function(err){
+            $log.error("Error removing database:", window.localStorage.artists, err)
         });
     };
 

@@ -1,10 +1,12 @@
-app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, DatabaseService) {
+app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, DatabaseService, AreaService) {
 
     var ArtistService = this;
 
     var artists = null;
 
     var refresh = false;
+
+    
 
     function requestArtists() {
         var defer = $q.defer();
@@ -36,6 +38,8 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
 
     ArtistService.getArtists = function() {
         var defer = $q.defer();
+
+        
 
         requestArtists().then(function(data){
             defer.resolve(data);

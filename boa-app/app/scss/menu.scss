@@ -17,20 +17,26 @@
 			text-align: center;
 			color:blue;
 			border-bottom: inset 10px blue;
-			
 		}
 		
 		p {
 			position: absolute;
 			bottom: 5%;
-			@media (max-height:700px){bottom: 10%};
-			@media (max-height:625px){bottom: 8%};
-			@media (max-height:600px){bottom: 4%};
-			@media (max-height:497px){bottom: 1%};
+			@media (max-height:700px){
+				bottom: 10%
+			};
+			@media (max-height:625px){
+				bottom: 8%
+			};
+			@media (max-height:600px){
+				bottom: 4%
+			};
+			@media (max-height:497px){
+				bottom: 1%
+			};
 
 			width: 100%;
 			text-align: center;
-				
 		}
 	}
 		
