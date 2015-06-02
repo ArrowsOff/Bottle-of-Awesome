@@ -1,115 +1,56 @@
-app.service('DatabaseService', function(pouchDB, $log) {
+app.service('DatabaseService', function($log, pouchDB, lodash) {
     var DatabaseService = this;
 
-    var db = pouchDB('database');
+    // var db = pouchDB('database');
 
     var artists     = pouchDB('artists');
-    var areas       = pouchDB('areas');
-    var favorited   = pouchDB('favorites');
+    // var areas       = pouchDB('areas');
 
-    var test = pouchDB('test');
-
-    function store(doc, database) {
-        // Databases: Artists / Favorites / Areas
+    // Post artists to database
+    DatabaseService.post = function(doc) {
         angular.forEach(doc.artist, function(key, value){
-            key.favorited = false;
+            key.favourited = false;
         });
 
-        test.put(doc).then(function(res){
-            $log.info(res);
+        doc._id = guid();
+
+        $log.debug("POST function:", doc)
+
+        artists.put(doc).then(function(data){
+            $log.info("Successfully put in artist database", data);
+            window.localStorage.artists = doc._id;
         }).catch(function(err){
             $log.error(err);
         })
 
     }
 
-    function update(doc, database) {
-        test.get(doc._id).then(function(doc){
-            $log.debug(doc);
-
-            var object = {
-                _id: doc._id,
-                _rev: doc._rev,
-                artist: doc.artist
+    // Use this to favorite an ID
+    DatabaseService.update = function(id, doc){
+        angular.forEach(doc.artist, function(key, value){
+            if(key._id == id){
+                key.favourited = !key.favourited;
             }
+        });
 
-            $log.debug(object);
-
-            return test.put(object);
-        }).then(function(res){
-            $log.info("Response:", res);
-        }).catch(function(err){
-            $log.error(err);
-        })
-    }
-
-    function remove(doc, database) {
-        $log.debug(doc);
-        test.remove(doc).then(function(data){
-            $log.info(data);
-        })
-    }
-
-    DatabaseService.postArtists = function(doc, database) {
-        // $log.debug(doc);
-        store(doc, database);
-
-
-        // test.destroy().then(function () {
-        //   // success
-        // }).catch(function (error) {
-        //   console.log(error);
-        // });
-    }
-
-    DatabaseService.post = function(doc, dataName){
-        db.post(doc)
-        .then(function(res){
-            if(!res.ok) {
-                return error(res);
-            }
+        artists.put(doc).then(function(response){
             
-            window.localStorage[dataName] = res.id;
-            return db.get(res.id);
-        })
-        .catch(function(error){
-            $log.error(error);
+        }).catch(function(err){
+            $log.error(err);
         });
-    };
+    }
 
+    // Get the artists database
     DatabaseService.get = function(id) {
-        return db.get(id);
-    };
+        return artists.get(id);
+    }
 
-    DatabaseService.put = function(id, dataName) {
-        var favorite = false;
-        
-        db.get(id)
-        .then(function(res){
-            favorite = true;
-            $log.debug('Unfavoriting', id);
-
-            db.remove(res).then(function(q){
-                $log.info(q);
-            }).catch(function(err){
-                $log.error(err);
-            });
-        })
-        .catch(function(error){
-            $log.debug('Favoriting', id);
-            db.put({
-                _id: id,
-                favorited: true
-            }).then(function(res){
-                $log.info(res);
-            });
-        });
-    };
-
-    DatabaseService.destroy = function() {
-        db.destroy();
-
-        $log.warn('Destroyed database');
+    // Create unique key
+    function guid() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
     }
 
     return DatabaseService;

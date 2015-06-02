@@ -38,8 +38,8 @@
 		<ion-list id="artists">
 			
 			<ion-item collection-repeat="artist in artists" class="item-icon-right">
-					
-				<i class="icon" ng-click="addToFavorites(artist._id)" ng-class="artist.favorited ? 'ion-ios-heart' : 'ion-ios-heart-outline'"></i>
+				<!-- ng-click="addToFavorites(artist._id)" -->
+				<i class="icon" ng-click="addToFavorites(artist._id)" ng-class="artist.favourited ? 'ion-ios-heart-outline' : 'ion-ios-heart'"></i>
 
 
 		    	<a ng-href="#/app/artists/{{artist._id}}">{{artist.name.__cdata}} {{ status(artist._id) }}</a>
