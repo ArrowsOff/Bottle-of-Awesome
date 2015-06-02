@@ -16,6 +16,7 @@
     "angular-pouchdb": "~2.1.0",
     "moment-countdown": "icambron/moment-countdown#~0.0.1",
     "moment": "~2.10.3",
-    "countdownjs": "mckamey/countdownjs#~2.5.2"
+    "countdownjs": "mckamey/countdownjs#~2.5.2",
+    "lawnchair": "brianleroux/lawnchair#~0.6.4"
   }
 }
