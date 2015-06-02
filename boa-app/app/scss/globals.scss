@@ -24,7 +24,6 @@ $orange: #F09202;
     font-family: 'proxima_nova_semibold';
     src: url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.eot');
     src: url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.woff2') format('woff2'),
          url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.woff') format('woff'),
          url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.ttf') format('truetype'),
          url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.svg#proxima_nova_alt_semibold') format('svg');
@@ -35,7 +34,6 @@ $orange: #F09202;
     font-family: 'proxima_nova_bold';
     src: url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.eot');
     src: url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.woff2') format('woff2'),
          url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.woff') format('woff'),
          url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.ttf') format('truetype'),
          url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.svg#proxima_nova_alt_bold') format('svg');
@@ -47,11 +45,50 @@ $orange: #F09202;
     src: url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.eot');
     src: url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.woff2') format('woff2'),
-         url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.woff') format('woff'),
          url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.ttf') format('truetype'),
          url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.svg#proxima_nova_altextrabold') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+// font style app
+h1, h2, h3, h4, h5, h6, p, span, a, button { 
+    font-family: 'proxima_nova_regular';
+}
+.semibold {
+    font-family: 'proxima_nova_semibold';
+}
+.bold {
+    font-family: 'proxima_nova_bold';
+}
+.extrabold {
+    font-family: 'proxima_nova_extrabold';
+}
+
+// color classes
+.color-red {
+    color: $red !important;
+}
+.color-white {
+    color: $white !important;
+}
+.color-purple {
+    color: $purple !important;
+}
+.color-black {
+    color: $black !important;
+}
+.color-green {
+    color: $green !important;
+}
+.color-yellow {
+    color: $yellow !important;
+}
+.color-blue {
+    color: $blue !important;
+}
+.color-orange {
+    color: $orange !important;
 }
 
 // If we use a clear header this will make the text show again
@@ -69,6 +106,11 @@ $orange: #F09202;
 	text-transform: uppercase;
 }
 
+.full-width {
+    width: 100%;
+    display: block;
+}
+
 // For styling the custom headers
 #logo {
 	position: fixed;
@@ -77,6 +119,6 @@ $orange: #F09202;
 	background-color: $red;
 	
 	h1.title {
-		line-height: 115px;
+		line-height: 100px;
 	}
 }
