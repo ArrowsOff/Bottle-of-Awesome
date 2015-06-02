@@ -72,7 +72,7 @@ gulp.task('scripts', ['scripts-lint'], function() {
 
 gulp.task('scripts:vendor', function() {
   return gulp.src(paths.libraries)
-    .pipe($.changed('./www/vendor.js'))
+    // .pipe($.changed('./www/vendor.js'))
     .pipe($.sourcemaps.init())
     .pipe($.concat('vendor.js'))
     .pipe($.sourcemaps.write('./'))
