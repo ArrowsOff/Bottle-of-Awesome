@@ -7765,6 +7765,9 @@ a.button {
 
 #info .has-header {
   top: 0; }
+#info ion-list {
+  position: relative;
+  top: 100px; }
 #info .infoElement {
   display: block;
   margin: 0;
