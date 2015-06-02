@@ -12,8 +12,7 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
 
         doc._id = guid();
 
-        artists.put(doc).then(function(data){
-            // $log.info("Successfully put in artist database", data);
+        artists.put(doc).then(function(){
             window.localStorage.artists = doc._id;
         }).catch(function(err){
             $log.error(err);
@@ -43,8 +42,6 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
     // Removing document from database
     DatabaseService.remove = function() {
         artists.get(window.localStorage.artists).then(function (doc) {
-            // $log.debug("Removing:", doc);
-
             localStorage.removeItem('artists');
             return artists.remove(doc);
         });

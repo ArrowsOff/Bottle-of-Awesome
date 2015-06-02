@@ -1,33 +1,46 @@
 <ion-view view-title="" id="artists">
+	<div id="logo">
+  		<h1 class="title text-center uppercase">Artists</h1>
+  	</div>
+  	<div id="areas">
+
+		<ion-scroll direction="x" class="wide-as-needed">
+	        <a class="button selected button-clear"> 1</a>
+	        <a class="button button-clear">2</a>
+	        <a class="button button-clear">3</a>
+	        <a class="button button-clear">4</a>
+	        <a class="button button-clear">5</a>
+	        <a class="button button-clear">6</a>
+	        <a class="button button-clear">7</a>
+	        <a class="button button-clear">8</a>
+	        <a class="button button-clear">9</a>
+	        <a class="button button-clear">10</a>
+	        <a class="button button-clear">11</a>
+	        <a class="button button-clear">12</a>
+	        <a class="button button-clear">13</a>
+	        <a class="button button-clear">14</a>
+	        <a class="button button-clear">15</a>
+	        <a class="button button-clear">16</a>
+  		</ion-scroll>
+		
+	</div>
+
   	<ion-content>	
+  		<div id="content">
 
-  		<div id="logo">
+	  		
+
+  		
   			
-  			<h1 class="title text-center uppercase">Artists</h1>
-
-  		</div>
-
-  		<div id="areas">
-
-			<ion-scroll direction="x" class="wide-as-needed">
-		        <a class="button selected button-clear"> 1</a>
-		        <a class="button button-clear">2</a>
-		        <a class="button button-clear">3</a>
-		        <a class="button button-clear">4</a>
-		        <a class="button button-clear">5</a>
-		        <a class="button button-clear">6</a>
-		        <a class="button button-clear">7</a>
-		        <a class="button button-clear">8</a>
-		        <a class="button button-clear">9</a>
-		        <a class="button button-clear">10</a>
-		        <a class="button button-clear">11</a>
-		        <a class="button button-clear">12</a>
-		        <a class="button button-clear">13</a>
-		        <a class="button button-clear">14</a>
-		        <a class="button button-clear">15</a>
-		        <a class="button button-clear">16</a>
-      		</ion-scroll>
+			<ion-list>
 			
+				<ion-item collection-repeat="artist in artists" class="item-icon-right">
+					<i class="icon ion-ios-heart" ng-click="addToFavorites(artist._id)" ng-class="{'ion-ios-heart-outline': artist.favourited}"></i>
+			    	<a ng-href="#/app/artists/{{artist._id}}">{{artist.name.__cdata}} {{ status(artist._id) }}</a>					
+			  	</ion-item>
+
+			</ion-list>
+
   		</div>
 
 
@@ -35,22 +48,7 @@
   		<!-- <button class="button button-positive button-full" ng-click="clear()" style="position: relative; top: 150px;">
   			Clear db
   		</button> -->
-		<ion-list id="artists">
-			
-			<ion-item collection-repeat="artist in artists" class="item-icon-right">
-				<!-- ng-click="addToFavorites(artist._id)" -->
-
-				<!-- 
-					ng-class="{'active': selectedCat == cat.id}"
-				 -->
-				<i class="icon ion-ios-heart" ng-click="addToFavorites(artist._id)" ng-class="{'ion-ios-heart-outline': artist.favourited}"></i>
-
-
-		    	<a ng-href="#/app/artists/{{artist._id}}">{{artist.name.__cdata}} {{ status(artist._id) }}</a>
-				
-		  	</ion-item>
-
-		</ion-list>
+		
 
   	</ion-content>
 </ion-view>

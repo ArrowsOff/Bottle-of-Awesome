@@ -1,13 +1,13 @@
 <ion-view view-title="" id="info">
+    <div id="logo">
+        <h1 class="title text-center uppercase bold">Info</h1>
+        <img ng-src="img/crinkles/trianglesmallup.svg" class="crinkles" id="leftcrinkle" alt="crinkles up">
+        <img ng-src="img/crinkles/trianglesmalldown.svg" class="crinkles" id="rightcrinkle" alt="crinkles up">
+    </div>
   	<ion-content>
-			
-		<div id="logo">
-			<h1 class="title text-center uppercase bold">Info</h1>
-			<img ng-src="img/crinkles/trianglesmallup.svg" class="crinkles" id="leftcrinkle" alt="crinkles up">
-			<img ng-src="img/crinkles/trianglesmalldown.svg" class="crinkles" id="rightcrinkle" alt="crinkles up">
-		</div>
+		<div id="content">
 		
-		<div class="list padding">
+		  <div class="list padding">
                 <a class="item text-center color-black bold" ng-style="{'height':calcInfoHeight+'px' }" href="#/app/info/aboutus">
                     <img ng-src="img/aboutus.svg" alt="About Us">
                     <div class="uppercase">About us</div>
@@ -33,6 +33,7 @@
                     <div class="uppercase">Disclaimer</div>
                 </a>
             </div>
-		
+            
+		</div>
   	</ion-content>
 </ion-view>

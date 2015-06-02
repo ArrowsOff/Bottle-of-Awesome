@@ -2,12 +2,18 @@
 	.has-header {
 		top: 0;
 	}
+	#content {
+	    top: 140px !important;
+	}
 
 	#areas {
-		position: fixed;
-		width: 100%;
-		height: 30px;
+		background: $white;
+		position:relative;
 		top: 100px;
+		z-index: 100;
+		width: 100%;
+		height: 47px;
+		// top: 100px;
 		.wide-as-needed {
 		  	overflow: scroll;
 		  	white-space: nowrap;
@@ -18,11 +24,6 @@
 		.selected {
 			border-bottom: 5px solid $red;
 		}
-	}
-
-	#artists {
-		position: relative;
-		top: 146px;
 	}
 	
 }
