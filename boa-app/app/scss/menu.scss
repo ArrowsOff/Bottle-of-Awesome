@@ -7,17 +7,56 @@
 	margin: 0;
 	padding: 0;
 	width: 50%;
-	float: left;	
+	float: left;
+	border: none;	
 		a {
 			width: 100%;
 			padding: 0;
 			height: 100%;
-			line-height: 20px;
+			line-height: 1500%;
 			text-align: center;
 			color:blue;
+			border-bottom: inset 10px blue;
+			
 		}
-	
 	}
+		
+	#newsMB > a{
+		border-bottom-color: $red ;
+		color: $red;
+	}
+	
+	#artistsMB > a{
+		border-bottom-color: $orange;	
+		color: $orange;			
+	}
+	
+	#infoMB > a{
+		border-bottom-color: $yellow;
+		color: $yellow;
+	}
+	
+	#scheduleMB > a{
+		border-bottom-color: $blue;
+		color: $blue;
+	}
+	
+	#mapMB > a{
+		border-bottom-color: $green;
+		color: $green;
+	}
+	
+	#favouritesMB > a{
+		border-bottom-color: $purple;
+		color: $purple;
+	}
+	
+	#XOmemoriesMB > a{
+		border-bottom-color: $black;
+		color: $black;
+	}
+	
+	
 
 }
 

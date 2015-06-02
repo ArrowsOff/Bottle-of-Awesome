@@ -7713,14 +7713,37 @@ a.button {
   margin: 0;
   padding: 0;
   width: 50%;
-  float: left; }
+  float: left;
+  border: none; }
   #menu .menuButton a {
     width: 100%;
     padding: 0;
     height: 100%;
-    line-height: 20px;
+    line-height: 1500%;
     text-align: center;
-    color: blue; }
+    color: blue;
+    border-bottom: inset 10px blue; }
+#menu #newsMB > a {
+  border-bottom-color: #E64551;
+  color: #E64551; }
+#menu #artistsMB > a {
+  border-bottom-color: #F09202;
+  color: #F09202; }
+#menu #infoMB > a {
+  border-bottom-color: #F8DC3B;
+  color: #F8DC3B; }
+#menu #scheduleMB > a {
+  border-bottom-color: #4BB8D6;
+  color: #4BB8D6; }
+#menu #mapMB > a {
+  border-bottom-color: #78B75A;
+  color: #78B75A; }
+#menu #favouritesMB > a {
+  border-bottom-color: #915F9F;
+  color: #915F9F; }
+#menu #XOmemoriesMB > a {
+  border-bottom-color: #3D3936;
+  color: #3D3936; }
 
 #artists .has-header {
   top: 0; }
