@@ -1,13 +1,19 @@
-app.controller('ArtistsCtrl', function ($scope, $log, ArtistService, DatabaseService) {
+app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, DatabaseService) {
 
-	ArtistService.getArtists().then(function(data){
-		$scope.artists = data.artist;
-	})
+	getArtists();
+
+	$rootScope.$on('favourited', function(event, args) {
+    	getArtists();
+	});
+
+	function getArtists() {
+		ArtistService.getArtists().then(function(data){
+			$scope.artists = data.artist;
+		});
+	}
 
 	$scope.clear = function() {
 		DatabaseService.remove();
-	}
-
-
-
+	};
+	
 });
