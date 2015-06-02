@@ -7661,6 +7661,34 @@ a.button {
 
 /**  Here will our custom styles go
 **************************************************************/
+@font-face {
+  font-family: 'proxima_nova_regular';
+  src: url('../fonts/mark_simonson_-_proxima_nova_alt_regular-webfont.eot');
+  src: url('../fonts/mark_simonson_-_proxima_nova_alt_regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/mark_simonson_-_proxima_nova_alt_regular-webfont.woff2') format('woff2'), url('../fonts/mark_simonson_-_proxima_nova_alt_regular-webfont.woff') format('woff'), url('../fonts/mark_simonson_-_proxima_nova_alt_regular-webfont.ttf') format('truetype'), url('../fonts/mark_simonson_-_proxima_nova_alt_regular-webfont.svg#proxima_nova_alt_rgregular') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'proxima_nova_semibold';
+  src: url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.eot');
+  src: url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.woff2') format('woff2'), url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.woff') format('woff'), url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.ttf') format('truetype'), url('../fonts/mark_simonson_-_proxima_nova_alt_semibold-webfont.svg#proxima_nova_alt_semibold') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'proxima_nova_bold';
+  src: url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.eot');
+  src: url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.woff2') format('woff2'), url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.woff') format('woff'), url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.ttf') format('truetype'), url('../fonts/mark_simonson_-_proxima_nova_alt_bold-webfont.svg#proxima_nova_alt_bold') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'proxima_nova_extrabold';
+  src: url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.eot');
+  src: url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.woff2') format('woff2'), url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.woff') format('woff'), url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.ttf') format('truetype'), url('../fonts/mark_simonson_-_proxima_nova_alt_extrabold-webfont.svg#proxima_nova_altextrabold') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
 .bar.bar-clear, .bar.bar-clear .button, .bar.bar-clear .title {
   color: #444; }
 
@@ -7680,6 +7708,19 @@ a.button {
 
 #menu .title, #menu .button-icon {
   color: #fff; }
+#menu .menuButton {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  float: left; }
+  #menu .menuButton a {
+    width: 100%;
+    padding: 0;
+    height: 100%;
+    line-height: 20px;
+    text-align: center;
+    color: blue; }
 
 #artists .has-header {
   top: 0; }
