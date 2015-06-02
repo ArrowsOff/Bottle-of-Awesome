@@ -7759,59 +7759,83 @@ h1, h2, h3, h4, h5, h6, p, span, a, button {
     width: 100%;
     padding: 0;
     height: 100%;
-    line-height: 1500%;
+    line-height: normal;
     text-align: center;
     color: blue;
     border-bottom: inset 10px blue; }
+  #menu .menuButton p {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    text-align: center; }
+    @media (max-height: 700px) {
+      #menu .menuButton p {
+        bottom: 10%; } }
+    @media (max-height: 625px) {
+      #menu .menuButton p {
+        bottom: 8%; } }
+    @media (max-height: 600px) {
+      #menu .menuButton p {
+        bottom: 4%; } }
+    @media (max-height: 497px) {
+      #menu .menuButton p {
+        bottom: 1%; } }
 #menu #newsMB > a {
   border-bottom-color: #E64551;
-  color: #E64551;
   background-image: url("../img/news.svg");
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center center; }
+  #menu #newsMB > a p {
+    color: #E64551 !important; }
 #menu #artistsMB > a {
   border-bottom-color: #F09202;
-  color: #F09202;
   background-image: url("../img/artists.svg");
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center center; }
+  #menu #artistsMB > a p {
+    color: #F09202; }
 #menu #infoMB > a {
   border-bottom-color: #F8DC3B;
-  color: #F8DC3B;
   background-image: url("../img/info.svg");
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center center; }
+  #menu #infoMB > a p {
+    color: #F8DC3B; }
 #menu #scheduleMB > a {
   border-bottom-color: #78B75A;
-  color: #78B75A;
   background-image: url("../img/schedule.svg");
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center center; }
+  #menu #scheduleMB > a p {
+    color: #78B75A; }
 #menu #mapMB > a {
   border-bottom-color: #915F9F;
-  color: #915F9F;
   background-image: url("../img/map.svg");
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center center; }
+  #menu #mapMB > a p {
+    color: #915F9F; }
 #menu #favouritesMB > a {
   border-bottom-color: #4BB8D6;
-  color: #4BB8D6;
   background-image: url("../img/favourites.svg");
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center center; }
+  #menu #favouritesMB > a p {
+    color: #4BB8D6; }
 #menu #XOmemoriesMB > a {
   border-bottom-color: #3D3936;
-  color: #3D3936;
   background-image: url("../img/xomemories.svg");
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center center; }
+  #menu #XOmemoriesMB > a p {
+    color: #3D3936; }
 
 #artists .has-header {
   top: 0; }
@@ -7871,7 +7895,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, button {
     display: block;
     margin: 0;
     padding: 13%;
-    padding-top: 7%;
+    padding-top: 5%;
     width: 50%;
     float: left;
     white-space: normal;

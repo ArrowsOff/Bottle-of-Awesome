@@ -13,75 +13,102 @@
 			width: 100%;
 			padding: 0;
 			height: 100%;
-			line-height: 1500%;
+			line-height: normal;
 			text-align: center;
 			color:blue;
 			border-bottom: inset 10px blue;
 			
 		}
+		
+		p {
+			position: absolute;
+			bottom: 5%;
+			@media (max-height:700px){bottom: 10%};
+			@media (max-height:625px){bottom: 8%};
+			@media (max-height:600px){bottom: 4%};
+			@media (max-height:497px){bottom: 1%};
+
+			width: 100%;
+			text-align: center;
+				
+		}
 	}
 		
 	#newsMB > a{
 		border-bottom-color: $red ;
-		color: $red;
 		background-image: url("../img/news.svg");
 		background-repeat: no-repeat;
 		background-size: 50%;
 		background-position: center center;
+		p{
+			color: $red !important;
+		}
 	}
 	
 	#artistsMB > a{
 		border-bottom-color: $orange;	
-		color: $orange;			
 		background-image: url("../img/artists.svg");
 		background-repeat: no-repeat;
 		background-size: 50%;
 		background-position: center center;
+		p{
+		color: $orange;			
+		}
 	}
 	
 	#infoMB > a{
 		border-bottom-color: $yellow;
-		color: $yellow;
 		background-image: url("../img/info.svg");
 		background-repeat: no-repeat;
 		background-size: 50%;
 		background-position: center center;
+		p{
+		color: $yellow;
+		}
 	}
 	
 	#scheduleMB > a{
 		border-bottom-color: $green;
-		color: $green;
 		background-image: url("../img/schedule.svg");
 		background-repeat: no-repeat;
 		background-size: 50%;
 		background-position: center center;
+		p{
+		color: $green;
+		}
 	}
 	
 	#mapMB > a{
 		border-bottom-color: $purple;
-		color: $purple;
 		background-image: url("../img/map.svg");
 		background-repeat: no-repeat;
 		background-size: 50%;
 		background-position: center center;
+		p{
+		color: $purple;
+		}
 	}
 	
 	#favouritesMB > a{
 		border-bottom-color: $blue;
-		color: $blue;
 		background-image: url("../img/favourites.svg");
 		background-repeat: no-repeat;
 		background-size: 50%;
 		background-position: center center;
+		p{
+		color: $blue;
+		}
 	}
 	
 	#XOmemoriesMB > a{
 		border-bottom-color: $black;
-		color: $black;
 		background-image: url("../img/xomemories.svg");
 		background-repeat: no-repeat;
 		background-size: 50%;
 		background-position: center center;
+		p{
+		color: $black;
+		}
 	}
 	
 	
