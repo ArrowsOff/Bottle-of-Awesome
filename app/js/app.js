@@ -3,10 +3,14 @@ var app = angular.module('starter', [
     'ngCordova',
     'cb.x2js',
     'ngLodash',
-    'pouchdb'
+    'pouchdb',
+    'ImgCache'
 ]);
 
-app.run(function($ionicPlatform, $rootScope, $log) {
+app.run(function($ionicPlatform, $rootScope, $log, ImgCache) {
+    // ImgCache.options.debug = true;
+    // ImgCache.options.chromeQuota = 50*1024*1024; 
+
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -24,10 +28,21 @@ app.run(function($ionicPlatform, $rootScope, $log) {
         } else {
             $log.warn('Analytics API not available...');
         }
+
+        ImgCache.$init();
+
     });
 });
 
-app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, ImgCacheProvider) {
+
+    // Options for ImgCache
+    ImgCacheProvider.setOption('debug', true);
+    ImgCacheProvider.setOption('usePersistentCache', true);
+    
+    // Set Init manually so we can wait for device to be ready
+    ImgCacheProvider.manualInit = true;
+
     // Enable native scrolling for Android
     if(!ionic.Platform.isIOS()) {
         $ionicConfigProvider.scrolling.jsScrolling(false);
