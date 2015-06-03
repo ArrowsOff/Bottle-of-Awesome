@@ -2,13 +2,7 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
 
     var ArtistService = this;
 
-    var artists = null;
-
-    var refresh = false;
-
-    
-
-    function requestArtists() {
+    function requestArtists(refresh) {
         var defer = $q.defer();
 
         if(!(window.localStorage.artists) || refresh) {
@@ -16,32 +10,31 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
                 var x2js = new X2JS();
                 var json = x2js.xml_str2json(data);
 
-                artists = json.artists;
+                DatabaseService.post(json.artists);   
 
-                DatabaseService.post(artists);   
-
-                defer.resolve(artists);
+                defer.resolve(json.artists);
             }).error(function(err){
                 defer.reject('Error: ', err);
             });
         } else {
-            DatabaseService.get(window.localStorage.artists).then(function(data){
-                $log.debug("ArtistService calling get form database:", data);
+            $log.debug("Database call for artist(s)");
+            DatabaseService.get(window.localStorage.artists).then(function(data){  
                 defer.resolve(data);
             }).catch(function(err){
                 defer.reject('requestArtists Err:', err);
-            });            
+            });  
+                          
         }
 
         return defer.promise;
     }
 
-    ArtistService.getArtists = function() {
+    ArtistService.getArtists = function(refresh) {
         var defer = $q.defer();
 
-        
+        if(!refresh) { refresh = false; }
 
-        requestArtists().then(function(data){
+        requestArtists(refresh).then(function(data){
             defer.resolve(data);
         }).catch(function(err){
             $log.error("getArtists Error:", err);
@@ -53,9 +46,7 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
     ArtistService.getArtist = function(id) {
         var defer = $q.defer();
 
-        requestArtists().then(function(data){
-            $log.debug("GetArtist for ID: ", data);
-
+        requestArtists().then(function(data) {
             lodash.findIndex(data.artist, function(artist) {
                 if (artist._id == id) {
                     defer.resolve(artist);
@@ -68,11 +59,8 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
     };
 
     ArtistService.favorite = function(id) {
-        requestArtists().then(function(data){
-            DatabaseService.update(id, data);
-        }).catch(function(err){
-            $log.error(err);
-        });
+        $log.debug("Database call for favorite");
+        DatabaseService.update(id, $rootScope.artists);
     };
 
     return ArtistService;

@@ -1,18 +1,25 @@
 app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, DatabaseService, AreaService) {
 
-	getArtists();
+	// getArtists();
 
-	$scope.stage;
+	// $scope.stage;
 
-	$rootScope.$on('favourited', function(event, args) {
-    	getArtists();
-	});
+	// $rootScope.$on('favourited', function(event, args) {
+ //    	getArtists();
+	// });
 
-	function getArtists() {
-		ArtistService.getArtists().then(function(data){
-			$scope.artists = data.artist;
-		});
-	}
+	// function getArtists() {
+	// 	ArtistService.getArtists().then(function(data){
+	// 		$scope.artists = data.artist;
+	// 	});
+	// }
+	
+	// if (!$rootScope.artists) {
+	// 	$log.debug("test")
+	// } else {
+	// 	// $scope.artists = $rootScope.artists;
+	// }
+	
 
 	$scope.clear = function() {
 		DatabaseService.remove();

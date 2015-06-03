@@ -6,7 +6,7 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
 
     // Post artists to database
     DatabaseService.post = function(doc) {
-        angular.forEach(doc.artist, function(key, value){
+        angular.forEach(doc.artist, function(key, value) {
             key.favourited = false;
         });
 
@@ -20,11 +20,10 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
     };
 
     // Use this to favorite an ID
-    DatabaseService.update = function(id, doc){
+    DatabaseService.update = function(id, doc) {
         angular.forEach(doc.artist, function(key, value){
             if(key._id == id){
                 key.favourited = !key.favourited;
-
             }
         });
 

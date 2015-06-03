@@ -4,9 +4,9 @@
   	</div>
   	
   	<ion-content>
-		<div id="content" ng-init="getArtists()">
+		<div id="content">
 
-			<div collection-repeat="artist in favourites" collection-item-height="100px" class="list">
+			<div ng-repeat="artist in favourites" height="100px" class="list">
 				<a ng-if="artist.favourited" class="item">
 
 					<div class="row nopadding img-artist">

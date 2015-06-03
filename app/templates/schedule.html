@@ -9,7 +9,7 @@
 				{{artist.stage_id}}
 			</div> -->
 
-			<div ng-repeat="(key, value) in artists | groupBy: 'stage_id'">
+			<div ng-repeat="(key, value) in artists.artist | groupBy: 'stage_id'">
 				
 				{{key}}
 

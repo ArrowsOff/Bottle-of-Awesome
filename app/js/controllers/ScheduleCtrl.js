@@ -1,11 +1,11 @@
 app.controller('ScheduleCtrl', function ($scope, ArtistService) {
 
-	getArtists();
+	// getArtists();
 
-	function getArtists() {
-		ArtistService.getArtists().then(function(data){
-			$scope.artists = data.artist;
-		});
-	}
+	// function getArtists() {
+	// 	ArtistService.getArtists().then(function(data){
+	// 		$scope.artists = data.artist;
+	// 	});
+	// }
 
 });
