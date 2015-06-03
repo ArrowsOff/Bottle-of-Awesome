@@ -1,0 +1,110 @@
+#menu {
+	.title, .button-icon{
+		color: #fff;
+	}
+	.menuButton{
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 50%;
+		float: left;
+		border: none;
+			
+		a {
+			width: 100%;
+			padding: 0;
+			height: 100%;
+			line-height: normal;
+			text-align: center;
+			color:blue;
+			border-bottom: inset 10px blue;
+			background-repeat: no-repeat;
+			background-size: 50%;
+			background-position: center center;
+			@media (max-height:497px){
+				border: none;
+				background-size: 40%;		
+			}
+		}
+		
+		p {
+			position: absolute;
+			bottom: 5%;
+			@media (max-height:700px){
+				bottom: 10%
+			};
+			@media (max-height:625px){
+				bottom: 8%
+			};
+			@media (max-height:600px){
+				bottom: 4%
+			};
+			@media (max-height:497px){
+				bottom: 1%
+			};
+
+			width: 100%;
+			text-align: center;
+		}
+	}
+	#newsMB > a{
+		border-bottom-color: $red ;
+		background-image: url("../img/news.svg");
+		p {
+			color: $red !important;
+		}
+	}
+	
+	#artistsMB > a{
+		border-bottom-color: $orange;	
+		background-image: url("../img/artists.svg");
+		p {
+			color: $orange;			
+		}
+	}
+	
+	#infoMB > a{
+		border-bottom-color: $yellow;
+		background-image: url("../img/info.svg");
+		p {
+			color: $yellow;
+		}
+	}
+	
+	#scheduleMB > a{
+		border-bottom-color: $green;
+		background-image: url("../img/schedule.svg");
+		p {
+			color: $green;
+		}
+	}
+	
+	#mapMB > a{
+		border-bottom-color: $purple;
+		background-image: url("../img/map.svg");
+		p {
+			color: $purple;
+		}
+	}
+	
+	#favouritesMB > a{
+		border-bottom-color: $blue;
+		background-image: url("../img/favourites.svg");
+		p {
+			color: $blue;
+		}
+	}
+	
+	#XOmemoriesMB > a{
+		border-bottom-color: $black;
+		background-image: url("../img/xomemories.svg");
+		p {
+			color: $black;
+		}
+	}
+	
+	
+
+}
+
+

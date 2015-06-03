@@ -1,0 +1,69 @@
+#artists {
+	.has-header {
+		top: 0;
+	}
+	#areas {
+		background: $white;
+		position: relative;
+		top: 100px;
+		z-index: 100;
+		width: 100%;
+		height: 47px;
+		.wide-as-needed {
+		  	overflow: scroll;
+		  	white-space: nowrap;
+		}
+		.scroll { 
+		  	min-width: 100%;
+		}
+		.selected {
+			border-bottom: 5px solid $red;
+		}
+		.item {
+			border: none;
+			background: none;
+			display: inline-block;
+			&.item-radio .item-content {
+			   	padding-right: 16px;
+			   	background: none; 
+			}
+		}
+	}
+	// This content has a different because it has a subheader
+	#content {
+	    top: 140px !important;
+	}
+	.item-artist {
+		position: relative;
+		.img-artist {
+			display: flex; 
+			justify-content:center;
+	    	align-items:center;
+	    	overflow:hidden;	    
+		    img {	    	
+		    	flex-shrink:0;
+	    		min-width:100%;
+	    		min-height:100%
+		    }
+		}
+
+		.icon {
+			font-size: 40px;
+  			position: absolute;
+  			right: 5px;
+  			top: 5px;		
+		}
+
+		.info {
+			position: absolute;
+			bottom: 0;
+		  	height: 40px;
+		  	left: 0;
+		  	right: 0;
+		  	background-color: rgba(255,255,0,0.5);
+		  	.name {
+		  		padding: 5px;
+		  	}
+		}
+	}
+}

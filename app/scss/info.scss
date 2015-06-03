@@ -1,0 +1,48 @@
+#info {
+	.has-header {
+		top: 0;
+	}
+	.crinkles {
+		position: absolute;
+		height: 54%;
+		top: 23%;
+		&#leftcrinkle {
+			left: 14%;
+		}
+		&#rightcrinkle {
+			right: 14%;
+		}
+	}
+	.list {
+		.item {
+			display: block;
+			margin: 0;
+			padding: 13%;
+			padding-top: 5%;
+			width: 50%;
+			float: left;
+			white-space: normal;
+			border-top: none;
+			img {
+				display: block;
+			}
+			.title {
+				font-size: 0.85em;
+				height: 54%;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+			}
+			&:nth-child(even) {
+				border-left: none;
+				border-right: none;
+			}
+			&:nth-child(odd) {
+				border-left: none;
+			}
+			&:last-child, &:nth-child(5) {
+				border-bottom: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+#news {
+	.has-header {
+		top: 0px;
+	}
+	#logo {
+		height: 150px;
+	}
+	#content {
+		top: 150px; 
+	}
+
+	// Page styling
+	#counter {
+		background-color: #4BB8D6;
+		p {
+			color: #fff;
+			font-size: 3em;
+			&.timer{
+				line-height: 115px;
+			}
+		}
+	}
+}

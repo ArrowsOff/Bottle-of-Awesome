@@ -1,0 +1,54 @@
+<ion-view view-title="" id="artists">
+	<div id="logo">
+  		<h1 class="title text-center uppercase">Artists</h1>
+  	</div>
+  	<div id="areas">
+		<ion-scroll direction="x" class="wide-as-needed">
+			
+			<!-- Make sure the all is checked on load -->
+			<ion-radio ng-model="stage" value="all" name="stage" icon="" ng-checked>All</ion-radio>
+        	<ion-radio ng-repeat="area in areas" ng-model="stage" ng-value="area._id" name="stage" icon="false">{{::area.title.toString()}}</ion-radio>
+
+  		</ion-scroll>
+
+  		
+	</div>
+
+  	<ion-content>	
+  		<div id="content">
+			
+  			
+
+			<ion-list ng-init="getArtists()">
+				<!-- <input type="text" ng-model="area.stage_id"> -->
+			
+				<div collection-repeat="artist in artists | filter:area | orderBy: name " collection-item-height="200px" class="item col col-50">
+					
+					<div class="item-content item-artist">
+						<i class="icon color-white" ng-click="addToFavorites(artist._id)" ng-class="artist.favourited ? 'ion-ios-heart' : ' ion-ios-heart-outline'"></i>	
+
+						<a class="img-artist" ng-href="#/app/artists/{{artist._id}}">
+							<img ng-src="{{artist.image.__cdata}}" height="200px">
+						</a>
+						
+						<div class="info color-white">
+
+							<span class="name uppercase">{{artist.name.__cdata}}</span> <br>
+							<span class="color-black">{{artist.stage_id}}</span>
+
+						</div>
+			    	</div>
+			    										
+			  	</div>
+
+			</ion-list>
+
+  		</div>
+
+
+		<!-- Debuggin purposes only -->
+  		<!-- <button class="button button-positive button-full" ng-click="clear()" style="position: relative; top: 150px;">
+  			Clear db
+  		</button> -->
+  	</ion-content>
+</ion-view>

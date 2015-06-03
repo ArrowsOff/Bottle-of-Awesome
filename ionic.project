@@ -1,0 +1,12 @@
+{
+  "name": "Extrema Outdoor 2015",
+  "app_id": "6a411493",
+  "gulpStartupTasks": [
+    "default",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
