@@ -17,7 +17,8 @@ var pluginlist = [
     "cordova-plugin-file-transfer",
     "cordova-plugin-media",
     "cordova-plugin-whitelist",
-    "https://github.com/danwilson/google-analytics-plugin.git"
+    "https://github.com/danwilson/google-analytics-plugin.git",
+    "cordova-plugin-splashscreen"
 ];
  
 // no need to configure below
