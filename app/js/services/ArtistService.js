@@ -22,8 +22,7 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
                 defer.resolve(data);
             }).catch(function(err){
                 defer.reject('requestArtists Err:', err);
-            });  
-                          
+            });                   
         }
 
         return defer.promise;
