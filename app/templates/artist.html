@@ -1,26 +1,22 @@
 <ion-view view-title="" id="artist">
     <ion-content>
-    	
-        <img ng-src="{{artist.image.__cdata}}" width="100%">
+    	<div class="image-header" style="position: relative; z-index: -1;">
+    		<i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }" style="position: absolute; top: 10px; right: 10px; font-size: 36px; z-index: 500;"></i>
+    		<img ng-src="{{artist.image.__cdata}}" width="100%">
+        	
+    	</div>
+        
+
 		<div class="padding">
 
-			<h1>Artiest: {{artist.name.__cdata}}</h1>
-	        <p>ID: {{artist._id}}</p>
+			<h1>{{artist.name.__cdata}}</h1>
 	        <p>Biography: {{artist.biography.__cdata}}</p>
 
-	        <p>StartTime: {{artist.start_time}}</p>
-	        <p>Endtime: {{artist.endtime}}</p>
+	        <p>StartTime: {{toTime(artist.start_time)}}</p>
+	        <p>Endtime: {{toTime(artist.endtime)}}</p>
 	        <p>Stage: {{artist.stage_id}}</p>
 	       	<p>Summary: {{artist.summary}}</p>
 	        
-	        <p>Url: {{artist.url.__cdata}}</p>
-	        <p>Website: {{artist.website.__cdata}}</p>
-	        <p>Youtube: {{artist.youtube.__cdata}}</p>
-	        <p>Facbook: {{artist.facebook.__cdata}}</p>
-	        <p>Twitter: {{artist.twitter.__cdata}}</p>
-	        <p>LastFM: {{artist.lastfm.__cdata}}</p>
-	        <p>MySpace: {{artist.myspace.__cdata}}</p>
-	        <p>Soundcloud: {{artist.soundcloud.__cdata}}</p>
         </div>
     </ion-content>
 </ion-view>
