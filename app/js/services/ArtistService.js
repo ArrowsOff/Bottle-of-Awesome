@@ -18,7 +18,7 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
             });
         } else {
             $log.debug("Database call for artist(s)");
-            DatabaseService.get(window.localStorage.artists).then(function(data){  
+            DatabaseService.get(window.localStorage.artists, 'artists').then(function(data){  
                 defer.resolve(data);
             }).catch(function(err){
                 defer.reject('requestArtists Err:', err);
@@ -59,8 +59,20 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
 
     ArtistService.favorite = function(id) {
         $log.debug("Database call for favorite");
-        DatabaseService.update(id, $rootScope.artists);
+        DatabaseService.favorite(id);
     };
+
+    ArtistService.getFavourites = function() {
+        var defer = $q.defer();
+
+        DatabaseService.get(window.localStorage.favourites, 'favourites').then(function(data){
+            defer.resolve(data);
+        }).catch(function(err){
+            $log.error(err);
+        });
+
+        return defer.promise;
+    }
 
     return ArtistService;
 });

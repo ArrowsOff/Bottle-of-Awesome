@@ -7,9 +7,9 @@ var app = angular.module('starter', [
     'ImgCache'
 ]);
 
-app.run(function($ionicPlatform, $rootScope, $log, ImgCache) {
-    // ImgCache.options.debug = true;
-    // ImgCache.options.chromeQuota = 50*1024*1024; 
+app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService) {
+    ImgCache.options.debug = true;
+    ImgCache.options.chromeQuota = 50*1024*1024; 
 
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -31,6 +31,24 @@ app.run(function($ionicPlatform, $rootScope, $log, ImgCache) {
 
         ImgCache.$init();
 
+        // This will set artist variable global
+        ArtistService.getArtists().then(function(data) {
+            $rootScope.artists = data;
+
+            // This will set favourites variable global
+            ArtistService.getFavourites().then(function(data) {
+                $rootScope.favourites = data;
+
+                // This will set an favourited value of true if the artist is favorited
+                angular.forEach(data.artists, function(obj) {
+                    angular.forEach($rootScope.artists.artist, function(res) {
+                        if(obj == res._id) {
+                            res.favourited = true;
+                        }
+                    })
+                })
+            });
+        });
     });
 });
 

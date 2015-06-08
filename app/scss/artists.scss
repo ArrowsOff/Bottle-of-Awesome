@@ -8,7 +8,7 @@
 		top: 100px;
 		z-index: 100;
 		width: 100%;
-		height: 47px;
+		height: 51px;
 		.wide-as-needed {
 		  	overflow: scroll;
 		  	white-space: nowrap;
@@ -16,23 +16,33 @@
 		.scroll { 
 		  	min-width: 100%;
 		}
-		.selected {
-			border-bottom: 5px solid $red;
-		}
 		.item {
-			border: none;
+			border: 0;
 			background: none;
 			display: inline-block;
+			
 			&.item-radio .item-content {
-			   	padding-right: 16px;
-			   	background: none; 
+			   	padding: 10px;
+			   	margin: 0 5px;
+			   	background: none;
+			   	border: inset 5px transparent;
+			   	transition: border ease-in-out 0.15s;
+			}
+
+			input:checked ~ .item-content {
+				border-bottom: 5px inset $red;
 			}
 		}
 	}
 	// This content has a different because it has a subheader
 	#content {
 	    top: 140px !important;
+	    
+	    .item {
+	    	border: 0;
+	    }
 	}
+
 	.item-artist {
 		position: relative;
 		.img-artist {

@@ -2,14 +2,13 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
     var DatabaseService = this;
 
     var artists     = pouchDB('artists');
+    var favouritesDB  = pouchDB('favourites');
     // var areas       = pouchDB('areas');
+    
+    var favourites = {};
 
     // Post artists to database
     DatabaseService.post = function(doc) {
-        angular.forEach(doc.artist, function(key, value) {
-            key.favourited = false;
-        });
-
         doc._id = guid();
 
         artists.put(doc).then(function(){
@@ -20,33 +19,76 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
     };
 
     // Use this to favorite an ID
-    DatabaseService.update = function(id, doc) {
-        angular.forEach(doc.artist, function(key, value){
-            if(key._id == id){
-                key.favourited = !key.favourited;
+    DatabaseService.favorite = function(id) {
+        if(!window.localStorage.favourites) {
+            var favouritesObject = {
+                _id : guid(),
+                artists: [id]
             }
-        });
 
-        artists.put(doc).then(function(response){
-            $rootScope.$broadcast("favourited");
-        }).catch(function(err){
-            $log.error(err);
-        });
+            favouritesDB.put(favouritesObject).then(function() {
+                $rootScope.$broadcast("favourited");
+                window.localStorage.favourites = favouritesObject._id;
+            })
+        } else {
+            favouritesDB.get(window.localStorage.favourites).then(function(doc) {
+                if(doc.artists.indexOf(id) == -1) {
+                    doc.artists.push(id);
+                    $log.debug(id, 'favourited');
+                } else {
+                    doc.artists.splice(doc.artists.indexOf(id));
+                    $log.debug(id, 'unfavourited');
+                }
+
+                favouritesDB.put(doc).then(function(res) {
+                    $log.debug(id, 'broadcast favourited');
+                    $rootScope.$broadcast("favourited");
+                }).catch(function(err){
+                    $log.error(err);
+                })
+            })
+        }
     };
 
     // Get the artists database
-    DatabaseService.get = function(id) {
-        return artists.get(id);
+    DatabaseService.get = function(id, database) {
+        if(database === 'artists') {
+            return artists.get(id);
+        } else if (database === 'favourites') {
+            return favouritesDB.get(id);
+        }
+       
     };
 
     // Removing document from database
     DatabaseService.remove = function() {
-        artists.get(window.localStorage.artists).then(function (doc) {
-            localStorage.removeItem('artists');
-            return artists.remove(doc);
-        }).catch(function(err){
-            $log.error("Error removing database:", window.localStorage.artists, err)
-        });
+
+        // artists.allDocs().then(function(data){
+        //     $log.info(data.rows);
+        //     angular.forEach(data.rows, function(id) {
+                artists.get("AA16DE97-8A2A-83CF-94F4-D8C4D23BE992").then(function (doc) {
+                    localStorage.removeItem('artists');
+                    artists.remove(doc);
+                }).catch(function(err){
+                    $log.error("Error removing database:", window.localStorage.artists, err);
+                });
+        //     })
+
+            
+        // })
+
+        // favouritesDB.allDocs().then(function(data){
+        //     $log.info(data.rows);
+
+        //     angular.forEach(data.rows, function(id) {
+        //         favouritesDB.get(id.toString()).then(function (doc) {
+        //             localStorage.removeItem('artists');
+        //             favouritesDB.remove(doc);
+        //         }).catch(function(err){
+        //             $log.error("Error removing database:", window.localStorage.artists, err);
+        //         });
+        //     })
+        // })
     };
 
     // Create unique key

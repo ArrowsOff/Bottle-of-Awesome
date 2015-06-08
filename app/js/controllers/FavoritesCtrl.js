@@ -1,3 +1,3 @@
-app.controller('FavoritesCtrl', function($scope, $log){
-
+app.controller('FavoritesCtrl', function($scope, $rootScope, $log){
+	
 });

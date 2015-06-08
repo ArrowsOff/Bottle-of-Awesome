@@ -15,13 +15,12 @@ app.service("AreaService", function($log, $q, $http){
 
             defer.resolve(areas);
         }).error(function(err){
-        	$log.error('haha')
             defer.reject('Error: ', err);
         });
 
 		return defer.promise;
 
-	}
+	};
 
 	// get area for artists
 	AreaService.getArea = function(id) {
@@ -30,7 +29,7 @@ app.service("AreaService", function($log, $q, $http){
 
 		return defer.promise;
 		
-	}
+	};
 
 	return AreaService;
 

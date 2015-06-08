@@ -20,6 +20,8 @@ app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, 
 	// 	// $scope.artists = $rootScope.artists;
 	// }
 	
+	// Preselect radio button - Area menu
+	$scope.stage = 'all';
 
 	$scope.clear = function() {
 		DatabaseService.remove();
@@ -30,8 +32,6 @@ app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, 
 
         $scope.areas = data.area;
     }).catch(function(err){
-        $log.error("TEST ERR:", err)
-    })
-
-
+        $log.error("Error getting Areas:", err);
+    });
 });
