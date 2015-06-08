@@ -6,9 +6,11 @@
 		<div id="content" ng-init="getArtists()">
 			
 			<div ng-repeat="(key, value) in artists.artist | groupBy: 'stage_id'">
-  				Group name: {{ key }}
-  				<div ng-repeat="artist in value">
+  				Stage ID: {{ key }}
+  				<div ng-repeat="artist in value | orderBy: artist.start_time">
+  					{{artist.start_time}}
     				{{ artist.name.__cdata }} 
+  					
   				</div>
   				<br>
 			</div>
