@@ -14,9 +14,9 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
 					if(obj == res._id) {
 						res.favourited = true;
 					}
-				})
-			})
-		})
+				});
+			});
+		});
 	});
 
 	// This can convert times from XML to readable Times

@@ -4,7 +4,8 @@ var app = angular.module('starter', [
     'cb.x2js',
     'ngLodash',
     'pouchdb',
-    'ImgCache'
+    'ImgCache',
+    'angular.filter'
 ]);
 
 app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService) {
@@ -29,6 +30,7 @@ app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService) {
             $log.warn('Analytics API not available...');
         }
 
+        // Initialize Image Caching
         ImgCache.$init();
 
         // This will set artist variable global
@@ -45,8 +47,8 @@ app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService) {
                         if(obj == res._id) {
                             res.favourited = true;
                         }
-                    })
-                })
+                    });
+                });
             });
         });
     });

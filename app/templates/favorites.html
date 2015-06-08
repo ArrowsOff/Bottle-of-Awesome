@@ -7,7 +7,7 @@
 		<div id="content">
 			<div class="list">
 				<div ng-repeat="artist in artists.artist">
-					<a ng-if="artist.favourited" class="item">
+					<a ng-if="artist.favourited" class="item" ng-href="#/app/artists/{{artist._id}}">
 
 						<div class="row img-artist">
 							<div class="col col-25">

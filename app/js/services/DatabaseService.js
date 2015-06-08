@@ -24,12 +24,12 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
             var favouritesObject = {
                 _id : guid(),
                 artists: [id]
-            }
+            };
 
             favouritesDB.put(favouritesObject).then(function() {
                 $rootScope.$broadcast("favourited");
                 window.localStorage.favourites = favouritesObject._id;
-            })
+            });
         } else {
             favouritesDB.get(window.localStorage.favourites).then(function(doc) {
                 if(doc.artists.indexOf(id) == -1) {
@@ -45,8 +45,8 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
                     $rootScope.$broadcast("favourited");
                 }).catch(function(err){
                     $log.error(err);
-                })
-            })
+                });
+            });
         }
     };
 

@@ -5,14 +5,12 @@
   	<ion-content>
 		<div id="content" ng-init="getArtists()">
 			
-			<!-- <div ng-repeat="artist in artists | groupBy: 'artist.stage_id'" class="list">
-				{{artist.stage_id}}
-			</div> -->
-
-			<div ng-repeat="artist in artists.artist">
-				
-				{{artist}}
-
+			<div ng-repeat="(key, value) in artists.artist | groupBy: 'stage_id'">
+  				Group name: {{ key }}
+  				<div ng-repeat="artist in value">
+    				{{ artist.name.__cdata }} 
+  				</div>
+  				<br>
 			</div>
 
 		</div>

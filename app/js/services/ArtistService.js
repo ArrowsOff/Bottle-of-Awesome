@@ -72,7 +72,7 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
         });
 
         return defer.promise;
-    }
+    };
 
     return ArtistService;
 });
