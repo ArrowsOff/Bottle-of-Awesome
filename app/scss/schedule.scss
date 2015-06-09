@@ -1,5 +1,41 @@
 #schedule {
+	#content {
+		display: block;
+		background-color: $white;
+		background-image: linear-gradient(transparent 50%, rgb(230,230,230) 50%);
+		background-size: 120px 120px;
+		height: 800px;
+		width: 800px;
+	}
 	.has-header {
 		top: 0;
+	}
+	.wide-as-needed {
+		overflow: scroll;
+		white-space: nowrap;
+	}
+	.scroll { 
+		min-width: 100%;
+	}	
+	.stage {
+		display: inline-block;
+		vertical-align: top;
+		width: 120px;
+		padding-right: 0;
+		.stage-id {
+			margin: 5px 0 15px;
+			background-color: $red;
+			height: 35px;
+			overflow: hidden;
+		}
+		.artist {
+			display: block;
+			background-color: $red;
+			margin: 10px 0;
+			font-size: 12px;
+			// background-image: ;
+			// background-position: top right;
+			// background-size: 20px 20px;
+		}
 	}
 }

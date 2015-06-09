@@ -1,19 +1,20 @@
 <ion-view view-title="" id="schedule">
 	<div id="logo">
-  		<h1 class="title text-center uppercase">Schedule</h1>
+  		<h1 class="title text-center uppercase bold">Schedule</h1>
   	</div>
   	<ion-content>
 		<div id="content" ng-init="getArtists()">
 			
-			<div ng-repeat="(key, value) in artists.artist | groupBy: 'stage_id'">
-  				Stage ID: {{ key }}
-  				<div ng-repeat="artist in value | orderBy: artist.start_time">
+      <ion-scroll direction="xy">
+			<div class="stage padding uppercase bold" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_id'">
+  				<div class="stage-id color-white padding">Stage ID: {{ key }}</div>
+  				<div class="artist color-white padding" ng-repeat="artist in value | orderBy: artist.start_time">
   					{{artist.start_time}}
-    				{{ artist.name.__cdata }} 
-  					
+    				{{ artist.name.__cdata }}
   				</div>
   				<br>
 			</div>
+      </ion-scroll>
 
 		</div>
   	</ion-content>
