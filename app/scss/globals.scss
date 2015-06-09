@@ -97,6 +97,32 @@ h1, h2, h3, h4, h5, h6, p, span, a, button {
     color: $orange !important;
 }
 
+// color classes
+.color-bg-red {
+    background-color: $red !important;
+}
+.color-bg-white {
+    background-color: $white !important;
+}
+.color-bg-purple {
+    background-color: $purple !important;
+}
+.color-bg-black {
+    background-color: $black !important;
+}
+.color-bg-green {
+    background-color: $green !important;
+}
+.color-bg-yellow {
+    background-color: $yellow !important;
+}
+.color-bg-blue {
+    background-color: $blue !important;
+}
+.color-bg-orange {
+    background-color: $orange !important;
+}
+
 .nopadding {
 	padding: 0;
 }
@@ -123,6 +149,11 @@ h1, h2, h3, h4, h5, h6, p, span, a, button {
 	}
 }
 
+.center-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 #content {
     position: relative;
