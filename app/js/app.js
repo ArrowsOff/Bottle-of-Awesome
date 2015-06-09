@@ -8,7 +8,7 @@ var app = angular.module('starter', [
     'angular.filter'
 ]);
 
-app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService) {
+app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService, $cordovaStatusbar) {
     ImgCache.options.debug = true;
     ImgCache.options.chromeQuota = 50*1024*1024; 
 
@@ -19,7 +19,8 @@ app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         }
         if(window.StatusBar) {
-            StatusBar.styleDefault();
+            // StatusBar.styleDefault();
+            $cordovaStatusbar.styleHex('#eb6772');
         }
 
         // Loading Google Analytics
@@ -155,6 +156,15 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
             "menuContent": {
                 templateUrl:  'templates/xomemories.html',
                 controller: 'XOmemoriesCtrl'
+            }
+        }
+    })
+    .state('app.xomemoriesNext', {
+        url: '/xomemoriesNext',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/xomemoriesNext.html',
+                controller: 'xomemoriesNextCtrl'
             }
         }
     });
