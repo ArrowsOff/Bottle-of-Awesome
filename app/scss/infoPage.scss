@@ -1,3 +1,15 @@
 #infoPage {
-	
+	#logo .title {
+		font-size: 30px;
+	}
+	.has-header {
+		top: 0;
+	}
+	.info-card {
+		margin: 10px 0;
+		.title {
+			background-color: $red;
+			font-size: 18px;
+		}
+	}
 }

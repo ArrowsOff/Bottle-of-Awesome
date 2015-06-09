@@ -114,15 +114,60 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
             }
         }
     })
-    .state('app.infoPages', {
-        url: '/info/:id',
+    .state('app.aboutus', {
+        url: '/info/aboutus',
         views: {
             "menuContent": {
-                templateUrl:  'templates/infoPage.html',
+                templateUrl:  'templates/info-pages/aboutus.html',
                 controller: 'InfoPageCtrl'
             }
         }
-    }) 
+    })    
+    .state('app.disclaimer', {
+        url: '/info/disclaimer',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/info-pages/disclaimer.html',
+                controller: 'InfoPageCtrl'
+            }
+        }
+    })    
+    .state('app.general', {
+        url: '/info/general',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/info-pages/general.html',
+                controller: 'InfoPageCtrl'
+            }
+        }
+    })    
+    .state('app.hotelpackages', {
+        url: '/info/hotelpackages',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/info-pages/hotelpackages.html',
+                controller: 'InfoPageCtrl'
+            }
+        }
+    })    
+    .state('app.howtogetthere', {
+        url: '/info/howtogetthere',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/info-pages/howtogetthere.html',
+                controller: 'InfoPageCtrl'
+            }
+        }
+    })    
+    .state('app.qa', {
+        url: '/info/qa',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/info-pages/qa.html',
+                controller: 'InfoPageCtrl'
+            }
+        }
+    })    
     .state('app.schedule', {
         url: '/schedule',
         views: {
