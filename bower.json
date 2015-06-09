@@ -18,6 +18,7 @@
     "countdownjs": "mckamey/countdownjs#~2.5.2",
     "imagesloaded": "~3.1.8",
     "angular-imgcache.js": "~0.1.0",
-    "angular-filter": "~0.5.4"
+    "angular-filter": "~0.5.4",
+    "ionic-audio": "~1.2.3"
   }
 }
