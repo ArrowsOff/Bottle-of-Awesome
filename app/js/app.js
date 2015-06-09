@@ -158,6 +158,15 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
                 controller: 'XOmemoriesCtrl'
             }
         }
+    })
+    .state('app.xomemoriesNext', {
+        url: '/xomemoriesNext',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/xomemoriesNext.html',
+                controller: 'xomemoriesNextCtrl'
+            }
+        }
     });
 
     $urlRouterProvider.otherwise('/app/news');
