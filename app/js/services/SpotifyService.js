@@ -1,11 +1,29 @@
-app.service('SpotifyService', function($scope){
+app.service('SpotifyService', function($http, $log, $q) {
+
+	var SpotifyService = this;
+
+	var url;
+
+	SpotifyService.get = function(artist) {
+		var defer = $q.defer();
+
+		$http.get('https://api.spotify.com/v1/search?q=' + artist + '&type=artist').then(function(data) {
+			$log.debug(data.data.artists)
+			$http.get('https://api.spotify.com/v1/artists/'+data.data.artists.items[0].id+'/top-tracks?country=NL').success(function(data) {
+				url = data.tracks[0].preview_url;
+				$log.debug(data)
+				defer.resolve(url);
+			}).error(function(err) {
+				defer.reject(err);
+			})
+		})
+
+		return defer.promise;
+	}
+
+	return SpotifyService;
 	// 	var url;
 	// var audio = null;
- 	// $scope.getSpotify = function(artist) {
-	// 	$http.get('https://api.spotify.com/v1/search?q=' + artist + '&type=artist').then(function(data){
-	// 		console.log(data.data.artists.items[0]);
-	// 	})
-	// };
 
 	// $scope.getTopTracks = function() {
 	// 	$http.get('https://api.spotify.com/v1/artists/2o5jDhtHVPhrJdv3cEQ99Z/top-tracks?country=NL')
@@ -21,7 +39,7 @@ app.service('SpotifyService', function($scope){
 	// $scope.play = function() {
 	// 	// audioObject = new Audio(url);
 	// 	// console.log(audioObject)
-		
+
 	// 	// audioObject.play();
 	// 	if(!url) {
 	// 		$scope.getTopTracks();
@@ -40,7 +58,7 @@ app.service('SpotifyService', function($scope){
 	// 		  });
 
 	// 		media.play();
-			
+
 	// 	}
 	// }
 

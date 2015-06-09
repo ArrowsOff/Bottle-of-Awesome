@@ -18,7 +18,8 @@ var pluginlist = [
     "cordova-plugin-media",
     "cordova-plugin-whitelist",
     "https://github.com/danwilson/google-analytics-plugin.git",
-    "cordova-plugin-splashscreen"
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar"
 ];
  
 // no need to configure below

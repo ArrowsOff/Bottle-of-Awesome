@@ -9,6 +9,7 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
 		ArtistService.getFavourites().then(function(data) {
 			$rootScope.favourites = data;
 
+			// This will set an favourited value of true if the artist is favorited
 			angular.forEach(data.artists, function(obj) {
 				angular.forEach($rootScope.artists.artist, function(res) {
 					if(obj == res._id) {
@@ -27,10 +28,10 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
 
 	// Google Analytics Track every view when state changes
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-	    $timeout(function(){
-	    	TrackingService.trackView($ionicNavBarDelegate.title());
+		$timeout(function(){
+	    	// TrackingService.trackView($ionicNavBarDelegate.title());
 	    },500);
-  	});
+	});
 
   	// Calculating height sidemenu buttons             
   	// Device hoogte - menubalk (nu 44px, 33px + (2x 5px padding) + 1px under-border  + een random pixel die ervoor zorgt dat je niet meer kan scrollen)
@@ -41,6 +42,4 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
 
   	// Calculation height for buttons on app.info
   	$scope.calcInfoHeight = (calcHeight - 121) / 3;
-});
-
-// Is er n artiest die op twee stages optreedt?
+  });

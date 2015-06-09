@@ -1,22 +1,39 @@
 <ion-view view-title="" id="artist">
-    <ion-content>
-    	<div class="image-header" style="position: relative; z-index: -1;">
-    		<i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }" style="position: absolute; top: 10px; right: 10px; font-size: 36px; z-index: 500;"></i>
-    		<img ng-src="{{artist.image.__cdata}}" width="100%">
-        	
-    	</div>
-        
+<ion-content >
 
-		<div class="padding">
+	<div class="image-header" style="position: relative; z-index: -1;">
+		<i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }" style="position: absolute; top: 10px; right: 10px; font-size: 36px; z-index: 500;"></i>
+		<img ng-src="{{artist.image.__cdata}}" width="100%">
 
-			<h1>{{artist.name.__cdata}}</h1>
-	        <p>Biography: {{artist.biography.__cdata}}</p>
+	</div>
 
-	        <p>StartTime: {{toTime(artist.start_time)}}</p>
-	        <p>Endtime: {{toTime(artist.endtime)}}</p>
-	        <p>Stage: {{artist.stage_id}}</p>
-	       	<p>Summary: {{artist.summary}}</p>
-	        
-        </div>
-    </ion-content>
+	<div class="spotify padding" style="background-color: #678; height: 200px; font-size: 36px;">
+		<i class="icon ion-ios-rewind color-white"></i>
+		<i class="color-white" ng-click="playing=!playing; play()" ng-class="{'icon ion-pause': playing , 'icon ion-play': !playing }" ng-if="!loading"></i>
+		<!-- <i class="icon ion-load-c" ng-if="loading"></i> -->
+		<ion-spinner ng-if="loading"></ion-spinner>
+		<!-- <i class="icon ion-pause color-white" ng-click="pause()"></i> -->
+		<i class="icon ion-ios-fastforward color-white"></i>
+
+		<div class="card">
+      <div class="item item-divider item-stable">
+        <ion-audio-progress-bar display-time display-info></ion-audio-progress-bar>
+      </div>
+    </div>
+	</div>
+
+
+	<div class="padding">
+
+		<h1>{{artist.name.__cdata}}</h1>
+		<p>Biography: {{artist.biography.__cdata}}</p>
+
+		<p>StartTime: {{toTime(artist.start_time)}}</p>
+		<p>Endtime: {{toTime(artist.endtime)}}</p>
+		<p>Stage: {{artist.stage_id}}</p>
+		<p>Summary: {{artist.summary}}</p>
+
+	</div>
+
+</ion-content>
 </ion-view>
