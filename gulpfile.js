@@ -26,8 +26,7 @@ var paths = {
               './app/lib/angular-filter/dist/angular-filter.min.js',
               './app/lib/videogular/videogular.min.js',
               './app/lib/videogular-controls/vg-controls.min.js'],
-  fonts: ['./app/lib/ionic/release/fonts/**', 
-          './app/fonts/**/*']
+  fonts: ['./app/lib/ionic/release/fonts/**', './app/fonts/**/*']
 };
 
 gulp.task('default', ['sass', 'scripts', 'scripts:vendor', 'html', 'images', 'fonts', 'data']);
@@ -82,7 +81,7 @@ gulp.task('scripts:vendor', function() {
     .pipe($.sourcemaps.init())
     .pipe($.concat('vendor.js'))
     .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest('./www'))
+    .pipe(gulp.dest('./www/js'))
 });
 
 /* Images
