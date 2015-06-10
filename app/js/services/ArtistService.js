@@ -12,17 +12,20 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
 
                 DatabaseService.post(json.artists);   
 
+                $log.debug("Request artists from URL");
+
                 defer.resolve(json.artists);
             }).error(function(err){
-                defer.reject('Error: ', err);
+                defer.reject("Error requesting artists", err);
             });
         } else {
-            $log.debug("Database call for artist(s)");
-            DatabaseService.get(window.localStorage.artists, 'artists').then(function(data){  
+            $log.debug("Request artists from database");
+
+            DatabaseService.get('artists').then(function(data){  
                 defer.resolve(data);
             }).catch(function(err){
-                defer.reject('requestArtists Err:', err);
-            });                   
+                defer.reject("Error requesting artists", err);
+            });                  
         }
 
         return defer.promise;
@@ -36,7 +39,7 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
         requestArtists(refresh).then(function(data){
             defer.resolve(data);
         }).catch(function(err){
-            $log.error("getArtists Error:", err);
+            $log.error("Error getting artists:", err);
         });
 
         return defer.promise;
@@ -51,7 +54,6 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
                     defer.resolve(artist);
                 }
             });
-
         });
 
         return defer.promise;
@@ -65,10 +67,11 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
     ArtistService.getFavourites = function() {
         var defer = $q.defer();
 
-        DatabaseService.get(window.localStorage.favourites, 'favourites').then(function(data){
+        $log.debug("Request favourites");
+        DatabaseService.get('favourites').then(function(data){
             defer.resolve(data);
         }).catch(function(err){
-            $log.error(err);
+            defer.reject("Error getting favourites", err);
         });
 
         return defer.promise;
