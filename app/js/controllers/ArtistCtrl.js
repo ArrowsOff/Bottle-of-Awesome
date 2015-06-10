@@ -9,6 +9,8 @@ app.controller('ArtistCtrl', function($scope, $stateParams, $log,$cordovaFile, $
       	]
 	};
 
+
+
 	// Get artist from database 
 	ArtistService.getArtist($stateParams.id).then(function(data) {
 		$scope.artist = data;

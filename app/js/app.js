@@ -98,11 +98,11 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
             }
         }
     })
-    // Controller will be instantiated manually for this page
     .state('app.artist', {
         url: '/artists/:id',
         views: {
             "menuContent": {
+                controller: 'ArtistCtrl',
                 templateUrl: 'templates/artist.html'
             }
         }
