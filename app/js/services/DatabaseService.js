@@ -7,7 +7,7 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
 
     // Post artists to database
     DatabaseService.post = function(doc) {
-        $log.debug("Posting Artists to database");
+        $log.log("Posting Artists to database");
 
         doc._id = 'artists';
 
@@ -28,21 +28,21 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
 
             database.put(favouritesObject).then(function() {
                 $rootScope.$broadcast("favourited");
-                $log.debug(id, 'broadcast favourited');
+                $log.log(id, 'broadcast favourited');
                 window.localStorage.favourites = favouritesObject._id;
             });
         } else {
             database.get(window.localStorage.favourites).then(function(doc) {
                 if(doc.artists.indexOf(id) == -1) {
                     doc.artists.push(id);
-                    $log.debug(id, 'favourited');
+                    $log.log(id, 'favourited');
                 } else {
                     doc.artists.splice(doc.artists.indexOf(id));
-                    $log.debug(id, 'unfavourited');
+                    $log.log(id, 'unfavourited');
                 }
 
                 database.put(doc).then(function(res) {
-                    $log.debug(id, 'broadcast favourited');
+                    $log.log(id, 'broadcast favourited');
                     $rootScope.$broadcast("favourited");
                 }).catch(function(err){
                     $log.error(err);

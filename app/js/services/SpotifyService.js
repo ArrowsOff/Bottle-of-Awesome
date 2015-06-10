@@ -7,14 +7,14 @@ app.service('SpotifyService', function($http, $log, $q) {
 	SpotifyService.get = function(artist) {
 		var defer = $q.defer();
 
-		$log.debug("Seaching Spotify for", artist);
+		$log.log("Seaching Spotify for", artist);
 
 		$http.get('https://api.spotify.com/v1/search?q=' + artist + '&type=artist').then(function(data) {
-			$log.debug("Getting first artist from Spotify search results");
+			$log.log("Getting first artist from Spotify search results");
 
 			if(!!data.data.artists.items[0]) {
 				$http.get('https://api.spotify.com/v1/artists/'+data.data.artists.items[0].id+'/top-tracks?country=NL').success(function(data) {
-					$log.debug("Getting first track to preview");
+					$log.log("Getting first track to preview");
 
 					if(!!data.tracks[0]) {
 						defer.resolve(data.tracks[0]);
@@ -25,7 +25,7 @@ app.service('SpotifyService', function($http, $log, $q) {
 					defer.reject("Error getting top tracks from", artist, err);
 				});
 			} else {
-				$log.debug("No artist found in Spotify API");
+				$log.log("No artist found in Spotify API");
 			}
 		}).catch(function(err) {
 			defer.reject("Error getting artist from Spotify API", err);

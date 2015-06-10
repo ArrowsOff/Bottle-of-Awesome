@@ -6,6 +6,6 @@ app.controller('InfoPageCtrl', function ($scope, $stateParams, $log, $http) {
 
         angular.forEach(json.pages, function(page) {
 
-        })
-    })    
+        });
+    });   
 });

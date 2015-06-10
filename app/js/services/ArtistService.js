@@ -12,14 +12,14 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
 
                 DatabaseService.post(json.artists);   
 
-                $log.debug("Request artists from URL");
+                $log.log("Request artists from URL");
 
                 defer.resolve(json.artists);
             }).error(function(err){
                 defer.reject("Error requesting artists", err);
             });
         } else {
-            $log.debug("Request artists from database");
+            $log.log("Request artists from database");
 
             DatabaseService.get('artists').then(function(data){  
                 defer.resolve(data);
@@ -45,29 +45,30 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
         return defer.promise;
     };
 
-    ArtistService.getArtist = function(id) {
-        var defer = $q.defer();
+    // No longer needed
+    // ArtistService.getArtist = function(id) {
+    //     var defer = $q.defer();
 
-        requestArtists().then(function(data) {
-            lodash.findIndex(data.artist, function(artist) {
-                if (artist._id == id) {
-                    defer.resolve(artist);
-                }
-            });
-        });
+    //     requestArtists().then(function(data) {
+    //         lodash.findIndex(data.artist, function(artist) {
+    //             if (artist._id == id) {
+    //                 defer.resolve(artist);
+    //             }
+    //         });
+    //     });
 
-        return defer.promise;
-    };
+    //     return defer.promise;
+    // };
 
     ArtistService.favorite = function(id) {
-        $log.debug("Database call for favorite");
+        $log.log("Database call for favorite");
         DatabaseService.favorite(id);
     };
 
     ArtistService.getFavourites = function() {
         var defer = $q.defer();
 
-        $log.debug("Request favourites");
+        $log.log("Request favourites");
         DatabaseService.get('favourites').then(function(data){
             defer.resolve(data);
         }).catch(function(err){

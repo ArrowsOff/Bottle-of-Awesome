@@ -1,5 +1,4 @@
-app.controller('ArtistCtrl', function($scope, $stateParams, $log,$cordovaFile, $cordovaFileTransfer, $cordovaMedia, $ionicLoading, $sce, ArtistService, SpotifyService) {
-
+app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $sce, ArtistService, SpotifyService) {
 	$scope.spotify = false;
 
 	// Configure Spotify url
@@ -9,15 +8,16 @@ app.controller('ArtistCtrl', function($scope, $stateParams, $log,$cordovaFile, $
       	]
 	};
 
-	// Get artist from database 
-	ArtistService.getArtist($stateParams.id).then(function(data) {
-		$scope.artist = data;
+	angular.forEach($rootScope.artists.artist, function(data) {	
+		if($stateParams.id == data._id) {
+			$scope.artist = data;
 
-		// Get Spotify track
-		SpotifyService.get(data.name.__cdata).then(function(data) {
-			$scope.spotify = true;
-			$scope.url = data.preview_url;
-			$scope.track = data.name;
-		});
+			// Get Spotify track
+			SpotifyService.get(data.name.__cdata).then(function(res) {
+				$scope.spotify = true;
+				$scope.url = res.preview_url;
+				$scope.track = res.name;
+			});
+		}
 	});
 });

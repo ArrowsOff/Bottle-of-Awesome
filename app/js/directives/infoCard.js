@@ -9,5 +9,5 @@ app.directive("infoCard", function($log) {
 		controller: function($scope) {
 
 		}
-	}
+	};
 });
