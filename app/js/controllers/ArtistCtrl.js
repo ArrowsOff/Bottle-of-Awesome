@@ -4,14 +4,7 @@ app.controller('ArtistCtrl', function($scope, $stateParams, $log,$cordovaFile, $
 		$scope.artist = data;
 
 		SpotifyService.get(data.name.__cdata).then(function(url) {
-			$log.debug(url);
 			mediaPrepare(url);
-
-			$scope.track = {
-				url: url,
-				artist: 'test',
-				title: 'Song name'
-			}
 		});
 	});
 
@@ -20,8 +13,7 @@ app.controller('ArtistCtrl', function($scope, $stateParams, $log,$cordovaFile, $
 	$scope.loading = false;
 
 	function mediaPrepare(src) {
-		media = new Media(src, function() {
-		}, null, function(status) {
+		media = new Media(src, function() { /* Success callback */}, null, function(status) {
 			if(status == 1) {
 				$scope.loading = true;
 			} else {
@@ -32,6 +24,7 @@ app.controller('ArtistCtrl', function($scope, $stateParams, $log,$cordovaFile, $
 
 	$scope.play = function() {
 		$log.debug($scope.playing);
+
 		if(!$scope.playing) {
 			$scope.playing = true;
 			media.play();
@@ -41,8 +34,10 @@ app.controller('ArtistCtrl', function($scope, $stateParams, $log,$cordovaFile, $
 		}
 	}
 	
-	$scope.$on('$ionicView.beforeLeave', function(){
-		media.pause();
+	$scope.$on('$ionicView.beforeLeave', function() {
+		if($scope.playing) {
+			media.pause();
+		}
 	});
 
 });

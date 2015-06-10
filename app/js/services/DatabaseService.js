@@ -11,12 +11,8 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
 
         doc._id = 'artists';
 
-        $log.debug(doc);
-
         database.put(doc).then(function() {
-
             window.localStorage.artists = doc._id;
-
         }).catch(function(err){
             $log.error("Error posting artists to database:", err);
         });
