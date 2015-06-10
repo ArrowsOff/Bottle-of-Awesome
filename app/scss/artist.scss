@@ -2,4 +2,36 @@
 	.has-header {
 		top: 0;
 	}
+
+	.spotify {
+		.videogular-container {
+			height: 200px !important; 
+			background: none;
+		}
+		vg-media {
+			display: none !important;
+		}
+		vg-controls {
+			min-height: 50px; 
+			top:0 !important; 
+			position:static !important;
+		}
+
+		vg-time-display, vg-scrub-bar {
+			display:inline-block !important;
+		}
+		vg-time-display {
+			width: 20% !important;
+		}
+		vg-scrub-bar {
+			width: 60% !important;
+		}
+		vg-play-pause-button {
+			display: block !important;
+			width: 100%;
+		}
+		.controls-container {
+			background:none !important;
+		}
+	}
 }

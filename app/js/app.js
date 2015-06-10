@@ -5,7 +5,9 @@ var app = angular.module('starter', [
     'ngLodash',
     'pouchdb',
     'ImgCache',
-    'angular.filter'
+    'angular.filter',
+    "com.2fdevs.videogular",
+    "com.2fdevs.videogular.plugins.controls"
 ]);
 
 app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService, $cordovaStatusbar) {

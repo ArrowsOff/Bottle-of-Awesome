@@ -16,13 +16,11 @@ app.service('SpotifyService', function($http, $log, $q) {
 				$http.get('https://api.spotify.com/v1/artists/'+data.data.artists.items[0].id+'/top-tracks?country=NL').success(function(data) {
 					$log.debug("Getting first track to preview");
 
-					if(data.tracks[0]) {
-						url = data.tracks[0].preview_url;
-						defer.resolve(url);
-					}
-
-					defer.reject('No tracks to preview');
-					
+					if(!!data.tracks[0]) {
+						defer.resolve(data.tracks[0]);
+					} else {
+						defer.reject('No tracks to preview');
+					}					
 				}).error(function(err) {
 					defer.reject("Error getting top tracks from", artist, err);
 				});
