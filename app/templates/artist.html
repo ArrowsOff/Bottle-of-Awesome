@@ -6,28 +6,32 @@
 
 <div class="image-header" style="position: relative; z-index: -1;">
 	<!-- <i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }" style="position: absolute; top: 10px; right: 10px; font-size: 36px; z-index: 500;"></i> -->
-	<img ng-src="{{artist.image.__cdata}}" width="100%">
+	<img id="image" ng-src="{{artist.image.__cdata}}">
 
 </div>
 
-<div class="spotify padding videogular-container" style="background-color: #678; min-height: 200px; font-size: 36px;" ng-if="spotify" ng-controller="ArtistCtrl as controller">
+<div class="padding performance">
+	<h1 class="text-center uppercase bold color-white">{{artist.name.__cdata}}</h1>
+	<p class="text-center uppercase color-white">{{artist.stage_id}} {{toTime(artist.start_time)}} - {{toTime(artist.endtime)}} {{imageHeight}}</p>
+</div>
 
-	<div class="text-center color-white padding">{{artist.name.__cdata}}</div>
+<div class="spotify padding videogular-container" style="font-size: 36px;" ng-if="spotify" ng-controller="ArtistCtrl as controller">
 
-	<div class="text-center color-white padding">{{track}}</div>
+	<div class="text-center color-white uppercase">{{artist.name.__cdata}} -<br>{{track}}</div>
+
 
 	<videogular class="videogular-container audio" style="">
 		<vg-media vg-src="controller.config.sources" vg-type="audio"></vg-media>
 
 		<vg-controls>
 			
-			<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+			<vg-time-display class="time">{{ currentTime | date:'mm:ss' }}</vg-time-display>
 
 			<vg-scrub-bar>
 				<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 			</vg-scrub-bar>
 
-			<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+			<vg-time-display class="time">{{ timeLeft | date:'mm:ss' }}</vg-time-display>
 
 			<vg-play-pause-button></vg-play-pause-button>
 
@@ -36,15 +40,13 @@
 
 </div>
 
-<div class="padding">
+<div class="info">
 
-	<h1>{{artist.name.__cdata}}</h1>
-	<p>Biography: {{artist.biography.__cdata}}</p>
+	<h2 class="bold uppercase">Biography</h2>
+	<p>{{artist.biography.__cdata}}</p>
 
-	<p>StartTime: {{toTime(artist.start_time)}}</p>
-	<p>Endtime: {{toTime(artist.endtime)}}</p>
-	<p>Stage: {{artist.stage_id}}</p>
-	<p>Summary: {{artist.summary}}</p>
+	<h2 class="bold uppercase">Summary</h2>
+	<p>{{artist.summary}}</p>
 
 </div>
 

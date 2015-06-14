@@ -2,10 +2,33 @@
 	.has-header {
 		top: 0;
 	}
-
+	.image-header {
+		height: 216px;
+		img {
+			width: 100%;
+		}
+		@media (max-width: 320px) {
+			height: 192px;
+		}
+	}
+	.performance {
+		background-color: $red;
+		padding: 40px 20px;
+		h1 {
+			font-size: 1.4em;
+		}
+		p {
+			font-size: 1.2em;
+		}
+	}
 	.spotify {
+		padding: 20px;
+		background-color: $black;
+		div {
+			font-size: 0.34em;
+			line-height: 1.2em;
+		}
 		.videogular-container {
-			height: 200px !important; 
 			background: none;
 		}
 		vg-media {
@@ -22,16 +45,36 @@
 		}
 		vg-time-display {
 			width: 20% !important;
+			font-size: 0.9em;
 		}
 		vg-scrub-bar {
 			width: 60% !important;
+			div {
+				margin: 0;
+				background-color: rgba(255,255,255,0.4);
+				height: 3px;
+			}
 		}
 		vg-play-pause-button {
 			display: block !important;
 			width: 100%;
+			.play {
+				font-size: 1.4em
+			}
 		}
 		.controls-container {
-			background:none !important;
+			padding: 15px;
+			background: none !important;
+		}
+	}
+	.info {
+		padding: 20px;
+		h2 {
+			font-size: 1em;
+		}
+		p {
+			font-size: 0.88em;
+			line-height: 1.5em;
 		}
 	}
 }
