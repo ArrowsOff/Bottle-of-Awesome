@@ -67,6 +67,35 @@
 			background: none !important;
 		}
 	}
+	.social-media {
+		padding: 20px 50px 10px;
+		height: 77px;
+		text-align: justify;
+		.stretch {
+			width: 100%;
+			display: inline-block;
+			font-size: 0;
+			line-height: 0;
+		}
+		a {
+			display: inline-block;
+			background-repeat: no-repeat;
+			padding: 0;
+			min-width: 47px;
+		}
+		.facebooklink {
+			background-image: url("../img/facebook.svg");
+		}
+		.twitterlink {
+			background-image: url("../img/twitter.svg");
+		}
+		.spotifylink {
+			background-image: url("../img/spotify.svg");
+		}
+		.youtubelink {
+			background-image: url("../img/youtube.svg");
+		}
+	}
 	.info {
 		padding: 20px;
 		h2 {
