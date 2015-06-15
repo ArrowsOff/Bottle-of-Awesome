@@ -5,8 +5,8 @@
   	<div id="areas">
 		<ion-scroll direction="x" class="wide-as-needed">
 			
-			<ion-radio ng-model="stage" ng-value="'all'" name="stage" icon="false">All</ion-radio>
-        	<ion-radio ng-repeat="area in areas" ng-model="stage" ng-value="area._id" name="stage" icon="false">{{::area.title.toString()}}</ion-radio>
+			<ion-radio ng-model="$parent.stage" ng-value="''" name="stage" icon="false">All</ion-radio>
+        	<ion-radio ng-repeat="area in areas" ng-model="$parent.$parent.stage" ng-value="area._id" name="stage" icon="false">{{::area.title.toString()}}</ion-radio>
 
   		</ion-scroll>
 	</div>
@@ -15,7 +15,7 @@
   		<div id="content">
 			<ion-list>
 			
-				<div collection-repeat="artist in artists.artist | filter:area | orderBy: name " collection-item-height="200px" class="item col col-50">
+				<div collection-repeat="artist in artists.artist | filter: stage" collection-item-height="200px" class="item col col-50">
 					
 					<div class="item-content item-artist">
 						<i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }"></i>	
