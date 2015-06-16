@@ -4,7 +4,7 @@ app.controller('NewsCtrl', function ($scope, $log) {
 
 	// Function for Countdown
 	function countdown() {
-		$scope.counter = moment().countdown("2015-7-18");
+		$scope.counter = moment().countdown("2015-7-11");
 	}
 
 	// Update countdown every second.
