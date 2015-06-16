@@ -3,15 +3,17 @@
 		top: 0px;
 	}
 	#logo {
-		height: 150px;
+		height: 130px;
+		padding: 25px 30px;
 	}
 	#content {
-		top: 150px; 
+		top: 130px; 
 	}
 
 	// Page styling
 	#counter {
 		background-color: #4BB8D6;
+		border: none;
 		p {
 			color: #fff;
 			font-size: 3em;
