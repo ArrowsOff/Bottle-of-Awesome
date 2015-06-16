@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.boaapp665807" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Extrema Outdoor</name>
-  <description>&#xD;&#xD;&#xD;&#xD;&#xD;
-        An app made by students group Bottle of Awesome.&#xD;&#xD;&#xD;&#xD;&#xD;
+  <description>&#xD;&#xD;&#xD;&#xD;&#xD;&#xD;
+        An app made by students group Bottle of Awesome.&#xD;&#xD;&#xD;&#xD;&#xD;&#xD;
     </description>
-  <author email="rickbeumers1994@gmail.com" href="http://xofestival.nl/">&#xD;&#xD;&#xD;&#xD;&#xD;
-      Bottle of Awesome&#xD;&#xD;&#xD;&#xD;&#xD;
+  <author email="rickbeumers1994@gmail.com" href="http://xofestival.nl/">&#xD;&#xD;&#xD;&#xD;&#xD;&#xD;
+      Bottle of Awesome&#xD;&#xD;&#xD;&#xD;&#xD;&#xD;
     </author>
   <content src="index.html"/>
   <access origin="*"/>
