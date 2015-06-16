@@ -4,8 +4,6 @@ app.controller('InfoPageCtrl', function ($scope, $stateParams, $log, $http) {
         var json = x2js.xml_str2json(data);
         $scope.pages = json.pages;
 
-        angular.forEach(json.pages, function(page) {
-
-        });
+        $log.log($scope.pages.page[0].body.toString());
     });   
 });
