@@ -2,16 +2,8 @@
 	.has-header {
 		top: 0;
 	}
-	.crinkles {
-		position: absolute;
-		height: 54%;
-		top: 23%;
-		&#leftcrinkle {
-			left: 14%;
-		}
-		&#rightcrinkle {
-			right: 14%;
-		}
+	#logo {
+		padding: 27px 34px;
 	}
 	.list {
 		.item {
