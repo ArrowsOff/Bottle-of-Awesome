@@ -11,8 +11,8 @@ var app = angular.module('starter', [
 ]);
 
 app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, $cordovaStatusbar, AreaService) {
-    ImgCache.options.debug = true;
-    ImgCache.options.chromeQuota = 50*1024*1024; 
+    ImgCache.options.debug = false;
+    ImgCache.options.chromeQuota = 10*1024*1024; // 10MB
 
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -102,7 +102,6 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
 app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, ImgCacheProvider) {
 
     // Options for ImgCache
-    ImgCacheProvider.setOption('debug', true);
     ImgCacheProvider.setOption('usePersistentCache', true);
     
     // Set Init manually so we can wait for device to be ready
