@@ -5,7 +5,6 @@
 <ion-content>
 
 <div class="image-header" style="position: relative; z-index: -1;">
-	<!-- <i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }" style="position: absolute; top: 10px; right: 10px; font-size: 36px; z-index: 500;"></i> -->
 	<img id="image" ng-src="{{artist.image.__cdata}}">
 
 </div>
@@ -40,12 +39,11 @@
 
 </div>
 
-<div class="social-media text-center">
-	<a href="#" class="button button-clear facebooklink"></a>
-	<a href="#" class="button button-clear twitterlink"></a>
-	<a href="#" class="button button-clear spotifylink"></a>
-	<a href="#" class="button button-clear youtubelink"></a>
-	<span class="stretch"></span>
+<div class="social-media text-center row">
+	<a ng-href="{{artist.facebook.__cdata}}" class="col button button-clear facebooklink" ng-click="InAppBrowser()" ng-if="artist.facebook.__cdata"></a>
+	<a ng-href="{{artist.twitter.__cdata}}" class="col button button-clear twitterlink" ng-click="InAppBrowser()" ng-if="artist.twitter.__cdata"></a>
+	<a ng-href="{{artistUrl}}" class="col button button-clear spotifylink" ng-click="InAppBrowser()" ng-if="spotify"></a>
+	<a ng-href="{{artist.youtube.__cdata}}" class="col button button-clear youtubelink" ng-click="InAppBrowser()" ng-if="artist.youtube.__cdata"></a>
 </div>
 
 <div class="info">

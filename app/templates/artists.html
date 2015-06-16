@@ -4,15 +4,18 @@
   	</div>
   	<div id="areas">
 		<ion-scroll direction="x" class="wide-as-needed">
-			
-			<ion-radio ng-model="stage" ng-value="'all'" name="stage" icon="false">All</ion-radio>
-        	<ion-radio ng-repeat="area in areas" ng-model="stage" ng-value="area._id" name="stage" icon="false">{{::area.title.toString()}}</ion-radio>
 
+			<ion-radio ng-model="$parent.stage" ng-value="'all'" name="stage" icon="false">All</ion-radio>
+        	<ion-radio ng-repeat="area in areas" ng-model="$parent.$parent.stage" ng-value="area._id" name="stage" icon="false">{{::area.title.toString()}}</ion-radio>
+			
   		</ion-scroll>
 	</div>
 
   	<ion-content>	
   		<div id="content">
+	  		<br>
+	  		<br>
+  			{{stage}}
 			<ion-list>
 			
 				<div collection-repeat="artist in artists.artist | filter:area | orderBy: name " collection-item-height="200px" class="item col col-50">
