@@ -5,18 +5,18 @@
 <ion-content>
 
 <div class="image-header" style="position: relative; z-index: -1;">
-	<img id="image" ng-src="{{artist.image.__cdata}}">
-
+	<!-- <img id="image" img-cache ic-src="{{::artist.image.__cdata}}"> -->
+	<img id="image" ng-src="{{::artist.image.__cdata}}">
 </div>
 
 <div class="padding performance">
-	<h1 class="text-center uppercase bold color-white">{{artist.name.__cdata}}</h1>
-	<p class="text-center uppercase color-white">{{artist.stage_name}} {{toTime(artist.start_time)}} - {{toTime(artist.end_time)}}</p>
+	<h1 class="text-center uppercase bold color-white">{{::artist.name.__cdata}}</h1>
+	<p class="text-center uppercase color-white">{{::artist.stage_name}} {{::toTime(artist.start_time)}} - {{::toTime(artist.end_time)}}</p>
 </div>
 
 <div class="spotify padding videogular-container" style="font-size: 36px;" ng-if="spotify" ng-controller="ArtistCtrl as controller">
 
-	<div class="text-center color-white uppercase">{{artist.name.__cdata}} -<br>{{track}}</div>
+	<div class="text-center color-white uppercase">{{::artist.name.__cdata}} -<br>{{::track}}</div>
 
 
 	<videogular class="videogular-container audio" style="">
@@ -40,19 +40,19 @@
 </div>
 
 <div class="social-media text-center row">
-	<a ng-href="{{artist.facebook.__cdata}}" class="col button button-clear facebooklink" ng-click="InAppBrowser()" ng-if="artist.facebook.__cdata"></a>
-	<a ng-href="{{artist.twitter.__cdata}}" class="col button button-clear twitterlink" ng-click="InAppBrowser()" ng-if="artist.twitter.__cdata"></a>
-	<a ng-href="{{artistUrl}}" class="col button button-clear spotifylink" ng-click="InAppBrowser()" ng-if="spotify"></a>
-	<a ng-href="{{artist.youtube.__cdata}}" class="col button button-clear youtubelink" ng-click="InAppBrowser()" ng-if="artist.youtube.__cdata"></a>
+	<a ng-href="{{::artist.facebook.__cdata}}" class="col button button-clear facebooklink" ng-click="InAppBrowser()" ng-if="artist.facebook.__cdata"></a>
+	<a ng-href="{{::artist.twitter.__cdata}}" class="col button button-clear twitterlink" ng-click="InAppBrowser()" ng-if="artist.twitter.__cdata"></a>
+	<a ng-href="{{::artistUrl}}" class="col button button-clear spotifylink" ng-click="InAppBrowser()" ng-if="spotify"></a>
+	<a ng-href="{{::artist.youtube.__cdata}}" class="col button button-clear youtubelink" ng-click="InAppBrowser()" ng-if="artist.youtube.__cdata"></a>
 </div>
 
 <div class="info">
 
 	<h2 class="bold uppercase">Biography</h2>
-	<p>{{artist.biography.__cdata}}</p>
+	<p>{{::artist.biography.__cdata}}</p>
 
 	<h2 class="bold uppercase">Summary</h2>
-	<p>{{artist.summary}}</p>
+	<p>{{::artist.summary}}</p>
 
 </div>
 

@@ -11,12 +11,13 @@
 
 						<div class="row img-artist">
 							<div class="col col-25">
-								<img ng-src="{{artist.image.__cdata}}" alt="" width="100%;">
+								<!-- <img img-cache ic-src="{{::artist.image.__cdata}}" width="100%;"> -->
+								<img ng-src="{{::artist.image.__cdata}}" width="100%;">
 							</div>
 							<div class="col col-75">
-								<h2>{{artist.name.__cdata}}</h2>
-					      		<p>{{artist.stage_id}}</p>
-					      		<p>{{toTime(artist.start_time)}}</p>
+								<h2>{{::artist.name.__cdata}}</h2>
+					      		<p>{{::artist.stage_id}}</p>
+					      		<p>{{::toTime(artist.start_time)}}</p>
 							</div>
 						</div>
 
