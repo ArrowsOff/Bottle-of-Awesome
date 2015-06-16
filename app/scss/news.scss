@@ -3,11 +3,14 @@
 		top: 0px;
 	}
 	#logo {
-		height: 130px;
-		padding: 25px 30px;
+		height: 150px;
+		padding: 28px 30px;
+	}
+	.platform-ios #logo {
+	    padding-top: 40px;
 	}
 	#content {
-		top: 130px; 
+		top: 150px; 
 	}
 
 	// Page styling

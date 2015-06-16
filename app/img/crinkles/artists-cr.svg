@@ -2,24 +2,41 @@
 <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 585.3 106" enable-background="new 0 0 585.3 106" xml:space="preserve">
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="2.3" y1="23" x2="82.3" y2="103"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="2.3" y1="63" x2="42.3" y2="103"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="22.3" y1="3" x2="122.3" y2="103"/>
-<polyline fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="62.3,3 122.3,63 162.3,103 "/>
-<polyline fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="102.3,3 122.3,23 202.3,103 "/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="422.3" y1="3" x2="522.3" y2="103"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="462.3" y1="3" x2="562.3" y2="103"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="502.3" y1="3" x2="582.3" y2="83"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="142.3" y1="3" x2="242.3" y2="103"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="182.3" y1="3" x2="282.3" y2="103"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="222.3" y1="3" x2="322.3" y2="103"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="262.3" y1="3" x2="362.3" y2="103"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="302.3" y1="3" x2="402.3" y2="103"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="342.3" y1="3" x2="442.3" y2="103"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="382.3" y1="3" x2="482.3" y2="103"/>
-<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="542.3" y1="3" x2="582.3" y2="43"/>
-<rect x="122.3" y="23" fill="#E74652" width="343.5" height="60.2"/>
-<rect x="21.3" y="34.6" fill="none" width="542" height="46.4"/>
-<text transform="matrix(1 0 0 1 127.3665 74.6406)" fill="#FFFFFF" font-family="'ProximaNovaA-Bold'" font-size="60">~ ARTISTS ~</text>
+	 viewBox="0 0 586 106" enable-background="new 0 0 586 106" xml:space="preserve">
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="3" y1="23" x2="83" y2="103"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="3" y1="63" x2="43" y2="103"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="23" y1="3" x2="123" y2="103"/>
+<polyline fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="63,3 123,63 163,103 "/>
+<polyline fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" points="103,3 123,23 203,103 "/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="423" y1="3" x2="523" y2="103"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="463" y1="3" x2="563" y2="103"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="503" y1="3" x2="583" y2="83"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="143" y1="3" x2="243" y2="103"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="183" y1="3" x2="283" y2="103"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="223" y1="3" x2="323" y2="103"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="263" y1="3" x2="363" y2="103"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="303" y1="3" x2="403" y2="103"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="343" y1="3" x2="443" y2="103"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="383" y1="3" x2="483" y2="103"/>
+<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="543" y1="3" x2="583" y2="43"/>
+<rect x="123" y="23" fill="#E74652" width="343.5" height="60.2"/>
+<g>
+	<path fill="#FFFFFF" d="M157.5,35.2c-0.6,7.2-2.2,14.7-8.9,14.7c-7.8,0-6.1-10.6-9.7-10.6c-2.4,0-3.3,5.4-3.7,10.6l-5.2-0.6
+		c0.6-7.1,2.3-14.6,8.9-14.6c7.8,0,6.1,10.6,9.7,10.6c2.4,0,3.3-5.3,3.7-10.7L157.5,35.2z"/>
+	<path fill="#FFFFFF" d="M206.1,74.6l-2.5-6.8h-17.2l-2.5,6.8h-9.7l15.4-40h10.7l15.4,40H206.1z M195,43.1l-6.2,17.2h12.5L195,43.1z
+		"/>
+	<path fill="#FFFFFF" d="M242.1,74.6l-7.9-14.2H228v14.2h-8.5v-40h18.7c8.3,0,13.5,5.5,13.5,12.9c0,7-4.5,10.9-8.8,11.9l9.1,15.2
+		H242.1z M242.9,47.5c0-3.3-2.6-5.3-5.9-5.3h-9v10.8h9C240.3,52.9,242.9,50.9,242.9,47.5z"/>
+	<path fill="#FFFFFF" d="M267.3,74.6V42.1h-11.7v-7.5h31.9v7.5h-11.6v32.5H267.3z"/>
+	<path fill="#FFFFFF" d="M292.9,74.6v-40h8.5v40H292.9z"/>
+	<path fill="#FFFFFF" d="M306.6,69l4.7-6.7c2.8,2.9,7.2,5.5,12.7,5.5c4.7,0,7-2.1,7-4.4c0-7-23-2.1-23-17.2
+		c0-6.7,5.8-12.2,15.2-12.2c6.4,0,11.6,1.9,15.6,5.6L334,46c-3.2-3-7.6-4.4-11.6-4.4c-3.6,0-5.6,1.6-5.6,4c0,6.3,23,2,23,17
+		c0,7.3-5.3,12.8-16,12.8C315.9,75.4,310.4,72.8,306.6,69z"/>
+	<path fill="#FFFFFF" d="M353.8,74.6V42.1h-11.7v-7.5h31.9v7.5h-11.6v32.5H353.8z"/>
+	<path fill="#FFFFFF" d="M376.8,69l4.7-6.7c2.8,2.9,7.2,5.5,12.7,5.5c4.7,0,7-2.1,7-4.4c0-7-23-2.1-23-17.2
+		c0-6.7,5.8-12.2,15.2-12.2c6.4,0,11.6,1.9,15.6,5.6l-4.7,6.4c-3.2-3-7.6-4.4-11.6-4.4c-3.6,0-5.6,1.6-5.6,4c0,6.3,23,2,23,17
+		c0,7.3-5.3,12.8-16,12.8C386.1,75.4,380.5,72.8,376.8,69z"/>
+	<path fill="#FFFFFF" d="M456,35.2c-0.6,7.2-2.2,14.7-8.9,14.7c-7.8,0-6.1-10.6-9.7-10.6c-2.4,0-3.3,5.4-3.7,10.6l-5.2-0.6
+		c0.6-7.1,2.3-14.6,8.9-14.6c7.8,0,6.1,10.6,9.7,10.6c2.4,0,3.3-5.3,3.7-10.7L456,35.2z"/>
+</g>
 </svg>
