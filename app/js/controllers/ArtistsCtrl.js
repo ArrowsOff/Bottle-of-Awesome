@@ -7,9 +7,7 @@ app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, 
 		DatabaseService.remove();
 	};
 
-	AreaService.getAreas().then(function(data){
-        $log.debug(data);
-
+	AreaService.getAreas().then(function(data) {
         $scope.areas = data.area;
     }).catch(function(err){
         $log.error("Error getting Areas:", err);
