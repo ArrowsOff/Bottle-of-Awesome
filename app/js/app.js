@@ -10,7 +10,7 @@ var app = angular.module('starter', [
     "com.2fdevs.videogular.plugins.controls"
 ]);
 
-app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService, $cordovaStatusbar, AreaService) {
+app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, $cordovaStatusbar, AreaService) {
     ImgCache.options.debug = true;
     ImgCache.options.chromeQuota = 50*1024*1024; 
 
@@ -34,12 +34,26 @@ app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService, $cor
         }
 
         // Initialize Image Caching
-        ImgCache.$init();
+        var imgDefer = $q.defer();
+
+        ImgCache.options.skipURIencoding=true;
+        ImgCache.init(function() {
+            $log.info('ImgCache init: success!');
+            imgDefer.resolve()
+        }, function(){
+            $log.info('ImgCache init: error! Check the log for errors');
+            imgDefer.reject()
+        });
+
+        var imgPromise = imgDefer.promise;
+        var favouritesPromise;
+        var areaPromise;
 
         // This will set artist variable global
         ArtistService.getArtists().then(function(data) {
             $rootScope.artists = data;
 
+            var favouritesDefer = $q.defer();
             // This will set favourites variable global
             ArtistService.getFavourites().then(function(data) {
                 $rootScope.favourites = data;
@@ -51,8 +65,16 @@ app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService, $cor
                             res.favourited = true;
                         }
                     });
+                    $log.log(obj)
                 });
+                favouritesDefer.resolve();
+            }).catch(function(err){
+                favouritesDefer.reject("Error with favourties", err);
             });
+
+            favouritesPromise = favouritesDefer.promise;
+
+            var areaDefer = $q.defer();
 
             AreaService.getAreas().then(function(data) {
                 // This will add a stageName to every artist.
@@ -63,9 +85,18 @@ app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService, $cor
                         }
                     });
                 });
+                areaDefer.resolve();
             });
+
+            areaPromise = areaDefer.promise;
         });
-    });
+        
+        $q.all([imgPromise, favouritesPromise, areaPromise]).then(function() {
+            if (!!navigator.splashscreen) {
+                navigator.splashscreen.hide();
+            }
+        });    
+    });  
 });
 
 app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, ImgCacheProvider) {
