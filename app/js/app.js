@@ -39,10 +39,10 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
         ImgCache.options.skipURIencoding=true;
         ImgCache.init(function() {
             $log.info('ImgCache init: success!');
-            imgDefer.resolve()
-        }, function(){
+            imgDefer.resolve();
+        }, function() {
             $log.info('ImgCache init: error! Check the log for errors');
-            imgDefer.reject()
+            imgDefer.reject();
         });
 
         var imgPromise = imgDefer.promise;
@@ -65,11 +65,8 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
                             res.favourited = true;
                         }
                     });
-                    $log.log(obj)
                 });
                 favouritesDefer.resolve();
-            }).catch(function(err){
-                favouritesDefer.reject("Error with favourties", err);
             });
 
             favouritesPromise = favouritesDefer.promise;
