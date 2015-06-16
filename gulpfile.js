@@ -1,8 +1,9 @@
-var gulp  = require('gulp');
-var gutil = require('gulp-util');
-var bower = require('bower');
-var sh    = require('shelljs');
-var $     = require('gulp-load-plugins')({ camelize: true });
+var gulp      = require('gulp');
+var gutil     = require('gulp-util');
+var bower     = require('bower');
+var sh        = require('shelljs');
+var pngquant  = require('imagemin-pngquant');
+var $         = require('gulp-load-plugins')({ camelize: true });
 
 var paths = {
   sass: ['./app/scss/**/*.scss'],
@@ -88,6 +89,11 @@ gulp.task('scripts:vendor', function() {
 ========================================================*/
 gulp.task('images', function() {
   return gulp.src('./app/img/**/*')
+    .pipe($.imagemin({
+          progressive: true,
+          svgoPlugins: [{removeViewBox: false}],
+          use: [pngquant()]
+    }))
     .pipe(gulp.dest('./www/img'))
 });
 
