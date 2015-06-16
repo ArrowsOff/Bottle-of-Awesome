@@ -10,7 +10,7 @@ var app = angular.module('starter', [
     "com.2fdevs.videogular.plugins.controls"
 ]);
 
-app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService, $cordovaStatusbar) {
+app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService, $cordovaStatusbar, AreaService) {
     ImgCache.options.debug = true;
     ImgCache.options.chromeQuota = 50*1024*1024; 
 
@@ -49,6 +49,17 @@ app.run(function($ionicPlatform, $rootScope, $log, ImgCache, ArtistService, $cor
                     angular.forEach($rootScope.artists.artist, function(res) {
                         if(obj == res._id) {
                             res.favourited = true;
+                        }
+                    });
+                });
+            });
+
+            AreaService.getAreas().then(function(data) {
+                // This will add a stageName to every artist.
+                angular.forEach(data.area, function(area) {
+                    angular.forEach($rootScope.artists.artist, function(res) {
+                        if(res.stage_id === area._id) {
+                            res.stage_name = area.title.__cdata;
                         }
                     });
                 });

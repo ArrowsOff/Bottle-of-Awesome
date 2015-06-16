@@ -1,7 +1,7 @@
 app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, DatabaseService, AreaService) {
 	
 	// Preselect radio button - Area menu
-	$scope.stage = 'all';
+	$scope.stage = '';
 
 	$scope.clear = function() {
 		DatabaseService.remove();

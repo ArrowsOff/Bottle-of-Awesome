@@ -11,7 +11,7 @@
 
 <div class="padding performance">
 	<h1 class="text-center uppercase bold color-white">{{artist.name.__cdata}}</h1>
-	<p class="text-center uppercase color-white">{{artist.stage_id}} {{toTime(artist.start_time)}} - {{toTime(artist.endtime)}} {{imageHeight}}</p>
+	<p class="text-center uppercase color-white">{{artist.stage_name}} {{toTime(artist.start_time)}} - {{toTime(artist.endtime)}}</p>
 </div>
 
 <div class="spotify padding videogular-container" style="font-size: 36px;" ng-if="spotify" ng-controller="ArtistCtrl as controller">

@@ -1,11 +1,21 @@
-app.controller('ScheduleCtrl', function ($scope, ArtistService) {
+app.controller('ScheduleCtrl', function($scope, $log, AreaService) {
 
-	// getArtists();
+	// AreaService.getAreas().then(function(data){
+ //        $log.debug(data.area);
 
-	// function getArtists() {
-	// 	ArtistService.getArtists().then(function(data){
-	// 		$scope.artists = data.artist;
-	// 	});
-	// }
+ //        $scope.areas = data.area;
+
+ //    }).catch(function(err){
+ //        $log.error("Error getting Areas:", err);
+ //    });
+
+    // $scope.toArea = function(id) {
+    // 	angular.forEach($scope.areas, function(area){
+    // 		if(area._id === id) {
+    // 			$log.log(area.title.toString());
+    // 			return area.title.toString();
+    // 		}
+    // 	})
+    // }
 
 });
