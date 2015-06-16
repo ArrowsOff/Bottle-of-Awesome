@@ -23,7 +23,6 @@ var paths = {
               './app/lib/moment-countdown/bin/moment-countdown.min.js',
               './app/lib/imgcache.js/js/imgCache.js',
               './app/lib/angular-imgcache.js/angular-imgcache.js',
-              './app/lib/imagesloaded/imagesloaded.pkgd.min.js',
               './app/lib/angular-filter/dist/angular-filter.min.js',
               './app/lib/videogular/videogular.min.js',
               './app/lib/videogular-controls/vg-controls.min.js'],
