@@ -1,4 +1,4 @@
-app.controller('ScheduleCtrl', function($scope, $log, AreaService) {
+app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
 
 	// AreaService.getAreas().then(function(data){
  //        $log.debug(data.area);
@@ -17,5 +17,23 @@ app.controller('ScheduleCtrl', function($scope, $log, AreaService) {
     // 		}
     // 	})
     // }
+    // $log.log($rootScope.artists)
+    // angular.forEach($rootScope.artists.artist, function(artist) {
+    // 	// $log.log(artist.stage_name)
+
+    // 	if(artist.stage_name === undefined) {
+    // 		$log.error(artist.stage_id)
+    // 	}
+    // })
+
+
+    var delegate;
+    var secondDelegate;
+    
+    $scope.scrolling = function() {
+      delegate = $ionicScrollDelegate.$getByHandle('bottom');
+      secondDelegate = $ionicScrollDelegate.$getByHandle('top');
+      secondDelegate.scrollTo(delegate.getScrollPosition().left);
+    }    
 
 });

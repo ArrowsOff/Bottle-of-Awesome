@@ -4,24 +4,34 @@
     </div>
     <ion-content>
         <div id="content">
-            <ion-scroll zooming="true" direction="xy" style="width: 100%; height: 1500px"> <!-- Calculate max height -->
-            
-                <div style="width: 5000px; height: 5000px;"> <!-- Calculate width/height -->
-                    
-                    <div class="stage padding uppercase bold" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_id'">
-                        <div class="stage-id color-white padding">{{ key }}</div>
+            <!-- <div class="stage padding uppercase bold" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name'"> -->
+                <!-- <div class="stage-id color-white padding">{{ key }}</div> -->
 
-                        {{value}}
-            
-                        <div class="artist color-white padding" ng-repeat="artist in value | orderBy: artist.start_time">
-                            {{artist.start_time}}
-                            {{ artist.name.__cdata }}
-                        </div>
-                    </div>
-            
-                </div>
-            
+                <!-- <br>
+
+            </div> -->
+            <ion-scroll direction="x" class="wide-as-needed top" delegate-handle="top">
+              
+                <div class="stage padding uppercase bold" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name'">
+                    {{key}}
+                </div> 
+
             </ion-scroll>
+            
+            <ion-scroll direction="xy" class="wide-as-needed bottom" delegate-handle="bottom" on-scroll="scrolling()">
+              
+                <div class="stage padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name'">
+                        
+                    <div ng-repeat="artist in value">
+                        
+                        <div class="stage-artist">{{artist.name.__cdata}}</div>
+
+                    </div>
+
+                </div>  
+                              
+            </ion-scroll>
+
         </div>
     </ion-content>
 </ion-view>

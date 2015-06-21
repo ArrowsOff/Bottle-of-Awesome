@@ -14,28 +14,30 @@
 		overflow: scroll;
 		white-space: nowrap;
 	}
-	.scroll { 
-		min-width: 100%;
-	}	
+
+	.top {
+  		z-index:20; 
+  		background-color: white;
+	}
+	.bottom {
+  		margin-top: -100px;
+  		z-index: 10;
+  		padding-top: 100px;
+	}
+
+
 	.stage {
-		display: inline-block;
-		vertical-align: top;
-		width: 120px;
+		display: inline-block;		
+		width: 180px;
 		padding-right: 0;
-		.stage-id {
-			margin: 5px 0 15px;
-			background-color: $red;
-			height: 35px;
-			overflow: hidden;
-		}
-		.artist {
-			display: block;
-			background-color: $red;
-			margin: 10px 0;
-			font-size: 12px;
-			// background-image: ;
-			// background-position: top right;
-			// background-size: 20px 20px;
-		}
+		
+	}
+	.stage-top {
+		// z-index: 20;
+	}
+	.stage-artist {
+		height: 100px;
+		margin: 10px 0;
+		background-color: $red;
 	}
 }
