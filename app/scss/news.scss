@@ -1,4 +1,5 @@
 #news {
+	background-color: $grey;
 	.has-header {
 		top: 0px;
 	}
@@ -22,6 +23,53 @@
 			font-size: 3em;
 			&.timer{
 				line-height: 115px;
+			}
+		}
+	}
+	.news-item {
+		margin: 16px;
+		padding: 0;
+		min-height: 90px;
+		white-space: normal;
+		.news-image {
+			display: block;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 87px;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		.message {
+			padding: 12px 12px 12px 99px;
+			h2 {
+				font-size: 0.63em;
+				margin-bottom: 1px;
+			}
+			.twitter-id {
+				font-size: 0.55em;
+				line-height: 9px;
+			}
+			.date {
+				font-size: 0.6em;
+				top: 12px;
+				right: 12px;
+				width: 17px;
+				white-space: normal;
+				line-height: 11px;
+				&:before {
+					content: "\00a0";
+				}
+			}
+			.content {
+				font-size: 0.7em;
+				padding: 10px 0;
+				white-space: normal;
+				line-height: 16px;
+			}
+			.hashtag {
+				color: $red;
 			}
 		}
 	}

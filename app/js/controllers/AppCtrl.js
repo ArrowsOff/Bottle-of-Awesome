@@ -42,4 +42,5 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
 
   	// Calculation height for buttons on app.info
   	$scope.calcInfoHeight = (calcHeight - 121) / 3;
+
   });
