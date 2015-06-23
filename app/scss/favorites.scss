@@ -4,8 +4,66 @@
 	}
 	.tabs-top > .tabs {
 		top: 100px;
+		height: 45px;
+		color: $black;
+		background-image: none;
+		.tab-item {
+			font-size: 1.5em;
+			line-height: 40px;
+			span {
+				color: $black;
+				font-family: 'proxima_nova_bold';
+				font-size: 0.95em;
+			}
+		}
+		.tab-item-active {
+			color: $black;
+			border-bottom: 5px inset $red;
+		}
 	}
 	#content {
-		top: 148px;
+		top: 145px;
+		.list {
+			.artist:last-child {
+				.info {
+					border-bottom: none;
+				}
+			}
+			.item {
+				border: none;
+			}
+			a {
+				padding: 0;
+			}
+		}
+		.favorite-image {
+			display: block;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 120px;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;		
+			border-right: 5px inset $green;
+		}
+		.info {
+			margin: 30px 27px 0px 150px;
+			padding-bottom: 30px;
+			border-bottom: 3px solid $grey;
+			h2 {
+				font-size: 1.1em;
+				margin-bottom: 15px;
+			}
+			.area {
+				font-size: 0.8em;
+				color: $green;
+				margin: 0;
+			}
+			.time {
+				font-size: 0.8em;
+				line-height: 10px;
+			}
+		}
 	}
 }
