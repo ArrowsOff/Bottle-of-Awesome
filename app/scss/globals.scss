@@ -9,6 +9,13 @@ $blue: #4BB8D6;
 $orange: #F09202;
 $grey: #e6e7e8;
 
+$red-trans: rgba(230,69,81,0.73);
+$purple-trans: rgba(145,95,159,0.73);
+$green-trans: rgba(120,183,90,0.73);
+$yellow-trans: rgba(248,220,59,0.73);
+$blue-trans: rgba(75,184,214,0.73);
+$orange-trans: rgba(240,146,2,0.73);
+
 // Proxima nova font
 @font-face {
     font-family: 'proxima_nova_regular';
@@ -124,6 +131,27 @@ h1, h2, h3, h4, h5, h6, p, span, a, button, div, .time {
     background-color: $orange !important;
 }
 
+.color-bg-red-trans {
+    background-color: $red-trans !important;
+}
+.color-bg-purple-trans {
+    background-color: $purple-trans !important;
+}
+.color-bg-green-trans {
+    background-color: $green-trans !important;
+}
+.color-bg-yellow-trans {
+    background-color: $yellow-trans !important;
+}
+.color-bg-blue-trans {
+    background-color: $blue-trans !important;
+}
+.color-bg-orange-trans {
+    background-color: $orange-trans !important;
+}
+
+
+
 .nopadding {
 	padding: 0;
 }
@@ -162,4 +190,8 @@ h1, h2, h3, h4, h5, h6, p, span, a, button, div, .time {
 #content {
     position: relative;
     top: 100px;
+}
+
+.right-buttons i {
+    padding: 0 1px;
 }

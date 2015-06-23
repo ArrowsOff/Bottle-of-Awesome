@@ -24,8 +24,8 @@
 						
 						<div class="info color-white">
 							{{ isFavourite(artist._id) }}
-							<span class="name uppercase">{{artist.name.__cdata}}</span> <br>
-							<span class="color-black">{{artist.stage_name}}</span>
+							<h2 class="name bold uppercase color-white">{{artist.name.__cdata}}</h2>
+							<p class="performance bold uppercase color-white">{{artist.stage_name}} - {{toTime(artist.start_time)}} - {{toTime(artist.start_end)}}</p>
 						</div>
 			    	</div>								
 			  	</div>
