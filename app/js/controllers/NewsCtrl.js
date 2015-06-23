@@ -12,4 +12,9 @@ app.controller('NewsCtrl', function ($scope, $log) {
         $scope.$apply(countdown());
     },1000);
 
+    
+  	// Calculation height for images news
+  	// $scope.calcNewsWidth = (document.getElementById('news-image').offsetHeight);
+
+
 });
