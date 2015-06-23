@@ -2,15 +2,10 @@
 	.has-header {
 		top: 0;
 	}
-	.img-artist {
-		display: flex; 
-		justify-content:center;
-		align-items:center;
-		overflow:hidden;	    
-		img {	    	
-			flex-shrink:0;
-			min-width:100%;
-			min-height:100%
-		}
+	.tabs-top > .tabs {
+		top: 100px;
+	}
+	#content {
+		top: 148px;
 	}
 }
