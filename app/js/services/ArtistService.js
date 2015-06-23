@@ -6,6 +6,7 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
         var defer = $q.defer();
 
         if(!(window.localStorage.artists) || refresh) {
+            // $http.get("http://xofestival.nl/xml/artists.xml").success(function(data) {
             $http.get("data/artists.xml").success(function(data) {
                 var x2js = new X2JS();
                 var json = x2js.xml_str2json(data);
