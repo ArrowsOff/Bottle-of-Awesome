@@ -75,10 +75,11 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
 
             AreaService.getAreas().then(function(data) {
                 // This will add a stageName to every artist.
-                angular.forEach(data.area, function(area) {
+                $log.log(data);
+                angular.forEach(data.stage, function(stage) {
                     angular.forEach($rootScope.artists.artist, function(res) {
-                        if(res.stage_id === area._id) {
-                            res.stage_name = area.title.__cdata;
+                        if(res.stage_id === stage._id) {
+                            res.stage_name = stage.title.__cdata;
                         }
                     });
                 });

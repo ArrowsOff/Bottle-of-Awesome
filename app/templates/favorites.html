@@ -7,19 +7,16 @@
 		<div id="content">
 			<div class="list">
 				<div ng-repeat="artist in artists.artist">
-					<a ng-if="artist.favourited" class="item" ng-href="#/app/artists/{{artist._id}}">
+					<a ng-if="artist.favourited" class="item item-icon-right item-thumbnail-left" ng-href="#/app/artists/{{artist._id}}">
 
-						<div class="row img-artist">
-							<div class="col col-25">
-								<!-- <img img-cache ic-src="{{::artist.image.__cdata}}" width="100%;"> -->
-								<img ng-src="{{::artist.image.__cdata}}" width="100%;">
-							</div>
-							<div class="col col-75">
-								<h2>{{::artist.name.__cdata}}</h2>
-					      		<p>{{::artist.stage_id}}</p>
-					      		<p>{{::toTime(artist.start_time)}}</p>
-							</div>
+						<img ng-src="{{::artist.image.__cdata}}" style="top:0; left: 0; bottom:0;">
+
+						<div class="info">
+							<h2>{{::artist.name.__cdata}}</h2>
+				      		<p>{{::artist.stage_name}}</p>
+				      		<p>{{::toTime(artist.start_time)}} - {{::toTime(artist.start_end)}}</p>
 						</div>
+						<i class="icon ion-heart color-red"></i>
 
 					</a>
 				</div>

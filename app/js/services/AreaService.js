@@ -2,24 +2,23 @@ app.service("AreaService", function($log, $q, $http){
 	
 	var AreaService = this;
 
-	var areas = null;
+	var stages = null;
 
 	// Get all areas
 	AreaService.getAreas = function() {
 		var defer = $q.defer();
 
-		$http.get("data/areas.xml").success(function(data) {
+		$http.get("data/stages.xml").success(function(data) {
             var x2js = new X2JS();
             var json = x2js.xml_str2json(data);
-            areas = json.areas; 
+            stages = json.stages; 
 
-            defer.resolve(areas);
+            defer.resolve(stages);
         }).error(function(err){
             defer.reject('Error: ', err);
         });
 
 		return defer.promise;
-
 	};
 
 	// get area for artists
