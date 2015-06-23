@@ -19,7 +19,6 @@
 						<i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }"></i>	
 
 						<a class="img-artist" ng-href="#/app/artists/{{artist._id}}">
-							<!-- <img img-cache ic-src="{{artist.image.__cdata}}" height="200px"> -->
 							<img ng-src="{{artist.image.__cdata}}" height="200px">
 						</a>
 						
@@ -27,7 +26,6 @@
 							{{ isFavourite(artist._id) }}
 							<span class="name uppercase">{{artist.name.__cdata}}</span> <br>
 							<span class="color-black">{{artist.stage_name}}</span>
-
 						</div>
 			    	</div>								
 			  	</div>
@@ -35,10 +33,5 @@
 			</ion-list>
 
   		</div><!-- END CONTENT -->
-
-		<!-- Debuggin purposes only -->
-  		<!-- <button class="button button-positive button-full" ng-click="clear()" style="position: relative; top: 150px;">
-  			Clear db
-  		</button> -->
   	</ion-content>
 </ion-view>
