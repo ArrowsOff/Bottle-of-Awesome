@@ -8,23 +8,49 @@
 		padding: 28px 30px;
 	}
 	.platform-ios #logo {
-	    padding-top: 40px;
+		padding-top: 40px;
 	}
 	#content {
 		top: 150px; 
+	}
+	#countText{
+		font-size: 2em;
 	}
 
 	// Page styling
 	#counter {
 		background-color: #4BB8D6;
 		border: none;
-		p {
-			color: #fff;
-			font-size: 3em;
+		font-size: 0.7em;
+		padding:10%;
+		div {
+			color: $white;
 			&.timer{
-				line-height: 115px;
+				line-height: 15px;
+				min-width: 25%;
+				display: inline-block;
+
+
+				text-align: center;
+				
+			}
+			&.timerTime{
+				line-height: 15px;
+				min-width: 22%;
+				display: inline-block;
+				font-size: 4em;
+				margin-top: 8%;
+				text-align: center;
+				
+			}
+			&.betweenTime{
+				display: inline-block;
+				text-align: center;
+				font-size: 4em;
 			}
 		}
+
+
 	}
 	.news-item {
 		margin: 16px;

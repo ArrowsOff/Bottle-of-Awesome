@@ -1,40 +1,47 @@
 <ion-view view-title="" id="news">
-    <div id="logo">
-        <img src="img/crinkles/news-cr.svg">
-    </div>
-    <ion-content>
+<div id="logo">
+    <img src="img/crinkles/news-cr.svg">
+</div>
+<ion-content>
 
-        <div id="content">
+<div id="content">
 
-            <div class="list">
-                <div class="item text-center" id="counter">
-                    <p class="timer">{{counter.days}}:{{counter.hours}}:{{counter.minutes}}:{{counter.seconds}}</p>
+    <div class="list">
+        <div class="item text-center" id="counter">
+            <div>
+                <div id="countText">
+                    <div class="timer">DAY</div><div class="timer">HRS</div><div class="timer">MIN</div><div class="timer">SEC</div>
                 </div>
-                <div class="item animated news-item fadeIn">
-                    <div class="news-image absolute" ng-style="{'background-image': 'url(http://lorempixel.com/400/400)'}"></div>
-                    <div class="message">
-                        <h2 class="color-red bold uppercase">Extrema outdoor nl</h2>
-                        <p class="twitter-id color-black">@ExtremaOutdoor</p>
-
-                        <p class="date absolute color-green bold absolute">29 aug</p>
-
-                        <p class="content color-black">Tijd voor het weekend, lekker naar XO!!!! Zin innnnn</p>
-                    </div>
-                </div>
-                <div class="item animated news-item fadeIn">
-                    <div class="news-image absolute" ng-style="{'background-image': 'url(http://lorempixel.com/400/400)'}"></div>
-                    <div class="message">
-                        <h2 class="color-red bold uppercase">Extrema outdoor nl</h2>
-                        <p class="twitter-id color-black">@ExtremaOutdoor</p>
-
-                        <p class="date absolute color-green bold absolute">29 aug</p>
-
-                        <p class="content color-black">Tijd voor het weekend, lekker naar XO!!!! Zin innnnn</p>
-                    </div>
+                <div class="countTime">
+                    <div class="timerTime">{{counter.days}}</div><div class="betweenTime">:</div><div class="timerTime">{{counter.hours}}</div><div class="betweenTime">:</div><div class="timerTime">{{counter.minutes}}</div><div class="betweenTime">:</div><div class="timerTime">{{counter.seconds}}</div>
                 </div>
             </div>
-
         </div>
+        <div class="item animated news-item fadeIn">
+            <div class="news-image absolute" ng-style="{'background-image': 'url(http://lorempixel.com/400/400)'}"></div>
+            <div class="message">
+                <h2 class="color-red bold uppercase">Extrema outdoor nl</h2>
+                <p class="twitter-id color-black">@ExtremaOutdoor</p>
 
-    </ion-content>
+                <p class="date absolute color-green bold absolute">29 aug</p>
+
+                <p class="content color-black">Tijd voor het weekend, lekker naar XO!!!! Zin innnnn</p>
+            </div>
+        </div>
+        <div class="item animated news-item fadeIn">
+            <div class="news-image absolute" ng-style="{'background-image': 'url(http://lorempixel.com/400/400)'}"></div>
+            <div class="message">
+                <h2 class="color-red bold uppercase">Extrema outdoor nl</h2>
+                <p class="twitter-id color-black">@ExtremaOutdoor</p>
+
+                <p class="date absolute color-green bold absolute">29 aug</p>
+
+                <p class="content color-black">Tijd voor het weekend, lekker naar XO!!!! Zin innnnn</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</ion-content>
 </ion-view>
