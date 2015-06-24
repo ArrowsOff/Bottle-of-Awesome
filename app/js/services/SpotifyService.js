@@ -13,10 +13,16 @@ app.service('SpotifyService', function($rootScope, $http, $log, $q) {
 		$http.get('https://api.spotify.com/v1/search?q=' + artist + '&type=artist').then(function(data) {
 			// $log.log("Getting first artist from Spotify search results");
 
+			// Fixes a bug were Dave Lambert would get the wrong artist from spotify
+			if(artist == "Dave Lambert") {
+				data.data.artists.items[0] = data.data.artists.items[1];
+			}
+
 			if(!!data.data.artists.items[0]) {
 				$http.get('https://api.spotify.com/v1/artists/'+data.data.artists.items[0].id+'/top-tracks?country=US').success(function(data) {
-					// $log.log("Getting first track to preview");
-
+					if(artist == "Dave Lambert") {
+						data.tracks[0] = data.tracks[3];
+					}
 					if(!!data.tracks[0]) {
 						defer.resolve(data.tracks[0]);
 					} else {
