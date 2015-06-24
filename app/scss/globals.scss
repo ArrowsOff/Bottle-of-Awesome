@@ -75,6 +75,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, button, div, .time {
 }
 .bold {
     font-family: 'proxima_nova_bold';
+    font-weight: bold;
 }
 .extrabold {
     font-family: 'proxima_nova_extrabold';
@@ -108,24 +109,31 @@ h1, h2, h3, h4, h5, h6, p, span, a, button, div, .time {
 
 .Diamond {
     background-color: $red-trans !important;
+    border-color: $red !important;
 }
 .LOVE {
     background-color: $green-trans !important;
+    border-color: $green !important;
 }
 .Ants {
     background-color: $yellow-trans !important;
+    border-color: $yellow !important;
 }
 .Cobalt {
     background-color: $orange-trans !important;
+    border-color: $orange !important;
 }
 .Quartz {
     background-color: $purple-trans !important;
+    border-color: $purple !important;
 }
 .Crystal {
     background-color: $blue-trans !important;
+    border-color: $blue !important;
 }
 .Ensuite {
     background-color: $grey-trans !important;
+    border-color: $black !important;
 }
 
 // color classes
