@@ -1,4 +1,4 @@
-app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $sce, ArtistService, SpotifyService) {
+app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $sce, ArtistService, SpotifyService, $ionicHistory) {
 	$scope.spotify = false;
 
 	// Configure Spotify url
@@ -30,5 +30,10 @@ app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $s
             return false; // prevent default action and stop event propagation
         }
     };
+
+	//Go back to previous view
+	$scope.goBack = function() {
+		$ionicHistory.goBack();
+	}    
 
 });
