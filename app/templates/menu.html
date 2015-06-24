@@ -12,31 +12,31 @@
     </ion-side-menu-content>
 
     <ion-side-menu side="left" id="menu">
-            <div id="logo">
-                <img ng-src="img/menu-logo.svg" alt="" style="width: 275px; padding: 32px 45px;">
-            </div>
+        <a menu-close id="logo" ng-href="#/app/news">
+            <img ng-src="img/menu-logo.svg" alt="" style="width: 275px; padding: 32px 45px;">
+        </a>
         <ion-content  id="sideMenu">
             <div id="content">
                 <ion-list>
-                    <ion-item menu-close id="newsMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" href="#/app/news">
+                    <ion-item menu-close id="newsMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" ng-href="#/app/news">
                         <p>News</p>
                     </ion-item>
-                    <ion-item menu-close id="artistsMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" href="#/app/artists">
+                    <ion-item menu-close id="artistsMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" ng-href="#/app/artists">
                         <p>Artists</p>
                     </ion-item>
-                    <ion-item menu-close id="infoMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" href="#/app/info">
+                    <ion-item menu-close id="infoMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" ng-href="#/app/info">
                         <p>Info</p>
                     </ion-item>
-                    <ion-item menu-close id="scheduleMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" href="#/app/schedule">
+                    <ion-item menu-close id="scheduleMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" ng-href="#/app/schedule">
                         <p>Schedule</p>
                     </ion-item>
-                    <ion-item menu-close id="mapMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" href="#/app/map">
+                    <ion-item menu-close id="mapMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" ng-href="#/app/map">
                         <p>Map</p>
                     </ion-item>
-                    <ion-item menu-close id="favouritesMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" href="#/app/favorites">
+                    <ion-item menu-close id="favouritesMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" ng-href="#/app/favorites">
                         <p>Favourites</p>
                     </ion-item>
-                    <ion-item menu-close id="XOmemoriesMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" href="#/app/xomemories">
+                    <ion-item menu-close id="XOmemoriesMB" class="menuButton" ng-style="{'height':calcHeightMB+'px' }" ng-href="#/app/xomemories">
                         <p>XO Memories</p>
                     </ion-item>
                 </ion-list>
