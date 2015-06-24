@@ -206,6 +206,19 @@ h1, h2, h3, h4, h5, h6, p, span, a, button, div, .time {
         padding: 0 !important;
     }
 }
+.back-button {
+    height: 60px !important;
+    max-height: none;
+    width: 60px !important;
+    padding: 8px 16px 16px 8px !important;
+    i {
+        &:before {
+        font-size: 40px !important;
+        line-height: 32px !important;
+        padding: 0 !important;            
+        }
+    }
+}
 #logo {
 	position: fixed;
 	width: 100%;
