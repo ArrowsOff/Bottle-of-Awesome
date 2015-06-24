@@ -23,9 +23,10 @@
 			
 			&.item-radio .item-content {
 			   	padding: 10px;
+			   	padding-top: 15px;
 			   	margin: 0 5px;
 			   	background: none;
-			   	border: inset 5px transparent;
+			   	border-bottom: inset 5px transparent;
 			   	transition: border ease-in-out 0.15s;
 			}
 
@@ -73,12 +74,12 @@
 		  	background-color: $green-trans;
 		  	.name {
 		  		font-size: 0.9em;
-		  		line-height: 10px;
+		  		line-height: 12px;
 		  		margin-bottom: 14px;
 		  	}
 		  	.performance {
 		  		font-size: 0.62em;
-		  		line-height: 7px;
+		  		line-height: 10px;
 		  	}
 		}
 	}
