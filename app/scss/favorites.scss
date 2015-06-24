@@ -21,6 +21,7 @@
 			border-bottom: 5px inset $red;
 		}
 	}
+
 	#content {
 		top: 145px;
 		.list {
@@ -65,5 +66,39 @@
 				line-height: 10px;
 			}
 		}
+		.text-wrap{
+			height: 100px;
+			margin-top: 25%;
+		}
+		.text-head{
+			
+			text-align: center;
+			font-size: 2em;
+			margin-top: 25px;
+		}
+		.text{
+			margin-top: 5%;
+			color: $green;
+		}
+		#crinkle-no-favourite{
+			margin-top: 20px;
+		}
+		.text-small{
+			width: 80%;
+			text-align: center;
+			color: $black;
+			font-size: 0.5em;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			line-height: 2.4;
+			i:before {
+				padding-left: 1%;
+				padding-right: 1%;
+				font-size: 1.8em;
+				vertical-align: middle;
+			}
+		}
 	}
+
 }
