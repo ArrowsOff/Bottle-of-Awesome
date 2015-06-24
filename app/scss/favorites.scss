@@ -18,7 +18,7 @@
 		}
 		.tab-item-active {
 			color: $black;
-			border-bottom: 5px inset $red;
+			border-bottom: 5px inset $red !important;
 		}
 	}
 
