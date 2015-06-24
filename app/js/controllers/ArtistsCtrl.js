@@ -2,11 +2,7 @@ app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, 
 	
 	// Preselect radio button - Area menu
 	$scope.stage = '';
-
-	$scope.stage_class = function(stage) {
-		return stage;
-	}
-
+	
 	$scope.clear = function() {
 		DatabaseService.remove();
 	};
