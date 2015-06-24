@@ -20,7 +20,7 @@
             
             <ion-scroll direction="xy" class="wide-as-needed bottom" delegate-handle="bottom" on-scroll="scrolling()">
               
-                <div class="stage padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name'">
+                <div class="stage padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'">
                         
                     <div ng-repeat="artist in value">
                         
