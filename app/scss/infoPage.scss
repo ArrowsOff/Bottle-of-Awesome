@@ -1,6 +1,13 @@
 #infoPage {
-	#logo .title {
-		font-size: 30px;
+	#logo{ 
+		.title {
+			font-size: 3em;
+			line-height: 54px;
+			margin-bottom: 0;
+		}
+		.howtogetthere, .hotelpackages {
+			font-size: 2em;
+		}
 	}
 	.has-header {
 		top: 0;
@@ -10,6 +17,12 @@
 		.title {
 			background-color: $red;
 			font-size: 18px;
+		}
+		p {
+			margin: 0;
+		}
+		table {
+			margin: 10px;
 		}
 	}
 }
