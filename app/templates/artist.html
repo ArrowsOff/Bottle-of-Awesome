@@ -8,9 +8,9 @@
 	<img id="image" ng-src="{{::artist.image.__cdata}}">
 </div>
 
-<div class="padding performance">
-	<h1 class="text-center uppercase bold color-white">{{::artist.name.__cdata}}</h1>
-	<p class="text-center uppercase color-white">{{::artist.stage_name}} {{::toTime(artist.start_time)}} - {{::toTime(artist.end_time)}}</p>
+<div class="padding performance text-center">
+	<h1 class="uppercase bold color-white color-bg-red">{{::artist.name.__cdata}}</h1>
+	<p class="uppercase color-white color-bg-red">{{::artist.stage_name}} {{::toTime(artist.start_time)}} - {{::toTime(artist.end_time)}}</p>
 </div>
 
 <div class="spotify padding videogular-container animated fadeIn" style="font-size: 36px;" ng-if="spotify" ng-controller="ArtistCtrl as controller">
@@ -46,12 +46,12 @@
 
 <div class="info">
 
-	<h2 class="bold uppercase">Biography</h2>
+<!-- 	<h2 class="bold uppercase">Biography</h2>
 	<p>{{::artist.biography.__cdata}}</p>
 
 	<h2 class="bold uppercase">Summary</h2>
 	<p>{{::artist.summary}}</p>
-
+ -->
 </div>
 
 </ion-content>

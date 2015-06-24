@@ -13,12 +13,22 @@
 	}
 	.performance {
 		background-color: $red;
+		background-image: url("../img/crinkles/artist-cr.svg");
+		background-repeat: no-repeat;
+		background-size: 80%;
+		background-position: center center;
 		padding: 40px 20px;
 		h1 {
 			font-size: 1.4em;
+			display: inline-block;
+			margin: 0;
+			padding: 0 5px 5px 5px;
 		}
 		p {
 			font-size: 1.2em;
+			display: inline-block;
+			margin: 0;
+			padding: 5px 5px 0px 5px;
 		}
 	}
 	.spotify {
@@ -60,6 +70,11 @@
 			width: 100%;
 			.play {
 				font-size: 1.4em
+			}
+			.iconButton {
+				&:focus {
+					border: none;
+				}
 			}
 		}
 		.controls-container {
