@@ -10,10 +10,10 @@
   					<ion-scroll>
 			  	
 						<div class="list">
-							<div class="artist" ng-repeat="artist in artists.artist" ng-if="artist.favourited">
+							<div class="artist" ng-repeat="artist in artists.artist | orderBy: 'start_time'" ng-if="artist.favourited">
 								<a  class="item item-icon-right item-thumbnail-left" ng-href="#/app/artists/{{artist._id}}">
 
-				                    <div class="favorite-image absolute" ng-style="{'background-image': 'url({{artist.image.__cdata}})'}"></div>
+				                    <div class="favorite-image absolute" ng-style="{'background-image': 'url({{artist.image.__cdata}})'}" ng-class="artist.stage_name"></div>
 									<div class="info">
 										<h2 class="bold uppercase color-black">{{::artist.name.__cdata}}</h2>
 							      		<p class="bold uppercase area">{{::artist.stage_name}}</p>
