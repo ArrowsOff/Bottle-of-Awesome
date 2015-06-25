@@ -44,13 +44,18 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
 
         if(diffHrs == 2) {
             result = diffHrs*60 - diffMins;
-        } else {
+        } else if (diffHrs == 1) {
             result = diffHrs*60 + diffMins;
+            if(result == 105) {
+                result = 45;
+            }
+        } else {
+            result = diffMins;
         }
 
         $log.log(artist.name.__cdata, result)
 
-        return result;
+        return result*1.5;
     }
 
     var delegate;
