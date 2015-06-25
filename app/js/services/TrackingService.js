@@ -14,7 +14,7 @@ app.service('TrackingService', function($log){
 			$log.debug('Tracking', event, type);
 			analytics.trackEvent(type, event);
 		}
-	}
+	};
 
 	return TrackingService;
 
