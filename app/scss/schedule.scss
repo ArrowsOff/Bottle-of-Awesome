@@ -1,47 +1,85 @@
 #schedule {
 	#content {
+		
+	}
+	#schedule-size{
+
+	}
+	#schedule-bg-scroll{
 		display: block;
 		background-color: $white;
 		background-image: linear-gradient(transparent 50%, rgb(230,230,230) 50%);
 		background-size: 120px 120px;
-		height: 800px;
-		width: 800px;
 	}
 	.has-header {
 		top: 0;
 	}
 	.wide-as-needed {
 		overflow: scroll;
-		white-space: nowrap;
+		white-space: normal;
 	}
 
 	.stage-name {
-		&.Diamond {
-			background-color: $red;
-		}
-	}
-
-	.stage-artist {
+		margin-bottom: 20px;
+		color: $white;
+		padding: 10px;
+		font-size: 1.2em;
+		width: 175px;
 		&.Diamond {
 			background-color: $red;
 		}
 		&.LOVE {
-		    background-color: $green;
+			background-color: $green;
 		}
 		&.Ants {
-		    background-color: $yellow !important;
+			background-color: $yellow !important;
 		}
 		&.Cobalt {
-		    background-color: $orange !important;
+			background-color: $orange !important;
 		}
 		&.Quartz {
-		    background-color: $purple !important;
+			background-color: $purple !important;
 		}
 		&.Crystal {
-		    background-color: $blue !important;
+			background-color: $blue !important;
 		}
 		&.Ensuite {
-		    background-color: $black !important;
+			background-color: $black !important;
+		}
+	}
+
+	.stage-artist {
+		margin-bottom: 10px;
+		width:175px;
+		color: $white;
+		font-size: 1em;
+		padding: 10px;
+
+		.stage-time{
+			font-size: 0.7em;
+		}
+		
+
+		&.Diamond {
+			background-color: $red;
+		}
+		&.LOVE {
+			background-color: $green;
+		}
+		&.Ants {
+			background-color: $yellow !important;
+		}
+		&.Cobalt {
+			background-color: $orange !important;
+		}
+		&.Quartz {
+			background-color: $purple !important;
+		}
+		&.Crystal {
+			background-color: $blue !important;
+		}
+		&.Ensuite {
+			background-color: $black !important;
 		}
 	}
 }

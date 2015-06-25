@@ -25,7 +25,10 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
     // 		$log.error(artist.stage_id)
     // 	}
     // })
-
+    $scope.calcWidthSC = screen.width;
+    $log.log($scope.calcWidthSC);
+    $scope.calcHeightSC = screen.height;
+    $log.log($scope.calcHeightSC);
 
     var delegate;
     var secondDelegate;
