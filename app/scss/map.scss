@@ -3,4 +3,74 @@
 		top: 0;
 	}
 
+	svg {
+		max-width: 100%;
+		padding: 10px;
+	}
+	#animatie1 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	  animation-delay: 2s;
+	}
+
+	#animatie2 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	}
+
+	#animatie3 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	  animation-delay: 4s;
+	}
+
+	#animatie4 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 10s linear alternate infinite;
+	}
+
+	#animatie5 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 10s linear alternate infinite;
+	}
+
+	#animatie6 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	  animation-delay: 1s;
+	}
+
+	#animatie7 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 10s linear alternate infinite;
+	  animation-delay: 1s;
+	}
+
+	#animatie8 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	  animation-delay: 3s;
+	}
+
+	#animatie9 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	  animation-delay: 1s;
+	}
+
+	#animatie10 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 10s linear alternate infinite;
+	  animation-delay: 2s;
+	}
 }
