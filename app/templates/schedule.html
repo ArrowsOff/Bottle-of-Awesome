@@ -10,26 +10,58 @@
                 <!-- <br>
 
             </div> -->
-            <ion-scroll direction="x" class="wide-as-needed top" delegate-handle="top">
-              
+            <!-- <ion-scroll direction="x" class="wide-as-needed top" delegate-handle="top">
+
                 <div class="stage stage-top padding uppercase bold" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name'">
                     {{key}}
-                </div> 
+                </div>
 
             </ion-scroll>
-            
-            <ion-scroll direction="xy" class="wide-as-needed bottom" delegate-handle="bottom" on-scroll="scrolling()">
-              
-                <div class="stage padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'">
-                        
-                    <div ng-repeat="artist in value">
-                        
-                        <div class="stage-artist">{{artist.name.__cdata}}</div>
+
+            <ion-scroll direction="xy" class="bottom" delegate-handle="bottom" on-scroll="scrolling()" style="width: 500px; height: 1500px">
+
+                <div class="wide-as-needed">
+                    <div class="stage padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'">
+
+                        <div ng-repeat="artist in value">
+
+                            <div class="stage-artist">{{artist.name.__cdata}}</div>
+
+                        </div>
 
                     </div>
 
-                </div>  
-                              
+                </div>
+
+            </ion-scroll> -->
+
+            <!-- <div class="stage padding wide-as-needed" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'">
+                {{key}}
+
+
+                <div ng-repeat="artist in value" >
+                    <div class="stage-artist" ng-class="artist.stage_name">{{artist.name.__cdata}}</div>
+                </div>
+
+            </div> -->
+
+            <ion-scroll direction="xy" style="width: 500px; height: 500px">
+                <!-- <div style="width: 5000px; height: 5000px;"> -->
+                <div class="wide-as-needed" style="width: 5000px; height: 5000px;">
+                    <div class="padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'" style="float: left;">
+                        <div class="stage-name" style="height: 80px;">
+                            {{key}}
+                        </div>
+
+                        <div ng-repeat="artist in value | orderBy: 'end_time'">
+                            <div class="stage-artist" ng-class="artist.stage_name" style="height: 80px;">
+                                {{artist.name.__cdata}}
+                                <div>{{toTime(artist.start_time)}} | {{toTime(artist.end_time)}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
             </ion-scroll>
 
         </div>
