@@ -1,83 +1,160 @@
+// #memories {
+// 	.has-header {
+// 		top: 0;
+// 	}
+// 	.item{
+// 		border:0;
+// 		text-align: center;
+// 		background-color:#7FF;
+// 		position:relative;
+// 		//margin-top: -10px;
+// 		//padding:.2em .5em;
+// 	}
+// 	.item.add{
+// 		height: 160px;
+// 		margin-top: -10px;
+// 	}
+// 	.item.next{
+// 		height: 78px;
+// 		margin-top: -10px;
+// 	}
+// 	.icon{
+// 		width: 80px;
+// 		margin-top: 15px;
+// 	}
+// 	.item p{
+// 		margin-top: 10px;
+// 	}
+// 	.item:after {
+// 		border-bottom:10px solid #7FF;
+// 		border-left:10px solid transparent;
+// 		border-right:10px solid transparent;
+// 		width:100%;
+// 		height:160px;
+//
+// 		content:"";
+// 		display:block;
+// 		position:absolute;
+// 		bottom:100%;
+// 		left:1em;
+// 	}
+//
+// 	$trianglesize:10px;
+// 	.triangle1{
+// 		width: 0;
+// 		height: 0;
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 		border-style: solid;
+// 		border-width: $trianglesize $trianglesize 0 $trianglesize;
+// 		border-color: $blue transparent transparent transparent;
+// 	}
+// 	.triangle2{
+// 		width: 0;
+// 		height: 0;
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 		border-style: solid;
+// 		border-width: $trianglesize $trianglesize 0 $trianglesize;
+// 		border-color: $orange transparent transparent transparent;
+// 	}
+// 	.triangle3{
+// 		width: 0;
+// 		height: 0;
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 		border-style: solid;
+// 		border-width: $trianglesize $trianglesize 0 $trianglesize;
+// 		border-color: $green transparent transparent transparent;
+// 	}
+// 	.zindex4{
+// 		z-index: 0;
+// 	}
+// 	.zindex3{
+// 		z-index: -10;
+// 	}
+// 	.zindex2{
+// 		z-index: -20;
+// 	}
+// 	.zindex1{
+// 		z-index: -30;
+// 	}
+//
+// }
+
 #memories {
 	.has-header {
 		top: 0;
 	}
-	.item{
-		border:0;
-		text-align: center;
-		background-color:#7FF;
-		position:relative;
-		//margin-top: -10px;
-		//padding:.2em .5em;
-	}
-	.item.add{
-		height: 160px;
-		margin-top: -10px;
-	}
-	.item.next{
-		height: 78px;
-		margin-top: -10px;
-	}
-	.icon{
-		width: 80px;
-		margin-top: 15px;
-	}
-	.item p{
-		margin-top: 10px;
-	}
-	.item:after {
-		border-bottom:10px solid #7FF;
-		border-left:10px solid transparent;
-		border-right:10px solid transparent;
-		width:100%;
-		height:160px;
 
-		content:"";
-		display:block;
-		position:absolute;
-		bottom:100%;
-		left:1em;
+	svg {
+		max-width: 100%;
+		padding: 10px;
 	}
-	
-	$trianglesize:10px;
-	.triangle1{
-		width: 0;
-		height: 0;
-		margin-left: auto;
-		margin-right: auto;
-		border-style: solid;
-		border-width: $trianglesize $trianglesize 0 $trianglesize;
-		border-color: $blue transparent transparent transparent;
-	}
-	.triangle2{
-		width: 0;
-		height: 0;
-		margin-left: auto;
-		margin-right: auto;
-		border-style: solid;
-		border-width: $trianglesize $trianglesize 0 $trianglesize;
-		border-color: $orange transparent transparent transparent;
-	}
-	.triangle3{
-		width: 0;
-		height: 0;
-		margin-left: auto;
-		margin-right: auto;
-		border-style: solid;
-		border-width: $trianglesize $trianglesize 0 $trianglesize;
-		border-color: $green transparent transparent transparent;
-	}
-	.zindex4{
-		z-index: 0;
-	}
-	.zindex3{
-		z-index: -10;
-	}
-	.zindex2{
-		z-index: -20;
-	}
-	.zindex1{
-		z-index: -30;
+	#animatie1 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	  animation-delay: 2s;
 	}
 
+	#animatie2 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	}
+
+	#animatie3 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	  animation-delay: 4s;
+	}
+
+	#animatie4 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 10s linear alternate infinite;
+	}
+
+	#animatie5 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 10s linear alternate infinite;
+	}
+
+	#animatie6 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	  animation-delay: 1s;
+	}
+
+	#animatie7 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 10s linear alternate infinite;
+	  animation-delay: 1s;
+	}
+
+	#animatie8 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	  animation-delay: 3s;
+	}
+
+	#animatie9 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	  animation-delay: 1s;
+	}
+
+	#animatie10 {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 10s linear alternate infinite;
+	  animation-delay: 2s;
+	}
 }
