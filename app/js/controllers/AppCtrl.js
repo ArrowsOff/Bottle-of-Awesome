@@ -2,6 +2,7 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
 
 	$scope.addToFavorites = function(id) {
 		ArtistService.favorite(id);
+		TrackingService.trackEvent(id, 'favourite');
 	};
 
 	// Update the $rootScope when an artist is favourited
@@ -22,22 +23,22 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
 
 	// This can convert times from XML to readable Times
 	$scope.toTime = function(time) {
-		// Might need to add 12 to this number 
+		// Might need to add 12 to this number
 		return moment(time).format("HH:mm");
 	};
 
 	// Google Analytics Track every view when state changes
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-		$timeout(function(){
-	    	// TrackingService.trackView($ionicNavBarDelegate.title());
+		$timeout(function() {
+	    	TrackingService.trackView(toState.name);
 	    },500);
 	});
 
-  	// Calculating height sidemenu buttons             
+  	// Calculating height sidemenu buttons
   	// Device hoogte - menubalk (nu 44px, 33px + (2x 5px padding) + 1px under-border  + een random pixel die ervoor zorgt dat je niet meer kan scrollen)
   	var calcHeight = (document.getElementById('sideMenu').offsetHeight);
-  	
-  	// Calculation height for buttons in sidemenu 
+
+  	// Calculation height for buttons in sidemenu
   	$scope.calcHeightMB = (calcHeight - 102) / 4;
 
   	// Calculation height for buttons on app.info

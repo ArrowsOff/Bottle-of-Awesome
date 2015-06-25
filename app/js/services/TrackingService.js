@@ -9,6 +9,13 @@ app.service('TrackingService', function($log){
 		}
 	};
 
+	TrackingService.trackEvent = function(event, type) {
+		if (typeof analytics !== 'undefined') {
+			$log.debug('Tracking', event, type);
+			analytics.trackEvent(type, event);
+		}
+	}
+
 	return TrackingService;
 
 });

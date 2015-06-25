@@ -1,4 +1,4 @@
-app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $sce, ArtistService, SpotifyService, $ionicHistory) {
+app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $sce, ArtistService, SpotifyService, $ionicHistory, TrackingService) {
 	$scope.spotify = false;
 
 	// Configure Spotify url
@@ -6,9 +6,10 @@ app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $s
 		sources: [{src: $sce.trustAsResourceUrl($scope.url), type: "audio/mpeg"}]
 	};
 
-	angular.forEach($rootScope.artists.artist, function(data) {	
+	angular.forEach($rootScope.artists.artist, function(data) {
 		if($stateParams.id == data._id) {
 			$scope.artist = data;
+			TrackingService.trackView(data.name.__cdata);
 
 			// Get Spotify information
 			SpotifyService.get(data.name.__cdata).then(function(res) {
@@ -19,6 +20,10 @@ app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $s
 			});
 		}
 	});
+
+	$scope.trackPlay = function() {
+		TrackingService.trackEvent($scope.artist.name.__cdata, 'played')
+	}
 
 	// Makes it possible to load links in browser outside of the app
 	$scope.InAppBrowser = function(e) {
@@ -34,6 +39,8 @@ app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $s
 	//Go back to previous view
 	$scope.goBack = function() {
 		$ionicHistory.goBack();
-	}    
+	}
+
+
 
 });
