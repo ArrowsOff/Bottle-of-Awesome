@@ -207,6 +207,15 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
                 controller: 'InfoPageCtrl'
             }
         }
+    }) 
+    .state('app.boa', {
+        url: '/info/boa',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/info-pages/boa.html',
+                controller: 'InfoPageCtrl'
+            }
+        }
     })    
     .state('app.schedule', {
         url: '/schedule',
