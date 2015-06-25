@@ -13,14 +13,14 @@
 		  	overflow: scroll;
 		  	white-space: nowrap;
 		}
-		.scroll { 
+		.scroll {
 		  	min-width: 100%;
 		}
 		.item {
 			border: 0;
 			background: none;
 			display: inline-block;
-			
+
 			&.item-radio .item-content {
 			   	padding: 10px;
 			   	padding-top: 15px;
@@ -38,7 +38,7 @@
 	// This content has a different because it has a subheader
 	#content {
 	    top: 140px !important;
-	    
+
 	    .item {
 	    	border: 0;
 	    }
@@ -47,11 +47,11 @@
 	.item-artist {
 		position: relative;
 		.img-artist {
-			display: flex; 
+			display: flex;
 			justify-content:center;
 	    	align-items:center;
-	    	overflow:hidden;	    
-		    img {	    	
+	    	overflow:hidden;
+		    img {
 		    	flex-shrink:0;
 	    		min-width:100%;
 	    		min-height:100%
@@ -62,7 +62,7 @@
 			font-size: 40px;
   			position: absolute;
   			right: 5px;
-  			top: 5px;		
+  			top: 5px;
 		}
 
 		.info {
@@ -72,6 +72,7 @@
 		  	right: 0;
 		  	padding: 10px;
 		  	background-color: $green-trans;
+
 		  	.name {
 		  		font-size: 0.9em;
 		  		line-height: 12px;
@@ -81,6 +82,27 @@
 		  		font-size: 0.62em;
 		  		line-height: 10px;
 		  	}
+		}
+		.Diamond {
+		    background-color: $red-trans !important;
+		}
+		.LOVE {
+		    background-color: $green-trans !important;
+		}
+		.Ants {
+		    background-color: $yellow-trans !important;
+		}
+		.Cobalt {
+		    background-color: $orange-trans !important;
+		}
+		.Quartz {
+		    background-color: $purple-trans !important;
+		}
+		.Crystal {
+		    background-color: $blue-trans !important;
+		}
+		.Ensuite {
+		    background-color: $grey-trans !important;
 		}
 	}
 }

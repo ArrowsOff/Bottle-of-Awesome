@@ -12,7 +12,7 @@
 			<a  class="item item-icon-right item-thumbnail-left" ng-href="#/app/artists/{{artist._id}}">
 
 				<div class="favorite-image absolute" ng-style="{'background-image': 'url({{artist.image.__cdata}})'}" ng-class="artist.stage_name"></div>
-				<div class="info">
+				<div class="info" ng-class="artist.stage_name">
 					<h2 class="bold uppercase color-black">{{::artist.name.__cdata}}</h2>
 					<p class="bold uppercase area">{{::artist.stage_name}}</p>
 					<p class="time">{{::toTime(artist.start_time)}} - {{::toTime(artist.end_time)}}</p>

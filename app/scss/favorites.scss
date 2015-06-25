@@ -45,7 +45,7 @@
 			width: 120px;
 			background-size: cover;
 			background-repeat: no-repeat;
-			background-position: center center;		
+			background-position: center center;
 			border-right: 5px inset $green;
 		}
 		.info {
@@ -71,7 +71,7 @@
 			margin-top: 25%;
 		}
 		.text-head{
-			
+
 			text-align: center;
 			font-size: 2em;
 			margin-top: 25px;
@@ -97,6 +97,49 @@
 				padding-right: 1%;
 				font-size: 1.8em;
 				vertical-align: middle;
+			}
+		}
+		.Diamond {
+
+		    border-color: $red !important;
+			.area {
+				color: $red !important;
+			}
+		}
+		.LOVE {
+		    border-color: $green !important;
+			.area {
+				color: $green !important;
+			}
+		}
+		.Ants {
+		    border-color: $yellow !important;
+			.area {
+				color: $yellow !important;
+			}
+		}
+		.Cobalt {
+		    border-color: $orange !important;
+			.area {
+				color: $orange !important;
+			}
+		}
+		.Quartz {
+		    border-color: $purple !important;
+			.area {
+				color: $purple !important;
+			}
+		}
+		.Crystal {
+		    border-color: $blue !important;
+			.area {
+				color: $blue !important;
+			}
+		}
+		.Ensuite {
+		    border-color: $black !important;
+			.area {
+				color: $black !important;
 			}
 		}
 	}
