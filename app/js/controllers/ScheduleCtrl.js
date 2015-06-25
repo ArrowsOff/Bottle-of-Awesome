@@ -39,7 +39,18 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
         var diffMs = (date2 - date1); // milliseconds between now & Christmas
         var diffHrs = Math.round((diffMs % 86400000) / 3600000); // hours
         var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
-        $log.log(artist.name.__cdata + ' ' + diffHrs + " hours, " + diffMins + " minutes");
+        var result;
+
+
+        if(diffHrs == 2) {
+            result = diffHrs*60 - diffMins;
+        } else {
+            result = diffHrs*60 + diffMins;
+        }
+
+        $log.log(artist.name.__cdata, result)
+
+        return result;
     }
 
     var delegate;
