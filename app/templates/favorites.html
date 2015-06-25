@@ -5,25 +5,25 @@
 
 <ion-tabs class="tabs-top tabs-text-only">
 <ion-tab title="FAVOURITES">
-<ion-content>
-<div id="content">
-	<div class="list">
-		<div class="artist" ng-repeat="artist in artists.artist | orderBy: 'start_time'" ng-if="artist.favourited">
-			<a  class="item item-icon-right item-thumbnail-left" ng-href="#/app/artists/{{artist._id}}">
+	<ion-content>
+			<div id="content">
+				<div class="list">
+					<div class="artist" ng-repeat="artist in artists.artist | orderBy: 'start_time'" ng-if="artist.favourited">
+						<a  class="item item-icon-right item-thumbnail-left" ng-href="#/app/artists/{{artist._id}}">
 
-				<div class="favorite-image absolute" ng-style="{'background-image': 'url({{artist.image.__cdata}})'}" ng-class="artist.stage_name"></div>
-				<div class="info" ng-class="artist.stage_name">
-					<h2 class="bold uppercase color-black">{{::artist.name.__cdata}}</h2>
-					<p class="bold uppercase area">{{::artist.stage_name}}</p>
-					<p class="time">{{::toTime(artist.start_time)}} - {{::toTime(artist.end_time)}}</p>
+							<div class="favorite-image absolute" ng-style="{'background-image': 'url({{artist.image.__cdata}})'}" ng-class="artist.stage_name"></div>
+							<div class="info" ng-class="artist.stage_name">
+								<h2 class="bold uppercase color-black">{{::artist.name.__cdata}}</h2>
+								<p class="bold uppercase area">{{::artist.stage_name}}</p>
+								<p class="time">{{::toTime(artist.start_time)}} - {{::toTime(artist.end_time)}}</p>
+							</div>
+							<i class="icon ion-heart color-red"></i>
+
+						</a>
+					</div>
 				</div>
-				<i class="icon ion-heart color-red"></i>
-
-			</a>
-		</div>
-	</div>
-	<!-- FIX DIT MET FAVOURITES -->
-<!-- 				<div class="text-wrap">
+				<!-- FIX DIT MET FAVOURITES -->
+				<div class="text-wrap" ng-if="!favourited">
 					<div class="text-head text-center">
 						<div class="text semibold">YOU HAVE NO</div>
 						<div class="text semibold">FAVOURITES YET</div>
@@ -31,7 +31,7 @@
 						<div class="text-small semibold">YOU CAN ADD FAVOURITES BY MARKING ARTISTS WITH THE <i class="icon ion-heart color-red"></i> BUTTON.<br> YOUR PERSONAL SCHEDULE AND<br> WARM-UP MIX WILL THEN BE CREATED.
 						</div>
 					</div>
-				</div> -->
+				</div>
 			</div>
 		</ion-content>
 	</ion-tab>

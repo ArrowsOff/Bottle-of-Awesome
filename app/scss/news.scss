@@ -6,12 +6,14 @@
 	#logo {
 		height: 150px;
 		padding: 28px 30px;
+
+
 	}
 	.platform-ios #logo {
 		padding-top: 40px;
 	}
 	#content {
-		top: 150px; 
+		top: 150px;
 	}
 	#countText{
 		font-size: 2em;
@@ -32,7 +34,7 @@
 
 
 				text-align: center;
-				
+
 			}
 			&.timerTime{
 				line-height: 15px;
@@ -41,7 +43,7 @@
 				font-size: 4em;
 				margin-top: 8%;
 				text-align: center;
-				
+
 			}
 			&.betweenTime{
 				display: inline-block;
@@ -98,5 +100,81 @@
 				color: $red;
 			}
 		}
+	}
+
+	// Animation
+	#animatie1 {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 6s linear alternate infinite;
+		animation-delay: 1s;
+		-webkit-animation: dash 6s linear alternate infinite;
+		-webkit-animation-delay: 1s;
+	}
+
+	#animatie2 {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 4s linear alternate infinite;
+		-webkit-animation: dash 4s linear alternate infinite;
+	}
+
+	#animatie3 {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 7s linear alternate infinite;
+		animation-delay: 2s;
+		-webkit-animation-delay: 2s;
+		-webkit-animation: dash 7s linear alternate infinite;
+	}
+
+	#animatie4 {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 10s linear alternate infinite;
+		-webkit-animation: dash 10s linear alternate infinite;
+	}
+
+	#animatie5 {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 10s linear alternate infinite;
+		-webkit-animation: dash 10s linear alternate infinite;
+	}
+
+	#animatie6 {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 7s linear alternate infinite;
+		animation-delay: 1s;
+		-webkit-animation: dash 7s linear alternate infinite;
+		-webkit-animation-delay: 1s;
+	}
+
+	#animatie7 {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 10s linear alternate infinite;
+		animation-delay: 1s;
+		-webkit-animation: dash 10s linear alternate infinite;
+		-webkit-animation-delay: 1s;
+	}
+
+	#animatie8 {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 7s linear alternate infinite;
+		animation-delay: 3s;
+		-webkit-animation: dash 7s linear alternate infinite;
+		-webkit-animation-delay: 3s;
+	}
+
+	#animatie9 {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 7s linear alternate infinite;
+		animation-delay: 2s;
+		-webkit-animation: dash 7s linear alternate infinite;
+		-webkit-animation-delay: 2s;
 	}
 }
