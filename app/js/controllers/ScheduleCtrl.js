@@ -30,13 +30,25 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
     $scope.calcHeightSC = screen.height;
     $log.log($scope.calcHeightSC);
 
+    $scope.calculateHeight = function(artist) {
+        // $log.log($scope.toTime(artist.end_time), $scope.toTime(artist.start_time))
+        // $log.log(parseInt($scope.toTime(artist.end_time), 10 ));
+
+        var date1 = new Date(artist.start_time);
+        var date2 = new Date(artist.end_time);
+        var diffMs = (date2 - date1); // milliseconds between now & Christmas
+        var diffHrs = Math.round((diffMs % 86400000) / 3600000); // hours
+        var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
+        $log.log(artist.name.__cdata + ' ' + diffHrs + " hours, " + diffMins + " minutes");
+    }
+
     var delegate;
     var secondDelegate;
-    
+
     $scope.scrolling = function() {
       delegate = $ionicScrollDelegate.$getByHandle('bottom');
       secondDelegate = $ionicScrollDelegate.$getByHandle('top');
       secondDelegate.scrollTo(delegate.getScrollPosition().left);
-    }    
+    }
 
 });

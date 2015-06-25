@@ -45,23 +45,21 @@
 
             </div> -->
 
-        <ion-scroll direction="xy" id="schedule-size" ng-style="{'width':calcWidthSC+'px', 'height':calcHeightSC+'px' }">
-            <div id="schedule-bg-scroll" style="width: 5000px; height: 5000px;">
-                <div class="wide-as-needed" style="width: 5000px; height: 5000px;">
+            <ion-scroll direction="xy" id="schedule-size" ng-style="{'width':calcWidthSC+'px', 'height':calcHeightSC+'px' }">
+                <div id="schedule-bg-scroll" style="width: 1365px; height: 5000px;">
                     <div class="padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'" style="float: left;">
                         <div class="stage-name semibold uppercase" ng-class="key" style="height: 40px;">
                             {{key}}
                         </div>
 
                         <div ng-repeat="artist in value | orderBy: 'end_time'">
-                            <div class="stage-artist semibold uppercase" ng-class="artist.stage_name" style="height: 80px;">
+                            <div class="stage-artist semibold uppercase" ng-class="artist.stage_name" style="height: 80px;" ng-style="{'height': calculateHeight(artist)+'px'}">
                                 {{artist.name.__cdata}}
                                 <div class="stage-time">{{toTime(artist.start_time)}} | {{toTime(artist.end_time)}}</div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </ion-scroll>
 
         </div>
