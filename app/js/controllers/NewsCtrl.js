@@ -1,4 +1,4 @@
-app.controller('NewsCtrl', function ($scope, $log) {
+app.controller('NewsCtrl', function ($scope, $log, $http) {
 	// Initialize counter
 	countdown();
 
@@ -24,6 +24,14 @@ app.controller('NewsCtrl', function ($scope, $log) {
         $scope.$apply(countdown());
     },1000);
 
+
+    // twitterfeed
+    $http.get("https://twitrss.me/twitter_user_to_rss/?user=ExtremaOutdoor").success(function(data) {
+        var x2js = new X2JS();
+        var json = x2js.xml_str2json(data);
+
+        $scope.rss = json.rss.channel.item;
+    });
 
     
   	// Calculation height for images news

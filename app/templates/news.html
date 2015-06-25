@@ -68,6 +68,23 @@
                 </div>
             </div>
         </div>
+
+        <div ng-repeat="item in rss">
+            <div class="item animated news-item fadeIn">
+            <div class="news-image absolute"></div>
+                <div class="message">
+                    <h2 class="color-red bold uppercase">Extrema outdoor nl</h2>
+                    <p class="twitter-id color-black">@ExtremaOutdoor</p>
+
+                    <p class="date absolute color-green bold absolute"></p>
+
+                    <p class="content color-black" ng-bind-html="item.description.__cdata"></p>
+                </div>
+            </div>            
+        </div>
+
+
+
         <div class="item animated news-item fadeIn">
             <div class="news-image absolute" ng-style="{'background-image': 'url(http://lorempixel.com/400/400)'}"></div>
             <div class="message">

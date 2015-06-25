@@ -65,7 +65,9 @@
 			left: 0;
 			height: 100%;
 			width: 87px;
-			background-size: cover;
+			background-color: $green;
+			background-image: url("../img/xo-logo-white.svg");
+			background-size: 80%;
 			background-repeat: no-repeat;
 			background-position: center center;
 		}
@@ -95,6 +97,9 @@
 				padding: 10px 0;
 				white-space: normal;
 				line-height: 16px;
+				p {
+					white-space: normal;
+				}
 			}
 			.hashtag {
 				color: $red;
