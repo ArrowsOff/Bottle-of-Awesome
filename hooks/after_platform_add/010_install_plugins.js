@@ -19,7 +19,8 @@ var pluginlist = [
     "cordova-plugin-whitelist",
     "https://github.com/danwilson/google-analytics-plugin.git",
     "cordova-plugin-splashscreen",
-    "cordova-plugin-statusbar"
+    "cordova-plugin-statusbar",
+    "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git"
 ];
  
 // no need to configure below
