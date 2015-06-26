@@ -28,7 +28,7 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
         // Loading Google Analytics
         if (typeof analytics !== 'undefined') {
             $log.debug('starting analytics');
-            analytics.startTrackerWithId("UA-16476871-20");
+            analytics.startTrackerWithId(window.baseconfig.googleAnalyticsId);
         } else {
             $log.warn('Analytics API not available...');
         }
@@ -87,20 +87,20 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
 
             areaPromise = areaDefer.promise;
         });
-        
+
         $q.all([imgPromise, favouritesPromise, areaPromise]).then(function() {
             if (!!navigator.splashscreen) {
                 navigator.splashscreen.hide();
             }
-        });    
-    });  
+        });
+    });
 });
 
 app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, ImgCacheProvider) {
 
     // Options for ImgCache
     ImgCacheProvider.setOption('usePersistentCache', true);
-    
+
     // Set Init manually so we can wait for device to be ready
     ImgCacheProvider.manualInit = true;
 
@@ -162,7 +162,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
                 controller: 'InfoPageCtrl'
             }
         }
-    })    
+    })
     .state('app.disclaimer', {
         url: '/info/disclaimer',
         views: {
@@ -171,7 +171,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
                 controller: 'InfoPageCtrl'
             }
         }
-    })    
+    })
     .state('app.general', {
         url: '/info/general',
         views: {
@@ -180,7 +180,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
                 controller: 'InfoPageCtrl'
             }
         }
-    })    
+    })
     .state('app.hotelpackages', {
         url: '/info/hotelpackages',
         views: {
@@ -189,7 +189,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
                 controller: 'InfoPageCtrl'
             }
         }
-    })    
+    })
     .state('app.howtogetthere', {
         url: '/info/howtogetthere',
         views: {
@@ -198,7 +198,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
                 controller: 'InfoPageCtrl'
             }
         }
-    })    
+    })
     .state('app.qa', {
         url: '/info/qa',
         views: {
@@ -207,7 +207,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
                 controller: 'InfoPageCtrl'
             }
         }
-    }) 
+    })
     .state('app.boa', {
         url: '/info/boa',
         views: {
@@ -216,7 +216,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
                 controller: 'InfoPageCtrl'
             }
         }
-    })    
+    })
     .state('app.schedule', {
         url: '/schedule',
         views: {
@@ -265,4 +265,3 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, Im
 
     $urlRouterProvider.otherwise('/app/news');
 });
-

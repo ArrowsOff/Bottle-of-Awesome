@@ -9,25 +9,26 @@
   		</ion-scroll>
 	</div>
 
-  	<ion-content>	
+  	<ion-content>
   		<div id="content">
 			<ion-list>
-			
+
 				<div collection-repeat="artist in artists.artist | filter: stage | orderBy: 'end_time' :true" collection-item-height="200px" class="item col col-50 animated fadeIn">
-					
+
 					<div class="item-content item-artist">
-						<i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }"></i>	
+						<i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }"></i>
 
 						<a class="img-artist" ng-href="#/app/artists/{{artist._id}}">
-							<img ng-src="{{artist.image.__cdata}}" height="200px">
+							<img img-cache ic-src="{{artist.image.__cdata}}" height="200px">
+							<!-- <img ng-src="{{artist.image.__cdata}}" height="200px"> -->
 						</a>
-						
+
 						<div class="info color-white" ng-class="artist.stage_name">
 							{{ isFavourite(artist._id) }}
 							<h2 class="name bold uppercase color-white">{{artist.name.__cdata}}</h2>
 							<p class="performance bold uppercase color-white">{{artist.stage_name}} - {{toTime(artist.start_time)}} - {{toTime(artist.end_time)}}</p>
 						</div>
-			    	</div>								
+			    	</div>
 			  	</div>
 
 			</ion-list>

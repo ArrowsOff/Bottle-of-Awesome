@@ -7,7 +7,7 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
 
         if(!(window.localStorage.artists) || refresh) {
             // $http.get("http://xofestival.nl/xml/artists.xml").success(function(data) {
-            $http.get("data/artists.xml").success(function(data) {
+            $http.get(window.baseconfig.api + "artists.xml").success(function(data) {
                 var x2js = new X2JS();
                 var json = x2js.xml_str2json(data);
 
@@ -45,7 +45,7 @@ app.service('ArtistService', function($rootScope, $q, $http, $log, lodash, Datab
 
         return defer.promise;
     };
-    
+
     ArtistService.favorite = function(id) {
         $log.log("Database call for favorite");
         DatabaseService.favorite(id);

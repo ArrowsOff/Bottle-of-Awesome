@@ -1,5 +1,5 @@
 app.service("AreaService", function($log, $q, $http){
-	
+
 	var AreaService = this;
 
 	var stages = null;
@@ -9,10 +9,10 @@ app.service("AreaService", function($log, $q, $http){
 		var defer = $q.defer();
 
 		//$http.get("http://xofestival.nl/xml/stages.xml").success(function(data) {
-		$http.get("data/stages.xml").success(function(data) {
+		$http.get(window.baseconfig.api + "stages.xml").success(function(data) {
             var x2js = new X2JS();
             var json = x2js.xml_str2json(data);
-            stages = json.stages; 
+            stages = json.stages;
 
             defer.resolve(stages);
         }).error(function(err){
@@ -28,7 +28,7 @@ app.service("AreaService", function($log, $q, $http){
 		var defer = $q.defer();
 
 		return defer.promise;
-		
+
 	};
 
 	return AreaService;

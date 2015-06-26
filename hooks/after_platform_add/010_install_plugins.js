@@ -13,13 +13,14 @@ var pluginlist = [
     // "cordova-plugin-geolocation",
     // "https://github.com/phonegap-build/PushPlugin.git",
     // "https://github.com/apache/cordova-plugin-file.git",
-    "cordova-plugin-file",
-    "cordova-plugin-file-transfer",
-    "cordova-plugin-media",
+    // "cordova-plugin-file",
+    // "cordova-plugin-file-transfer",
+    // "cordova-plugin-media",
     "cordova-plugin-whitelist",
     "https://github.com/danwilson/google-analytics-plugin.git",
     "cordova-plugin-splashscreen",
-    "cordova-plugin-statusbar"
+    "cordova-plugin-statusbar",
+    "cordova-plugin-inappbrowser"
 ];
  
 // no need to configure below
