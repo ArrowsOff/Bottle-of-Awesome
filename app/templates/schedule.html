@@ -46,7 +46,7 @@
             </div> -->
 
             <ion-scroll direction="xy" id="schedule-size" ng-style="{'width':calcWidthSC+'px', 'height':calcHeightSC+'px' }">
-                <div id="schedule-bg-scroll" style="width: 1365px; height: 5000px;">
+                <div id="schedule-bg-scroll" style="width: 1365px; height: 1500px;">
                     <div class="padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'" style="float: left;">
                         <div class="stage-name semibold uppercase" ng-class="key" style="height: 40px;">
                             {{key}}
