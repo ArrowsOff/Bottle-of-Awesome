@@ -35,4 +35,22 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
         $log.log('scrolling', delegate.getScrollPosition().left, secondDelegate.getScrollPosition().left);
         secondDelegate.scrollTo(delegate.getScrollPosition().left);
     };
+    
+    $log.log(moment().format('hh:mm'));
+    
+    $scope.linePosition = function() {
+	    var timeLineH = moment().format('H');
+	    var timeLineM = moment().format('mm');
+	    
+	    var timeLineH = (timeLineH * 90)-990;
+	    var timeLineM = timeLineM *1.5;
+//	    $log.log(timelineH);
+//	    $log.log(timelineM);	    
+	    var timeLine = timeLineH + timeLineM;
+//	    $log.log(timeLine);	 
+	    
+	    return timeLine;   
+	    
+	    
+    }
 });
