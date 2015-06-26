@@ -11,8 +11,6 @@ app.service('SpotifyService', function($rootScope, $http, $log, $q) {
 		$log.log("Seaching Spotify for", artist);
 
 		$http.get('https://api.spotify.com/v1/search?q=' + artist + '&type=artist').then(function(data) {
-			// $log.log("Getting first artist from Spotify search results");
-
 			// Fixes a bug were Dave Lambert would get the wrong artist from spotify
 			if(artist == "Dave Lambert") {
 				data.data.artists.items[0] = data.data.artists.items[1];
@@ -27,7 +25,7 @@ app.service('SpotifyService', function($rootScope, $http, $log, $q) {
 						defer.resolve(data.tracks[0]);
 					} else {
 						defer.reject('No tracks to preview');
-					}					
+					}
 				}).error(function(err) {
 					defer.reject("Error getting top tracks from", artist, err);
 				});
@@ -57,7 +55,7 @@ app.service('SpotifyService', function($rootScope, $http, $log, $q) {
 		});
 
 		favouritesPromise = favourites.map(function(favourite) {
-			var defer = $q.defer(); 
+			var defer = $q.defer();
 
 			getArtistId(favourite.name.__cdata).then(function(data) {
 				if(!!data) {
@@ -69,12 +67,11 @@ app.service('SpotifyService', function($rootScope, $http, $log, $q) {
 			});
 
 			return defer.promise;
-		})
+		});
 
 
 		$q.all(favouritesPromise).then(function(data) {
 			artistIdPromise = data.map(function(artist_id) {
-
 				if(!!artist_id) {
 					var defer = $q.defer();
 
@@ -83,7 +80,7 @@ app.service('SpotifyService', function($rootScope, $http, $log, $q) {
 						defer.resolve(track);
 					}).catch(function(err){
 						defer.resolve();
-					})
+					});
 
 					return defer.promise;
 				}
@@ -94,7 +91,7 @@ app.service('SpotifyService', function($rootScope, $http, $log, $q) {
 			});
 		});
 		return deferred.promise;
-	}
+	};
 
 	function getArtistId(artist_name) {
 		var defer = $q.defer();
@@ -103,7 +100,7 @@ app.service('SpotifyService', function($rootScope, $http, $log, $q) {
 			if(!!data.data.artists.items[0]) {
 				defer.resolve(data.data.artists.items[0].id);
 			} else {
-				defer.reject("No artist in spotify with that name")
+				defer.reject("No artist in spotify with that name");
 			}
 		}).catch(function(err) {
 			defer.reject("Error getting artist from Spotify API", err);
@@ -120,7 +117,7 @@ app.service('SpotifyService', function($rootScope, $http, $log, $q) {
 				defer.resolve(data.tracks[0]);
 			} else {
 				defer.reject('No tracks to preview');
-			}					
+			}
 		}).error(function(err) {
 			defer.reject("Error getting top tracks from", artist, err);
 		});

@@ -24,5 +24,5 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
         }
 
         return result*1.5;
-    }
+    };
 });

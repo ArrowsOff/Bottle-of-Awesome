@@ -22,17 +22,11 @@ app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $s
 	});
 
 	$scope.trackPlay = function() {
-		TrackingService.trackEvent($scope.artist.name.__cdata, 'played')
-	}
-
-	// Makes it possible to load links in browser outside of the app
-	
+		TrackingService.trackEvent($scope.artist.name.__cdata, 'played');
+	};
 
 	//Go back to previous view
 	$scope.goBack = function() {
 		$ionicHistory.goBack();
-	}
-
-
-
+	};
 });

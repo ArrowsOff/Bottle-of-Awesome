@@ -5,9 +5,7 @@ app.controller('FavoritesCtrl', function($scope, $rootScope, $log, SpotifyServic
 	});
 
 	ArtistService.getFavourites().then(function(data) {
-		$log.log(data.artists)
 		if(data.artists.length > 0) {
-
 			$scope.favourited = true;
 		} else {
 			$scope.favourited = false;
@@ -16,14 +14,11 @@ app.controller('FavoritesCtrl', function($scope, $rootScope, $log, SpotifyServic
 
 	$rootScope.$on('favourited', function() {
 		ArtistService.getFavourites().then(function(data) {
-			$log.log(data.artists)
 			if(data.artists.length > 0) {
-
 				$scope.favourited = true;
 			} else {
 				$scope.favourited = false;
 			}
 		});
-	})
-
+	});
 });
