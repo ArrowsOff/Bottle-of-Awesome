@@ -26,15 +26,7 @@ app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $s
 	}
 
 	// Makes it possible to load links in browser outside of the app
-	$scope.InAppBrowser = function(e) {
-		e = e ||  window.event;
-        var element = e.target || e.srcElement;
-
-        if (element.tagName == 'A') {
-            window.open(element.href, "_system", "location=yes");
-            return false; // prevent default action and stop event propagation
-        }
-    };
+	
 
 	//Go back to previous view
 	$scope.goBack = function() {
