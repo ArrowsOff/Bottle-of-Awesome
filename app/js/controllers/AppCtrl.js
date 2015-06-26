@@ -44,4 +44,14 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
   	// Calculation height for buttons on app.info
   	$scope.calcInfoHeight = (calcHeight - 121) / 3;
 
+  	$scope.InAppBrowser = function(e) {
+		e = e ||  window.event;
+        var element = e.target || e.srcElement;
+
+        if (element.tagName == 'A') {
+            window.open(element.href, "_system", "location=yes");
+            return false; // prevent default action and stop event propagation
+        }
+    };
+
   });

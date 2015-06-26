@@ -5,9 +5,29 @@
 			line-height: 54px;
 			margin-bottom: 0;
 		}
-		.howtogetthere, .hotelpackages {
+		.howtogetthere, .hotelpackages, {
 			font-size: 2em;
 		}
+		.boa{
+			font-size: 1.8em;
+		}
+		img{
+			width: 80%;
+			margin-top: 3%;
+			margin-left: 10%;
+			margin-right: 10%;
+		}
+
+	}
+	.linked{
+		background-color: $red;
+		color: $white;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+		padding: 8px;
+		font-size: 1.4em;
+		width: 90%;
 	}
 	.has-header {
 		top: 0;
@@ -25,4 +45,46 @@
 			margin: 10px;
 		}
 	}
+	.boa-blue{
+		background-color: $blue;
+		color: $white;
+		text-align: center;
+		font-size: 1em;
+		padding: 10px;
+	}
+	.boa-blue-img{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 80px;
+	}
+
+	#bot-of-aw{
+		font-size: 1.5em;
+		margin-bottom: 0px;
+	}
+	.questions{
+		margin:20px;
+		text-align: center;
+	}
+	#email{
+		color: $green;
+		font-size: 1.2em;
+	}
+	.linked-in-img{
+		width: 20px;
+		margin:0;
+		float: right;
+	}
+	a:link{
+		color:$green;
+		text-decoration: none;
+	}
 }
+
+
+
+
+
+
