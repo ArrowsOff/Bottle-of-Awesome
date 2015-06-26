@@ -10,6 +10,6 @@ app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, 
 	AreaService.getAreas().then(function(data) {
         $scope.stages = data.stage;
     }).catch(function(err) {
-        $log.error("Error getting Areas:", err);
+        $log.error("Error getting areas:", err);
     });
 });

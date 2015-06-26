@@ -17,7 +17,7 @@
 
             <ion-scroll direction="xy" id="schedule-size" ng-style="{'width':calcWidthSC+'px', 'height':calcHeightSC+'px' }" delegate-handle="bottom" on-scroll="scrolling()">
             	<div id="timeline" ng-style="{'top':linePosition() +'px'}" ></div>
-                <div id="schedule-bg-scroll" style="width: 1365px; height: 1200px;">
+                <div id="schedule-bg-scroll" style="width: 1365px; height: 1290px;">
                     <div class="padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'" style="float: left;">
 
                         <div ng-repeat="artist in value | orderBy: 'end_time'">
