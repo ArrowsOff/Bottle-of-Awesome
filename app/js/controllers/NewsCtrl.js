@@ -39,6 +39,7 @@ app.controller('NewsCtrl', function ($scope, $log, $http) {
     $http.get("https://twitrss.me/twitter_user_to_rss/?user=ExtremaOutdoor").success(function(data) {
         var x2js = new X2JS();
         var json = x2js.xml_str2json(data);
+        $log.log(json);
 
         $scope.rss = json.rss.channel.item;
     });

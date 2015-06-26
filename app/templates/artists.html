@@ -13,7 +13,7 @@
   		<div id="content">
 			<ion-list>
 
-				<div collection-repeat="artist in artists.artist | filter: stage | orderBy: 'end_time' :true" collection-item-height="200px" class="item col col-50 animated fadeIn">
+				<div collection-repeat="artist in artists.artist | filter: stage | orderBy: 'end_time' :true" collection-item-height="199px" class="item col col-50 animated fadeIn">
 
 					<div class="item-content item-artist">
 						<i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }"></i>

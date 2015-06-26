@@ -190,6 +190,8 @@ h1, h2, h3, h4, h5, h6, p, span, a, button, div, .time {
     max-height: none;
     width: 60px !important;
     padding: 8px 16px 16px 8px !important;
+    text-shadow: 1px 1px $grey-trans;
+
     i {
         &:before {
             font-size: 40px !important;
@@ -225,6 +227,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, button, div, .time {
 
 .right-buttons i {
     padding: 0 1px;
+    text-shadow: 1px 1px $grey-trans;
 }
 
 

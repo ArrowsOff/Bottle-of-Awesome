@@ -1,4 +1,7 @@
 #artists {
+	#content{
+		background-color: $black;
+	}
 	.has-header {
 		top: 0;
 	}
@@ -10,11 +13,12 @@
 		width: 100%;
 		height: 51px;
 		.wide-as-needed {
-		  	overflow: scroll;
-		  	white-space: nowrap;
+			overflow: scroll;
+			white-space: nowrap;
 		}
 		.scroll {
-		  	min-width: 100%;
+			min-width: 100%;
+		
 		}
 		.item {
 			border: 0;
@@ -22,12 +26,12 @@
 			display: inline-block;
 
 			&.item-radio .item-content {
-			   	padding: 10px;
-			   	padding-top: 15px;
-			   	margin: 0 5px;
-			   	background: none;
-			   	border-bottom: inset 5px transparent;
-			   	transition: border ease-in-out 0.15s;
+				padding: 10px;
+				padding-top: 15px;
+				margin: 0 5px;
+				background: none;
+				border-bottom: inset 5px transparent;
+				transition: border ease-in-out 0.15s;
 			}
 
 			input:checked ~ .item-content {
@@ -37,11 +41,11 @@
 	}
 	// This content has a different because it has a subheader
 	#content {
-	    top: 140px !important;
+		top: 140px !important;
 
-	    .item {
-	    	border: 0;
-	    }
+		.item {
+			border: 0;
+		}
 	}
 
 	.item-artist {
@@ -49,60 +53,62 @@
 		.img-artist {
 			display: flex;
 			justify-content:center;
-	    	align-items:center;
-	    	overflow:hidden;
-		    img {
-		    	flex-shrink:0;
-	    		min-width:100%;
-	    		min-height:100%
-		    }
+			align-items:center;
+			overflow:hidden;
+			img {
+				flex-shrink:0;
+				min-width:100%;
+				min-height:100%;
+				border-top: 1px inset lightgray;
+				border-bottom: 1px inset lightgray;
+			}
 		}
 
 		.icon {
 			font-size: 40px;
-  			position: absolute;
-  			right: 5px;
-  			top: 5px;
+			position: absolute;
+			right: 5px;
+			top: 5px;
 		}
 
 		.info {
 			position: absolute;
 			bottom: 0;
-		  	left: 0;
-		  	right: 0;
-		  	padding: 10px;
-		  	background-color: $green-trans;
+			left: 0;
+			right: 0;
+			padding: 10px;
+			background-color: $green-trans;
 
-		  	.name {
-		  		font-size: 0.9em;
-		  		line-height: 12px;
-		  		margin-bottom: 14px;
-		  	}
-		  	.performance {
-		  		font-size: 0.62em;
-		  		line-height: 10px;
-		  	}
+			.name {
+				font-size: 0.9em;
+				line-height: 12px;
+				margin-bottom: 14px;
+			}
+			.performance {
+				font-size: 0.62em;
+				line-height: 10px;
+			}
 		}
 		.Diamond {
-		    background-color: $red-trans !important;
+			background-color: $red-trans !important;
 		}
 		.LOVE {
-		    background-color: $green-trans !important;
+			background-color: $green-trans !important;
 		}
 		.Ants {
-		    background-color: $yellow-trans !important;
+			background-color: $yellow-trans !important;
 		}
 		.Cobalt {
-		    background-color: $orange-trans !important;
+			background-color: $orange-trans !important;
 		}
 		.Quartz {
-		    background-color: $purple-trans !important;
+			background-color: $purple-trans !important;
 		}
 		.Crystal {
-		    background-color: $blue-trans !important;
+			background-color: $blue-trans !important;
 		}
 		.Ensuite {
-		    background-color: $grey-trans !important;
+			background-color: $grey-trans !important;
 		}
 	}
 }

@@ -19,6 +19,7 @@
 		font-size: 2em;
 	}
 
+
 	// Page styling
 	#counter {
 		background-color: #4BB8D6;
@@ -57,6 +58,7 @@
 		padding: 0;
 		min-height: 90px;
 		white-space: normal;
+
 		.news-image {
 			display: block;
 			top: 0;
@@ -100,8 +102,18 @@
 				}
 			}
 			.hashtag {
-				color: $red;
+				color: $blue !important;
 			}
+			.twitter-emoji{
+				width: 5%;
+			}
+			s{
+				text-decoration: none;
+			}
+
+		}
+		a{
+			color: $blue !important;		
 		}
 	}
 
