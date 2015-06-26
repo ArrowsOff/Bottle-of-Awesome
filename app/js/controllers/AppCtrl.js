@@ -28,6 +28,12 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
 		return moment(time).format("HH:mm");
 	};
 
+	// This can convert times from XML to readable Times
+	$scope.toDate = function(date) {
+		// Might need to add 12 to this number
+		return moment(date).format("DD MMM");
+	};
+
 	// Google Analytics Track every view when state changes
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
 		$timeout(function() {
