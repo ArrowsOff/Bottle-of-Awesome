@@ -4,20 +4,22 @@
     </div>
     <ion-content>
         <div id="content">
-            
+
             <ion-scroll direction="xy" id="schedule-size" ng-style="{'width':calcWidthSC+'px', 'height':calcHeightSC+'px' }">
-                <div id="schedule-bg-scroll" style="width: 1365px; height: 1500px;">
+                <div id="schedule-bg-scroll" style="width: 1365px; height: 1200px;">
                     <div class="padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'" style="float: left;">
                         <div class="stage-name semibold uppercase" ng-class="key" style="height: 40px;">
                             {{key}}
                         </div>
 
                         <div ng-repeat="artist in value | orderBy: 'end_time'">
-                            <a class="stage-artist semibold uppercase" ng-class="artist.stage_name" style="display: block; height: 80px;" ng-style="{'height': calculateHeight(artist)+'px'}"ng-href="#/app/artists/{{artist._id}}">
-                                <i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }" style="font-size: 24px; float:right; z-index: 500;"></i>
-                                {{artist.name.__cdata}}
-                                <div class="stage-time">{{toTime(artist.start_time)}} | {{toTime(artist.end_time)}}</div>
-                            </a>
+                            <div class="stage-artist uppercase" ng-style="{'height': calculateHeight(artist)+'px'}">
+                                <a ng-href="#/app/artists/{{artist._id}}" class="padding color-white semibold" style="display: block; height:100%;" ng-class="artist.stage_name">
+                                    <i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)"  ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }" style="padding-left:10px; font-size: 24px; float:right; z-index: 500;"></i>
+                                    {{artist.name.__cdata}}
+                                    <div class="stage-time">{{toTime(artist.start_time)}} | {{toTime(artist.end_time)}}</div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
