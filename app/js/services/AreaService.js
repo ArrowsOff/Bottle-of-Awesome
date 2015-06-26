@@ -8,7 +8,6 @@ app.service("AreaService", function($log, $q, $http){
 	AreaService.getAreas = function() {
 		var defer = $q.defer();
 
-		//$http.get("http://xofestival.nl/xml/stages.xml").success(function(data) {
 		$http.get(window.baseconfig.api + "stages.xml").success(function(data) {
             var x2js = new X2JS();
             var json = x2js.xml_str2json(data);
@@ -18,9 +17,8 @@ app.service("AreaService", function($log, $q, $http){
             angular.forEach(stages.stage, function(stage, key) {
                 if (stage.title.__cdata == "Ruby Village") {
                     stages.stage.splice(key);
-                };
+                }
             });
-
 
             defer.resolve(stages);
         }).error(function(err){

@@ -27,7 +27,7 @@ app.controller('NewsCtrl', function ($scope, $log, $http) {
         } else {
             return false;
         }
-    }
+    };
 
 	// Update countdown every second.
 	setInterval(function(){
@@ -44,7 +44,7 @@ app.controller('NewsCtrl', function ($scope, $log, $http) {
         $scope.rss = json.rss.channel.item;
     });
 
-    
+
   	// Calculation height for images news
   	// $scope.calcNewsWidth = (document.getElementById('news-image').offsetHeight);
 

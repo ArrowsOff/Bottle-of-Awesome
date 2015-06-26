@@ -78,7 +78,7 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
                 var name = artist.name.__cdata;
                 if (name == "Roog" || name == "Michel De Hey" || name == "STV-Visuals") {
                     data.artist.splice(key);
-                };
+                }
             });
 
 
