@@ -19,7 +19,7 @@
 						<i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }"></i>
 
 						<a class="img-artist" ng-href="#/app/artists/{{artist._id}}">
-							<img img-cache ic-src="{{artist.image.__cdata}}" height="200px">
+							<img img-cache ng-src="{{artist.image.__cdata}}" height="200px">
 							<!-- <img ng-src="{{artist.image.__cdata}}" height="200px"> -->
 						</a>
 

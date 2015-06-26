@@ -16,28 +16,25 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
 
     $ionicPlatform.ready(function() {
         // back button action
-          $ionicPlatform.registerBackButtonAction(function(e){
+        $ionicPlatform.registerBackButtonAction(function(e){
             if ($rootScope.backButtonPressedOnceToExit) {
-              ionic.Platform.exitApp();
+                ionic.Platform.exitApp();
             }
 
             else if ($ionicHistory.backView()) {
-              $ionicHistory.goBack();
-            }
-            else {
-              $rootScope.backButtonPressedOnceToExit = true;
-              window.plugins.toast.showShortBottom(
-                "Press back button again to exit",function(a){},function(b){}
-              );
-              setTimeout(function(){
-                $rootScope.backButtonPressedOnceToExit = false;
-              },2000);
+                $ionicHistory.goBack();
+            } else {
+                $rootScope.backButtonPressedOnceToExit = true;
+                window.plugins.toast.showShortBottom(
+                    "Press back button again to exit",function(a){},function(b){}
+                );
+                setTimeout(function(){
+                    $rootScope.backButtonPressedOnceToExit = false;
+                },2000);
             }
             e.preventDefault();
             return false;
-          },101);
-
-
+        },101);
 
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -60,7 +57,7 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
         // Initialize Image Caching
         var imgDefer = $q.defer();
 
-        ImgCache.options.skipURIencoding=true;
+        // ImgCache.options.skipURIencoding=true;
         ImgCache.init(function() {
             $log.info('ImgCache init: success!');
             imgDefer.resolve();
