@@ -1,6 +1,7 @@
 app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegate, $timeout, ArtistService, TrackingService, lodash) {
 
 	$scope.addToFavorites = function(id) {
+		event.preventDefault();
 		ArtistService.favorite(id);
 		TrackingService.trackEvent(id, 'favourite');
 	};

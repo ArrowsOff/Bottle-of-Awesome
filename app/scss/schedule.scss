@@ -1,6 +1,6 @@
 #schedule {
 	#content {
-		
+
 	}
 	#schedule-size{
 
@@ -17,6 +17,9 @@
 	.wide-as-needed {
 		overflow: scroll;
 		white-space: normal;
+	}
+	a {
+		text-decoration: none;
 	}
 
 	.stage-name {
@@ -58,7 +61,7 @@
 		.stage-time{
 			font-size: 0.7em;
 		}
-		
+
 
 		&.Diamond {
 			background-color: $red;

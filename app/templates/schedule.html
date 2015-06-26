@@ -4,47 +4,7 @@
     </div>
     <ion-content>
         <div id="content">
-            <!-- <div class="stage padding uppercase bold" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name'"> -->
-                <!-- <div class="stage-id color-white padding">{{ key }}</div> -->
-
-                <!-- <br>
-
-            </div> -->
-            <!-- <ion-scroll direction="x" class="wide-as-needed top" delegate-handle="top">
-
-                <div class="stage stage-top padding uppercase bold" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name'">
-                    {{key}}
-                </div>
-
-            </ion-scroll>
-
-            <ion-scroll direction="xy" class="bottom" delegate-handle="bottom" on-scroll="scrolling()" style="width: 500px; height: 1500px">
-
-                <div class="wide-as-needed">
-                    <div class="stage padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'">
-
-                        <div ng-repeat="artist in value">
-
-                            <div class="stage-artist">{{artist.name.__cdata}}</div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </ion-scroll> -->
-
-            <!-- <div class="stage padding wide-as-needed" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'">
-                {{key}}
-
-
-                <div ng-repeat="artist in value" >
-                    <div class="stage-artist" ng-class="artist.stage_name">{{artist.name.__cdata}}</div>
-                </div>
-
-            </div> -->
-
+            
             <ion-scroll direction="xy" id="schedule-size" ng-style="{'width':calcWidthSC+'px', 'height':calcHeightSC+'px' }">
                 <div id="schedule-bg-scroll" style="width: 1365px; height: 1500px;">
                     <div class="padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'" style="float: left;">
@@ -53,10 +13,11 @@
                         </div>
 
                         <div ng-repeat="artist in value | orderBy: 'end_time'">
-                            <div class="stage-artist semibold uppercase" ng-class="artist.stage_name" style="height: 80px;" ng-style="{'height': calculateHeight(artist)+'px'}">
+                            <a class="stage-artist semibold uppercase" ng-class="artist.stage_name" style="display: block; height: 80px;" ng-style="{'height': calculateHeight(artist)+'px'}"ng-href="#/app/artists/{{artist._id}}">
+                                <i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)" class="color-white" ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }" style="font-size: 24px; float:right; z-index: 500;"></i>
                                 {{artist.name.__cdata}}
                                 <div class="stage-time">{{toTime(artist.start_time)}} | {{toTime(artist.end_time)}}</div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
