@@ -77,7 +77,7 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
             angular.forEach(data.artist, function(artist, key) {
                 var name = artist.name.__cdata;
                 if (name == "Roog" || name == "Michel De Hey" || name == "STV-Visuals" || name == "Mc Robbie Rise") {
-                    data.artist.splice(key);
+                    // data.artist.splice(key);
                 }
             });
 
