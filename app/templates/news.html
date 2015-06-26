@@ -58,14 +58,18 @@
 <div id="content">
 
     <div class="list">
-        <div class="item text-center" id="counter">
-            <div>
+        <div class="item text-center" id="counter" ng-if="!check()">
+            <div ng-if="counter.value >= 0">
                 <div id="countText">
                     <div class="timer">DAY</div><div class="timer">HRS</div><div class="timer">MIN</div><div class="timer">SEC</div>
                 </div>
                 <div class="countTime">
                     <div class="timerTime">{{counter.days}}</div><div class="betweenTime">:</div><div class="timerTime">{{counter.hours}}</div><div class="betweenTime">:</div><div class="timerTime">{{counter.minutes}}</div><div class="betweenTime">:</div><div class="timerTime">{{counter.seconds}}</div>
                 </div>
+                <div class="timer">{{timer}}</div>
+            </div>            
+            <div ng-if="festival.value < 0">
+                <h2 class="uppercase bold color-white thanks">Thank you for visiting Extrema Outdoor 2015!<br>See you next year!</h2>
             </div>
         </div>
 

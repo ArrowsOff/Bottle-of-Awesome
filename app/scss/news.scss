@@ -31,10 +31,7 @@
 				line-height: 15px;
 				min-width: 25%;
 				display: inline-block;
-
-
 				text-align: center;
-
 			}
 			&.timerTime{
 				line-height: 15px;
@@ -43,7 +40,6 @@
 				font-size: 4em;
 				margin-top: 8%;
 				text-align: center;
-
 			}
 			&.betweenTime{
 				display: inline-block;
@@ -51,8 +47,10 @@
 				font-size: 4em;
 			}
 		}
-
-
+		.thanks {
+			white-space: normal;
+			font-size: 2.3em;
+		}
 	}
 	.news-item {
 		margin: 16px;
