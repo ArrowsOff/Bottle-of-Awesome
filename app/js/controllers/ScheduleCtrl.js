@@ -25,4 +25,14 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
 
         return result*1.5;
     };
+
+    var delegate;
+    var secondDelegate;
+
+    $scope.scrolling = function() {
+        delegate = $ionicScrollDelegate.$getByHandle('bottom');
+        secondDelegate = $ionicScrollDelegate.$getByHandle('top');
+        $log.log('scrolling', delegate.getScrollPosition().left, secondDelegate.getScrollPosition().left);
+        secondDelegate.scrollTo(delegate.getScrollPosition().left);
+    };
 });
