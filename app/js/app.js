@@ -10,11 +10,35 @@ var app = angular.module('starter', [
     "com.2fdevs.videogular.plugins.controls"
 ]);
 
-app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, $cordovaStatusbar, AreaService) {
+app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, $cordovaStatusbar, AreaService, $ionicHistory) {
     ImgCache.options.debug = false;
     ImgCache.options.chromeQuota = 10*1024*1024; // 10MB
 
     $ionicPlatform.ready(function() {
+        // back button action
+          $ionicPlatform.registerBackButtonAction(function(e){
+            if ($rootScope.backButtonPressedOnceToExit) {
+              ionic.Platform.exitApp();
+            }
+
+            else if ($ionicHistory.backView()) {
+              $ionicHistory.goBack();
+            }
+            else {
+              $rootScope.backButtonPressedOnceToExit = true;
+              window.plugins.toast.showShortBottom(
+                "Press back button again to exit",function(a){},function(b){}
+              );
+              setTimeout(function(){
+                $rootScope.backButtonPressedOnceToExit = false;
+              },2000);
+            }
+            e.preventDefault();
+            return false;
+          },101);
+
+
+
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
         if(window.cordova && window.cordova.plugins.Keyboard) {
