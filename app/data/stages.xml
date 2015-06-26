@@ -35,4 +35,9 @@
     <order>1</order>
     <language>en</language>
   </stage>
+  <stage id="98f13708210194c475687be6106a3b84">
+    <title><![CDATA[Ruby Village]]></title>
+    <order>7</order>
+    <language>en</language>
+  </stage>
 </stages>

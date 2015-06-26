@@ -14,6 +14,14 @@ app.service("AreaService", function($log, $q, $http){
             var json = x2js.xml_str2json(data);
             stages = json.stages;
 
+            // remove empty stage
+            angular.forEach(stages.stage, function(stage, key) {
+                if (stage.title.__cdata == "Ruby Village") {
+                    stages.stage.splice(key);
+                };
+            });
+
+
             defer.resolve(stages);
         }).error(function(err){
             defer.reject('Error: ', err);

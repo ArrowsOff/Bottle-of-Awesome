@@ -72,6 +72,16 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
 
         // This will set artist variable global
         ArtistService.getArtists().then(function(data) {
+
+            // remove invalide date and vj
+            angular.forEach(data.artist, function(artist, key) {
+                var name = artist.name.__cdata;
+                if (name == "Roog" || name == "Michel De Hey" || name == "STV-Visuals") {
+                    data.artist.splice(key);
+                };
+            });
+
+
             $rootScope.artists = data;
 
             var favouritesDefer = $q.defer();
