@@ -1,6 +1,7 @@
 #infoPage {
-	#content-boa{
-		margin-top: 230px;
+	#content-boa {
+		top: 230px;
+		position: relative;
 	}
 	#logo-boa{
 		position: fixed;
@@ -12,7 +13,7 @@
 		text-align: center;
 		color: white;
 	}
-	#logo{ 
+	#logo{
 		position: fixed;
 		width: 100%;
 		background-color: #E64551;
@@ -108,9 +109,3 @@
 		width: 80%;
 	}
 }
-
-
-
-
-
-
