@@ -30,7 +30,7 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
                 );
                 setTimeout(function(){
                     $rootScope.backButtonPressedOnceToExit = false;
-                },2000);
+                }, 2000);
             }
             e.preventDefault();
             return false;
