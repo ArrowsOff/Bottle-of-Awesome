@@ -1,6 +1,6 @@
 #infoPage {
-	#content{
-		margin-top: 130px;
+	#content-boa{
+		margin-top: 230px;
 	}
 	#logo-boa{
 		position: fixed;
@@ -38,16 +38,6 @@
 			margin-right: 10%;
 		}
 
-	}
-	.linked{
-		background-color: $blue;
-		color: $white;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 10px;
-		padding: 8px;
-		font-size: 1.4em;
-		width: 80%;
 	}
 	.has-header {
 		top: 0;
@@ -101,6 +91,17 @@
 	a:link{
 		color:$green;
 		text-decoration: none;
+		display: block;
+	}
+	.linked{
+		background-color: $blue;
+		color: $white !important;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+		padding: 8px;
+		font-size: 1.4em;
+		width: 80%;
 	}
 }
 
