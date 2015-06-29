@@ -2,7 +2,14 @@
 	.has-header {
 		top: 0;
 	}
-
+	ion-scroll {
+		height: 470px;
+		width: 360px;
+	}
+ 	#map-image{
+		width: 1440px;
+		height: 1440px;
+	}
 	svg {
 		max-width: 100%;
 		padding: 5px;
@@ -87,13 +94,5 @@
 		animation-delay: 2s;
 		-webkit-animation: dash 10s linear alternate infinite;
 		-webkit-animation-delay: 2s;
-	}
-	#map-image{
-		width: 200%;
-	}
-	.scroll-view{
-		position: relative;
-		display: inline;
-		-webkit-transform: translate3d(-50%, -50%, 0px)
 	}
 }
