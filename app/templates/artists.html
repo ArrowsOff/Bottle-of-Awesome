@@ -5,7 +5,7 @@
   	<div id="areas">
 		<ion-scroll direction="x" class="wide-as-needed">
 			<ion-radio ng-model="$parent.stage" ng-value="''" name="stage" icon="false" class="uppercase bold">All</ion-radio>
-        	<ion-radio ng-repeat="stage in stages | orderBy: 'order'" ng-model="$parent.$parent.stage" ng-value="stage._id" name="stage" icon="false" class="uppercase bold">{{::stage.title.toString()}}</ion-radio>
+        	<ion-radio ng-repeat="stage in stages | orderBy: 'order'" ng-model="$parent.$parent.stage" ng-value="stage._id" name="stage" icon="false" class="uppercase bold">{{::stage.title.__cdata}}</ion-radio>
   		</ion-scroll>
 	</div>
 

@@ -1,40 +1,59 @@
-app.service("AreaService", function($log, $q, $http){
+app.service("AreaService", function($log, $q, $http, DatabaseService){
 
 	var AreaService = this;
 
 	var stages = null;
 
-	// Get all areas
-	AreaService.getAreas = function() {
-		var defer = $q.defer();
+	function requestAreas(refresh) {
+        var defer = $q.defer();
 
-		$http.get(window.baseconfig.api + "stages.xml").success(function(data) {
-            var x2js = new X2JS();
-            var json = x2js.xml_str2json(data);
-            stages = json.stages;
+        if(!(window.localStorage.areas) || refresh) {
+            // $http.get("http://xofestival.nl/xml/artists.xml").success(function(data) {
+            $http.get(window.baseconfig.api + "stages.xml").success(function(data) {
+                var x2js = new X2JS();
+                var json = x2js.xml_str2json(data);
 
-            // remove empty stage
-            angular.forEach(stages.stage, function(stage, key) {
-                if (stage.title.__cdata == "Ruby Village") {
-                    stages.stage.splice(key);
-                }
+				// Remove empty stage
+	            angular.forEach(json.stages.stage, function(stage, key) {
+	                if (stage.title.__cdata == "Ruby Village") {
+	                    json.stages.stage.splice(key);
+	                }
+	            });
+
+				DatabaseService.postAreas(json.stages);
+
+                $log.log("Request areas from URL");
+
+                defer.resolve(json.stages);
+            }).error(function(err){
+                defer.reject("Error requesting areas", err);
             });
+        } else {
+            $log.log("Request areas from database");
 
-            defer.resolve(stages);
-        }).error(function(err){
-            defer.reject('Error: ', err);
-        });
+            DatabaseService.get('areas').then(function(data){
+                defer.resolve(data);
+            }).catch(function(err){
+                defer.reject("Error requesting areas", err);
+            });
+        }
 
-		return defer.promise;
-	};
+        return defer.promise;
+    }
 
-	// get area for artists
-	AreaService.getArea = function(id) {
-
+	// Get all areas
+	AreaService.getAreas = function(refresh) {
 		var defer = $q.defer();
 
-		return defer.promise;
+		if(!refresh) { refresh = false; }
 
+		requestAreas(refresh).then(function(data){
+	        defer.resolve(data);
+	    }).catch(function(err){
+	        $log.error("Error getting areas:", err);
+	    });
+
+		return defer.promise;
 	};
 
 	return AreaService;

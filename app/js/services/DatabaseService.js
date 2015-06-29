@@ -2,7 +2,7 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
     var DatabaseService = this;
 
     var database = pouchDB('LocalDatabase');
-    
+
     var favourites = {};
 
     // Post artists to database
@@ -15,6 +15,19 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
             window.localStorage.artists = doc._id;
         }).catch(function(err){
             $log.error("Error posting artists to database:", err);
+        });
+    };
+
+    // Post artists to database
+    DatabaseService.postAreas = function(doc) {
+        $log.log("Posting areas to database");
+
+        doc._id = 'areas';
+
+        database.put(doc).then(function() {
+            window.localStorage.areas = doc._id;
+        }).catch(function(err){
+            $log.error("Error posting areas to database:", err);
         });
     };
 
@@ -53,7 +66,7 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
 
     // Get the artists database
     DatabaseService.get = function(id) {
-        return database.get(id);         
+        return database.get(id);
     };
 
     // Removing document from database
