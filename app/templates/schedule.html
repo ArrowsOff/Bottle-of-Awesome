@@ -21,7 +21,7 @@
                     <div class="padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'" style="float: left;">
 
                         <div ng-repeat="artist in value | orderBy: 'end_time'">
-                            <div class="stage-artist uppercase" ng-style="{'height': calculateHeight(artist)+'px'}">
+                            <div class="stage-artist uppercase" ng-style="{'height': calculateHeight(artist)+'px'}"  ng-class="artist.name.__cdata">
                                 <a ng-href="#/app/artists/{{artist._id}}" class="padding color-white semibold" style="display: block; height:100%;" ng-class="artist.stage_name">
                                     <i ng-click="artist.favourited=!artist.favourited; addToFavorites(artist._id)"  ng-class="{'icon ion-ios-heart': artist.favourited , 'icon ion-ios-heart-outline': !artist.favourited }" style="padding-left:10px; font-size: 24px; float:right; z-index: 500;"></i>
                                     {{artist.name.__cdata}}
@@ -29,6 +29,7 @@
                                 </a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </ion-scroll>

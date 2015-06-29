@@ -26,7 +26,7 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
             } else {
                 $rootScope.backButtonPressedOnceToExit = true;
                 window.plugins.toast.showShortBottom(
-                    "Press back button again to exit",function(a){},function(b){}
+                    "Press back button again to exit", function(a){}, function(b){}
                 );
                 setTimeout(function(){
                     $rootScope.backButtonPressedOnceToExit = false;

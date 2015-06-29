@@ -42,7 +42,11 @@
     "org.apache.cordova.file-transfer",
     "cordova-plugin-inappbrowser",
     "cordova-plugin-statusbar",
-    "cordova-plugin-splashscreen"
+    "cordova-plugin-splashscreen",
+    {
+      "locator": "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
+      "id": "nl.x-services.plugins.toast"
+    }
   ],
   "cordovaPlatforms": [
     "ios",

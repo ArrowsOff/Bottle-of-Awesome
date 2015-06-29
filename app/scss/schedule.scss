@@ -84,5 +84,15 @@
 		.Ensuite {
 			background-color: $black;
 		}
+
+		&.Jean .LOVE, &.Marcello .LOVE {
+			margin-top: 90px;
+		}
+		&.Oliver {
+			margin-top: 30px;
+		}
+		&.Bellen .Quartz {
+			margin-top: 180px + 22.5px;
+		}
 	}
 }
