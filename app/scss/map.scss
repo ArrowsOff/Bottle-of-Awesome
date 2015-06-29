@@ -88,4 +88,12 @@
 		-webkit-animation: dash 10s linear alternate infinite;
 		-webkit-animation-delay: 2s;
 	}
+	#map-image{
+		width: 200%;
+	}
+	.scroll-view{
+		position: relative;
+		display: inline;
+		-webkit-transform: translate3d(-50%, -50%, 0px)
+	}
 }
