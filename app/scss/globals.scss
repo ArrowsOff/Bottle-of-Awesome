@@ -1,21 +1,38 @@
 // Colors
-$red: #E64551;
+$red: #E64551;        // DIAMOND - RED
 $white: #FFFFFF;
-$purple: #915F9F;
-$black: #3D3936;
-$green: #78B75A;
-$yellow: #F8DC3B;
-$blue: #4BB8D6;
-$orange: #F09202;
-$grey: #e6e7e8;
+$purple: #915F9F;     // QUARTZ - BLUE
+$black: #3D3936;      // ENSUITE - GREEN
+$green: #78B75A;      // LOVE - ORANGE
+$yellow: #F8DC3B;     // ANTS - BLACK
+$blue: #4BB8D6;       // CRYSTAL - YELLOW
+$orange: #F09202;     // COBALT - PURPLE
+$grey: #e6e7e8; //
 
-$red-trans: rgba(230,69,81,0.73);
-$purple-trans: rgba(145,95,159,0.73);
-$green-trans: rgba(120,183,90,0.73);
-$yellow-trans: rgba(248,220,59,0.73);
-$blue-trans: rgba(75,184,214,0.73);
-$orange-trans: rgba(240,146,2,0.73);
-$grey-trans: rgba(61,57,54, 0.73);
+$red-trans: rgba(230,69,81,0.73);        // DIAMOND - RED
+$purple-trans: rgba(145,95,159,0.73);    // QUARTZ - BLUE
+$green-trans: rgba(120,183,90,0.73);     // LOVE - ORANGE
+$yellow-trans: rgba(248,220,59,0.73);    // ANTS -BLACK
+$blue-trans: rgba(75,184,214,0.73);      // CRYSTAL - YELLOW
+$orange-trans: rgba(240,146,2,0.73);     // COBALT - PURPLE
+$grey-trans: rgba(61,57,54, 0.73);       // ENSUITE - GREEN
+
+$diamond: $red;
+$diamond-trans: $red-trans;
+$quartz: $blue;
+$quartz-trans: $blue-trans;
+$love: $orange;
+$love-trans: $orange-trans;
+$ensuite: $green;
+$ensuite-trans: $green-trans;
+$ants: $black;
+$ants-trans: $grey-trans;
+$crystal: $yellow;
+$crystal-trans: $yellow-trans;
+$cobalt: $purple;
+$cobalt-trans: $purple-trans;
+
+
 
 // Proxima nova font
 @font-face {

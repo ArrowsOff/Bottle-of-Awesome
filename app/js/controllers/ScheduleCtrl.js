@@ -34,7 +34,7 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
             result = diffMins;
         }
 
-        return result*1.5;
+        return (result*1.5) + 'px';
     };
 
     var delegate;
