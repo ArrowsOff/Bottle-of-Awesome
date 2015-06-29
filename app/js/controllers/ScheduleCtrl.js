@@ -2,7 +2,17 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
     $scope.calcWidthSC = screen.width;
     $scope.calcHeightSC = screen.height;
 
-    $log.log($scope.artists);
+    //check if date is XO date
+    $scope.now = moment();
+    $scope.min = moment("2015-07-11 11:00:00");
+    $scope.max = moment("2015-07-11 23:00:00");
+    $scope.check = function() {
+        if ($scope.now < $scope.max && $scope.now >= $scope.min) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
     // Calculate the height for each artist block on the schedulepage.
     $scope.calculateHeight = function(artist) {
