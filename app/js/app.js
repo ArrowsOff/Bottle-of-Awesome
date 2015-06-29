@@ -78,8 +78,8 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
             // remove invalide date and vj
             angular.forEach(data.artist, function(artist, key) {
                 var name = artist.name.__cdata;
-                if (name == "Roog" || name == "Michel De Hey" || name == "STV-Visuals" || name == "Mc Robbie Rise") {
-                    // data.artist.splice(key);
+                if (name == "Mc Robbie Rise") {
+                    data.artist.splice(key, 1);
                 }
             });
 

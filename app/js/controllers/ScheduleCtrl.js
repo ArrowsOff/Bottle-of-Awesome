@@ -16,25 +16,34 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
 
     // Calculate the height for each artist block on the schedulepage.
     $scope.calculateHeight = function(artist) {
-        var date1 = new Date(artist.start_time);
-        var date2 = new Date(artist.end_time);
+    //     $log.info('Jo wat?');
+
+        var start_time = artist.start_time;
+        var end_time = artist.end_time;
+        var date1 = new Date(start_time.replace(' ', 'T'));
+        var date2 = new Date(end_time.replace(' ', 'T'));
         var diffMs = (date2 - date1); // milliseconds between now & Christmas
         var diffHrs = Math.round((diffMs % 86400000) / 3600000); // hours
         var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
-        var result;
 
-        if(diffHrs == 2) {
-            result = diffHrs*60 - diffMins;
-        } else if (diffHrs == 1) {
-            result = diffHrs*60 + diffMins;
-            if(result == 105) {
-                result = 45;
-            }
+        if(!isNaN(diffMs)) {
+          var result;
+
+          if(diffHrs == 2) {
+              result = diffHrs*60 - diffMins;
+          } else if (diffHrs == 1) {
+              result = diffHrs*60 + diffMins;
+              if(result == 105) {
+                  result = 45;
+              }
+          } else {
+              result = diffMins;
+          }
+
+          return (result*1.5) + 'px';
         } else {
-            result = diffMins;
+          return false;
         }
-
-        return (result*1.5) + 'px';
     };
 
     var delegate;
@@ -57,5 +66,5 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
 	    timeLine = timeLineH + timeLineM;
 
 	    return timeLine;
-    }
+    };
 });
