@@ -1,9 +1,45 @@
 #schedule {
+	.blocker {
+			position: absolute;
+		  top: 0;
+		  left: 0;
+		  display: block;
+		  z-index: 100;
+		  height: 60px;
+		  width: 360px;
+	}
+	.spacer {
+		position: absolute;
+		left: 0;
+		height: 60px;
+		width: 30px;
+		border-right: 3px solid $red;
+	}
+	.stages {
+		margin-left: 30px;
+		.stage {
+			padding: 10px;
+		}
+	}
 	#schedule-bg-scroll {
 		display: block;
 		background-color: $white;
 		background-image: linear-gradient(rgb(230,230,230) 50%, transparent 50%);
 		background-size: 180px 180px;
+		position: absolute;
+		left: 30px;
+	}
+	#hours {
+		display: block;
+	  background-image: url("../img/times.svg");
+	  background-position: center 3px;
+	  background-size: 10px 1108px;
+	  background-repeat: no-repeat;
+	  position: absolute;
+	  height: 1082px;
+	  width: 30px;
+	  border-right: 3px solid $red;
+	  z-index: 100;
 	}
 	#timeline{
 		width:1365px;
@@ -12,6 +48,7 @@
 		position: relative;
 		top:10px;
 		opacity: 0.5;
+		z-index: 10;
 	}
 	.has-header {
 		top: 0;
