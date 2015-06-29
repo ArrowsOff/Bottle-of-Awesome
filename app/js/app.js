@@ -43,6 +43,8 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
         }
         if(window.StatusBar) {
             // StatusBar.styleDefault();
+            $cordovaStatusbar.overlaysWebView(true);
+            $cordovaStatusbar.style(1);
             $cordovaStatusbar.styleHex('#eb6772');
         }
 

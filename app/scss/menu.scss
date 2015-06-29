@@ -2,6 +2,7 @@
 	.title, .button-icon{
 		color: $white;
 	}
+
 	#logo {
 		padding: 0;
 	}
@@ -12,7 +13,7 @@
 		width: 50%;
 		float: left;
 		border: none;
-			
+
 		a {
 			width: 100%;
 			padding: 0;
@@ -26,10 +27,10 @@
 			background-position: center 30%;
 			@media (max-height:497px){
 				border: none;
-				background-size: 40%;		
+				background-size: 40%;
 			}
 		}
-		
+
 		p {
 			position: absolute;
 			bottom: 5%;
@@ -57,15 +58,15 @@
 			color: $red !important;
 		}
 	}
-	
+
 	#artistsMB > a{
-		border-bottom-color: $orange;	
+		border-bottom-color: $orange;
 		background-image: url("../img/artists.svg");
 		p {
-			color: $orange;			
+			color: $orange;
 		}
 	}
-	
+
 	#infoMB > a{
 		border-bottom-color: $yellow;
 		background-image: url("../img/info.svg");
@@ -73,7 +74,7 @@
 			color: $yellow;
 		}
 	}
-	
+
 	#scheduleMB > a{
 		border-bottom-color: $green;
 		background-image: url("../img/schedule.svg");
@@ -81,7 +82,7 @@
 			color: $green;
 		}
 	}
-	
+
 	#mapMB > a{
 		border-bottom-color: $purple;
 		background-image: url("../img/map.svg");
@@ -89,7 +90,7 @@
 			color: $purple;
 		}
 	}
-	
+
 	#favouritesMB > a{
 		border-bottom-color: $blue;
 		background-image: url("../img/favourites.svg");
@@ -97,7 +98,7 @@
 			color: $blue;
 		}
 	}
-	
+
 	#XOmemoriesMB > a{
 		border-bottom-color: $black;
 		background-image: url("../img/xomemories.svg");
@@ -108,9 +109,18 @@
 	#countText{
 		color: $white !important;
 	}
-	
-	
+
+
 
 }
-
-
+.platform-ios {
+	#menu {
+		#logo {
+			padding-top: 10px 0px;
+			height: 100px;
+		}
+		#content {
+			top: 100px;
+		}
+	}
+}

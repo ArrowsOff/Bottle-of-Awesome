@@ -3,7 +3,7 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
     $scope.calcHeightSC = screen.height;
 
     $log.log($scope.artists);
-    
+
     // Calculate the height for each artist block on the schedulepage.
     $scope.calculateHeight = function(artist) {
         var date1 = new Date(artist.start_time);
@@ -36,12 +36,15 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
         secondDelegate.scrollTo(delegate.getScrollPosition().left);
     };
 
+    var timeLineH;
+    var timeLineM;
+    var timeLine;
     $scope.linePosition = function() {
-	    var timeLineH = moment().format('H');
-	    var timeLineM = moment().format('mm');
-	    var timeLineH = (timeLineH * 90)-990;
-	    var timeLineM = timeLineM *1.5;
-	    var timeLine = timeLineH + timeLineM;
+	    timeLineH = moment().format('H');
+	    timeLineM = moment().format('mm');
+	    timeLineH = (timeLineH * 90)-990;
+	    timeLineM = timeLineM *1.5;
+	    timeLine = timeLineH + timeLineM;
 
 	    return timeLine;
     }
