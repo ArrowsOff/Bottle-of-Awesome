@@ -1,27 +1,13 @@
-app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, $ionicScrollDelegate, AreaService) {
+app.controller('ArtistsCtrl', function($scope, $rootScope, $log, ArtistService, $ionicScrollDelegate) {
 
 	// Preselect radio button - Area menu
 	$scope.stage = '';
 
-	AreaService.getAreas().then(function(data) {
-        $scope.stages = data.stage;
-    }).catch(function(err) {
-        $log.error("Error getting areas:", err);
-    });
-
 	var delegate;
-	//
-    // $scope.scrolling = function() {
-    //
-    //     secondDelegate = $ionicScrollDelegate.$getByHandle('top');
-    //     secondDelegate.scrollTo(delegate.getScrollPosition().left);
-    // };
-
 	function scrollToStage(x) {
 		delegate = $ionicScrollDelegate.$getByHandle('stages');
 		delegate.scrollTo(x, 0, true);
 	}
-
 
 	// Swiping through stages
 	$scope.swipeLeft = function() {
