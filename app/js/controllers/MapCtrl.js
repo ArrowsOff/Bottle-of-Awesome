@@ -11,5 +11,5 @@ app.controller('MapCtrl', function ($scope, $ionicScrollDelegate, $log) {
         $log.log(delegate.getScrollPosition());
         delegate.scrollTo(300,270);
         delegate.zoomTo(0.7);
-    }
+    };
 });
