@@ -11,7 +11,7 @@ var pluginlist = [
     "cordova-plugin-device",
     "org.apache.cordova.console",
     // "cordova-plugin-geolocation",
-    // "https://github.com/phonegap-build/PushPlugin.git",
+    "https://github.com/phonegap-build/PushPlugin.git",
     // "https://github.com/apache/cordova-plugin-file.git",
     // "cordova-plugin-file",
     // "cordova-plugin-file-transfer",

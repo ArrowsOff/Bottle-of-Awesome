@@ -19,9 +19,7 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
         $ionicPlatform.registerBackButtonAction(function(e){
             if ($rootScope.backButtonPressedOnceToExit) {
                 ionic.Platform.exitApp();
-            }
-
-            else if ($ionicHistory.backView()) {
+            } else if ($ionicHistory.backView()) {
                 $ionicHistory.goBack();
             } else {
                 $rootScope.backButtonPressedOnceToExit = true;
@@ -45,8 +43,10 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
             $cordovaStatusbar.styleHex('#eb6772');
         }
         if(window.plugins) {
-            if (window.plugins.pushNotification) {
+            if (window.plugins.pushNotification && !!!localStorage.pushToken) {
                 PushService.register();
+            } else {
+                $log.log('Push already registered', localStorage.pushToken);
             }
         }
 
