@@ -108,6 +108,11 @@
 		width: 80%;
 		display: block;
 	}
+	@media (max-width: 320px) {
+		.linked {
+			width: 85%;			
+		}
+	}
 }
 .platform-ios {
 	.title {
