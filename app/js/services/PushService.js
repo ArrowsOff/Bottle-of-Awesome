@@ -59,6 +59,7 @@ app.service('PushService', function($log, $http, $cordovaDevice, $window){
         }
     }
     function errorHandler(error) {
+        alert(error);
         $log.error(ionic.Platform.platform(), "error:", error);
     }
 
@@ -73,6 +74,8 @@ app.service('PushService', function($log, $http, $cordovaDevice, $window){
     }
 
     PushService.register = function() {
+
+        alert("test");
         var config = null;
 
         if (ionic.Platform.isAndroid()) {

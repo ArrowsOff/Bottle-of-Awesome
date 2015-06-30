@@ -69,4 +69,9 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicPlatform, $io
             return false; // prevent default action and stop event propagation
         }
     };
+
+	$scope.browse = function(url) {
+		window.open(url, '_system', 'location=yes');
+		return false;
+	}
   });

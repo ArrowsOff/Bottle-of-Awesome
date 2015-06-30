@@ -39,10 +39,10 @@
 </div>
 
 <div class="social-media text-center row">
-	<a ng-href="{{::artist.facebook.__cdata}}" class="col button button-clear facebooklink" ng-click="InAppBrowser()" ng-if="artist.facebook.__cdata"></a>
-	<a ng-href="{{::artist.twitter.__cdata}}" class="col button button-clear twitterlink" ng-click="InAppBrowser()" ng-if="artist.twitter.__cdata"></a>
-	<a ng-href="{{::artistUrl}}" class="col button button-clear spotifylink" ng-click="InAppBrowser()" ng-if="spotify"></a>
-	<a ng-href="{{::artist.youtube.__cdata}}" class="col button button-clear youtubelink" ng-click="InAppBrowser()" ng-if="artist.youtube.__cdata"></a>
+	<a class="col button button-clear facebooklink" ng-click="browse('{{::artist.facebook.__cdata}}')" ng-if="artist.facebook.__cdata"></a>
+	<a class="col button button-clear twitterlink" ng-click="browse('{{::artist.twitter.__cdata}}')" ng-if="artist.twitter.__cdata"></a>
+	<a class="col button button-clear spotifylink" ng-click="browse('{{::artistUrl}}')" ng-if="spotify"></a>
+	<a class="col button button-clear youtubelink" ng-click="browse('{{::artist.youtube.__cdata}}')" ng-if="artist.youtube.__cdata"></a>
 </div>
 
 </ion-content>
