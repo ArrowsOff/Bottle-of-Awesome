@@ -3,7 +3,6 @@
 		top: 0;
 	}
 	ion-scroll {
-		height: 470px;
 		width: 360px;
 	}
 	#map-image{
@@ -13,7 +12,7 @@
 	}
 	.scroll-view{
 		position: relative;
-		display: inline;
+		display: inline-block;
 	}
 
 	svg {
