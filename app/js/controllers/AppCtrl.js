@@ -73,5 +73,5 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicPlatform, $io
 	$scope.browse = function(url) {
 		window.open(url, '_system', 'location=yes');
 		return false;
-	}
+	};
   });

@@ -43,11 +43,11 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
             $cordovaStatusbar.styleHex('#eb6772');
         }
         if(window.plugins) {
-            // if (window.plugins.pushNotification && !!!localStorage.pushToken) {
+            if (window.plugins.pushNotification && !!!localStorage.pushToken) {
                 PushService.register();
-            // } else {
-            //     $log.log('Push already registered', localStorage.pushToken);
-            // }
+            } else {
+                $log.log('Push already registered', localStorage.pushToken);
+            }
         }
 
         // Loading Google Analytics

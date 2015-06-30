@@ -54,17 +54,14 @@ app.service('PushService', function($log, $http, $cordovaDevice, $window){
         };
 
         if (ionic.Platform.isIOS()) {
-            alert("token:", result);
             storeToken();
         }
     }
     function errorHandler(error) {
-        alert(error);
         $log.error(ionic.Platform.platform(), "error:", error);
     }
 
     function storeToken() {
-        alert(ionic.Platform.platform(), userDevice.device.token);
         $http.post('http://app.xofestival.nl/api/register/' + ionic.Platform.platform() + '.php', userDevice).success(function(data){
             $log.log("token:", data);
             if(!!data) {
@@ -75,7 +72,6 @@ app.service('PushService', function($log, $http, $cordovaDevice, $window){
 
     PushService.register = function() {
 
-        alert("test");
         var config = null;
 
         if (ionic.Platform.isAndroid()) {
