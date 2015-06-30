@@ -1,5 +1,4 @@
-app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegate, $timeout, ArtistService, TrackingService, lodash) {
-
+app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicPlatform, $ionicNavBarDelegate, $timeout, ArtistService, TrackingService, lodash, $cordovaPush, $cordovaToast, $http) {
 	$scope.isIOS = function() {
 		if(ionic.Platform.isIPad() || ionic.Platform.isIOS()) {
 			return true;
@@ -70,5 +69,4 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
             return false; // prevent default action and stop event propagation
         }
     };
-
   });

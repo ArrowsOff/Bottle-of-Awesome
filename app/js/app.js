@@ -10,7 +10,7 @@ var app = angular.module('starter', [
     "com.2fdevs.videogular.plugins.controls"
 ]);
 
-app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, $cordovaStatusbar, AreaService, $ionicHistory) {
+app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, PushService, $cordovaStatusbar, AreaService, $ionicHistory) {
     ImgCache.options.debug = false;
     ImgCache.options.chromeQuota = 10*1024*1024; // 10MB
 
@@ -43,6 +43,9 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
         }
         if(window.StatusBar) {
             $cordovaStatusbar.styleHex('#eb6772');
+        }
+        if(window.plugins.pushNotification) {
+            PushService.register();
         }
 
         // Loading Google Analytics
