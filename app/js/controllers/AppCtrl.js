@@ -51,13 +51,13 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicPlatform, $io
   	var calcHeight = (document.getElementById('sideMenu').offsetHeight);
 
   	// Calculation height for buttons in sidemenu
-  	$scope.calcHeightMB = (calcHeight - 102) / 4;
-
   	// Calculation height for buttons on app.info
 	if($scope.isIOS()) {
 		$scope.calcInfoHeight = (calcHeight - 141) / 3;
+		$scope.calcHeightMB = (calcHeight - 122) / 4;
 	} else {
 		$scope.calcInfoHeight = (calcHeight - 121) / 3;
+		$scope.calcHeightMB = (calcHeight - 102) / 4;
 	}
 
   	$scope.InAppBrowser = function(e) {
