@@ -33,6 +33,10 @@
     {
       "locator": "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
       "id": "nl.x-services.plugins.toast"
+    },
+    {
+      "locator": "https://github.com/danwilson/google-analytics-plugin.git",
+      "id": "cordova-plugin-google-analytics"
     }
   ],
   "cordovaPlatforms": [
