@@ -32,8 +32,6 @@ $crystal-trans: $yellow-trans;
 $cobalt: $purple;
 $cobalt-trans: $purple-trans;
 
-
-
 // Proxima nova font
 @font-face {
     font-family: 'proxima_nova_regular';
@@ -225,11 +223,11 @@ h1, h2, h3, h4, h5, h6, p, span, a, button, div, .time {
 }
 .platform-ios {
     #logo {
-        height:120px;
-        padding: 35px 34px;
+        // height:120px;
+        // padding: 35px 34px;
     }
     #content {
-        top:120px;
+        // top:120px;
     }
 }
 #logo {
