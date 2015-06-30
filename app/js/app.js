@@ -83,7 +83,6 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
                 }
             });
 
-
             $rootScope.artists = data;
 
             var favouritesDefer = $q.defer();
@@ -112,6 +111,7 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
                     angular.forEach($rootScope.artists.artist, function(res) {
                         if(res.stage_id === stage._id) {
                             res.stage_name = stage.title.__cdata;
+                            res.stage_order = stage.order;
                         }
                     });
                 });

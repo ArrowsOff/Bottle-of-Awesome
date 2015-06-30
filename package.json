@@ -27,19 +27,6 @@
     "com.ionic.keyboard",
     "cordova-plugin-whitelist",
     "cordova-plugin-device",
-    "cordova-plugin-geolocation",
-    "cordova-plugin-media",
-    {
-      "locator": "https://github.com/danwilson/google-analytics-plugin.git",
-      "id": "cordova-plugin-google-analytics"
-    },
-    "cordova-plugin-file",
-    {
-      "locator": "https://github.com/phonegap-build/PushPlugin.git",
-      "id": "com.phonegap.plugins.PushPlugin"
-    },
-    "cordova-plugin-file-transfer",
-    "org.apache.cordova.file-transfer",
     "cordova-plugin-inappbrowser",
     "cordova-plugin-statusbar",
     "cordova-plugin-splashscreen",

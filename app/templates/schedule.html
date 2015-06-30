@@ -8,9 +8,9 @@
             <ion-scroll direction="x" ng-style="{'width':calcWidthSC+'px' }" show-scrollbar-x="false" delegate-handle="top" overflow-scroll="true">
                 <div class="spacer"></div>
                 <div class="stages" style="width: 1365px;">
-                    <div class="padding-horizontal stage" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'value.order'" style="float: left;">
-                        <div class="stage-name semibold uppercase" ng-class="key">
-                            {{key}}
+                    <div class="padding-horizontal stage" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_order'" style="float: left;">
+                        <div class="stage-name semibold uppercase" ng-class="value[0].stage_name">
+                            {{value[0].stage_name}}
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                 <div id="hours"></div>
             	<div id="timeline" ng-style="{'top':linePosition() +'px'}" ng-if="check() == true"></div>
                 <div id="schedule-bg-scroll" style="width: 1365px; height: 1290px;">
-                    <div class="padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_name' | orderBy: 'order'" style="float: left;">
+                    <div class="padding" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_order'" style="float: left;">
 
                         <div ng-repeat="artist in value | orderBy: 'end_time'" ng-if="!!calculateHeight(artist)">
                             <div class="stage-artist uppercase" ng-style="{'height': calculateHeight(artist)}"  ng-class="artist.name.__cdata">
