@@ -13,6 +13,7 @@
     </ion-side-menu-content>
 
     <ion-side-menu side="left" id="menu">
+        <div ng-if="isIOS()" class="ios-filler"></div>
         <a menu-close id="logo" ng-href="#/app/news">
             <img ng-src="img/menu-logo.svg" alt="" style="width: 275px; padding: 32px 45px;">
         </a>
