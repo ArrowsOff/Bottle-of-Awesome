@@ -37,9 +37,9 @@ app.controller('NewsCtrl', function ($scope, $log, $http) {
 
     // twitterfeed
     $http.get("http://app.xofestival.nl/api/rss.php").success(function(data) {
-        var x2js = new X2JS();
-        var json = x2js.xml_str2json(data);
-        $log.log(json);
+        //var x2js = new X2JS();
+        //var json = x2js.xml_str2json(data);
+        $log.log(data);
 
         $scope.rss = json.rss.channel.item;
     });
