@@ -9,7 +9,13 @@
  	#map-image{
 		width: 1440px;
 		height: 1440px;
+		width: 200%;
 	}
+	.scroll-view{
+		position: relative;
+		display: inline;
+	}
+
 	svg {
 		max-width: 100%;
 		padding: 5px;
@@ -95,4 +101,3 @@
 		-webkit-animation: dash 10s linear alternate infinite;
 		-webkit-animation-delay: 2s;
 	}
-}
