@@ -44,8 +44,10 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
         if(window.StatusBar) {
             $cordovaStatusbar.styleHex('#eb6772');
         }
-        if(window.plugins.pushNotification) {
-            PushService.register();
+        if(window.plugins) {
+            if (window.plugins.pushNotification) {
+                PushService.register();
+            }
         }
 
         // Loading Google Analytics
