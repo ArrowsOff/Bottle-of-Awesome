@@ -42,9 +42,6 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         }
         if(window.StatusBar) {
-            // StatusBar.styleDefault();
-            $cordovaStatusbar.overlaysWebView(true);
-            $cordovaStatusbar.style(1);
             $cordovaStatusbar.styleHex('#eb6772');
         }
 
