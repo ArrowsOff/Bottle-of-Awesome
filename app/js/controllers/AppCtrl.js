@@ -1,5 +1,11 @@
 app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegate, $timeout, ArtistService, TrackingService, lodash) {
 
+	$scope.isIOS = function() {
+		if(ionic.Platform.isIPad() || ionic.Platform.isIOS()) {
+			return true;
+		}
+	};
+
 	$scope.addToFavorites = function(id) {
 		event.preventDefault();
 		ArtistService.favorite(id);
@@ -49,7 +55,12 @@ app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicNavBarDelegat
   	$scope.calcHeightMB = (calcHeight - 102) / 4;
 
   	// Calculation height for buttons on app.info
-  	$scope.calcInfoHeight = (calcHeight - 121) / 3;
+ //  	$scope.calcInfoHeight = (calcHeight - 121) / 3;
+	if($scope.isIOS()) {
+		$scope.calcInfoHeight = (calcHeight - 141) / 3;
+	} else {
+		$scope.calcInfoHeight = (calcHeight - 121) / 3;
+	}
 
   	$scope.InAppBrowser = function(e) {
 		e = e ||  window.event;

@@ -169,7 +169,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, button, div, .time {
     background-color: $orange-trans !important;
 }
 
-
+.ios-filler {
+    height: 15px;
+    background-color: $red;
+}
 
 .nopadding {
 	padding: 0;
@@ -222,11 +225,11 @@ h1, h2, h3, h4, h5, h6, p, span, a, button, div, .time {
 }
 .platform-ios {
     #logo {
-        height:100px;
+        height:120px;
         padding: 35px 34px;
     }
     #content {
-        top:100px;
+        top:120px;
     }
 }
 #logo {
