@@ -3,7 +3,7 @@
   		<img src="img/crinkles/artists-cr.svg">
   	</div>
   	<div id="areas">
-		<ion-scroll direction="x" class="wide-as-needed">
+		<ion-scroll direction="x" class="wide-as-needed" delegate-handle="stages">
 			<ion-radio ng-model="$parent.stage" ng-value="''" name="stage" icon="false" class="uppercase bold">All</ion-radio>
         	<ion-radio ng-repeat="stage in stages | orderBy: 'order'" ng-model="$parent.$parent.stage" ng-value="stage._id" name="stage" icon="false" class="uppercase bold">{{::stage.title.__cdata}}</ion-radio>
   		</ion-scroll>
