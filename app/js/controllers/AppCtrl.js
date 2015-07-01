@@ -1,4 +1,4 @@
-app.controller('AppCtrl', function($scope, $rootScope, $log, $ionicPlatform, $ionicNavBarDelegate, $timeout, ArtistService, TrackingService, lodash, $cordovaPush, $cordovaToast, $http) {
+app.controller('AppCtrl', function($scope, $rootScope, $log, $timeout, ArtistService, TrackingService) {
 	$scope.isIOS = function() {
 		if(ionic.Platform.isIPad() || ionic.Platform.isIOS()) {
 			return true;

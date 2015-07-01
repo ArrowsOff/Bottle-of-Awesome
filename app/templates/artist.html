@@ -5,8 +5,7 @@
 <ion-content>
 
 <div class="image-header" style="position: relative; z-index: -1;">
-    <img id="image" img-cache ng-src="{{::artist.image.__cdata}}">
-	<!-- <img id="image" ng-src="{{::artist.image.__cdata}}"> -->
+    <img id="image" ng-src="{{::artist.image.__cdata}}">
 </div>
 
 <div class="padding performance text-center">
@@ -14,12 +13,12 @@
 	<p class="uppercase color-white color-bg-red">{{::artist.stage_name}} {{::toTime(artist.start_time)}} - {{::toTime(artist.end_time)}}</p>
 </div>
 
-<div class="spotify padding videogular-container animated fadeIn" style="font-size: 36px;" ng-if="spotify" ng-controller="ArtistCtrl as controller">
+<div class="spotify padding videogular-container" style="font-size: 36px;" ng-if="spotify" ng-controller="ArtistCtrl as ArtistCtrl">
 
 	<div class="text-center color-white uppercase">{{::artist.name.__cdata}} -<br>{{::track}}</div>
 
 	<videogular class="videogular-container audio">
-		<vg-media vg-src="controller.config.sources" vg-type="audio"></vg-media>
+		<vg-media vg-src="ArtistCtrl.config.sources" vg-type="audio"></vg-media>
 
 		<vg-controls>
 

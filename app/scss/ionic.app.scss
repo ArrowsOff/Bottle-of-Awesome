@@ -21,12 +21,9 @@ $ionicons-font-path: "../fonts" !default;
 // Include all of Ionic
 @import "../lib/ionic/scss/ionic";
 @import "videoregular";
-@import "libs/animate";
 
 /**  Here will our custom styles go
 **************************************************************/
-
-
 @import "globals";
 @import "menu";
 
@@ -40,4 +37,3 @@ $ionicons-font-path: "../fonts" !default;
 @import "map";
 @import "schedule";
 @import "memories";
-

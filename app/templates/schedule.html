@@ -5,7 +5,7 @@
     <ion-content>
         <div id="content">
             <div class="blocker"></div>
-            <ion-scroll direction="x" ng-style="{'width':calcWidthSC+'px' }" delegate-handle="top">
+            <ion-scroll direction="x" ng-style="{'width':calcWidthSC+'px' }" delegate-handle="top" scrollbar-y="false" scrollbar-x="false">
                 <div class="spacer"></div>
                 <div class="stages" style="width: 1365px;">
                     <div class="padding-horizontal stage" ng-repeat="(key, value) in artists.artist | groupBy: 'stage_order'" style="float: left;">
@@ -16,7 +16,7 @@
                 </div>
             </ion-scroll>
 
-            <ion-scroll direction="xy" id="schedule-size" ng-style="{'width':calcWidthSC+'px', 'height':calcHeightSC+'px' }" delegate-handle="bottom" on-scroll="scrolling()">
+            <ion-scroll direction="xy" id="schedule-size" ng-style="{'width':calcWidthSC+'px', 'height':calcHeightSC+'px' }" delegate-handle="bottom" on-scroll="scrolling()" scrollbar-y="false" scrollbar-x="false">
                 <div id="hours"></div>
             	<div id="timeline" ng-style="{'top':linePosition() +'px'}" ng-if="check()"></div>
                 <div id="schedule-bg-scroll" style="width: 1365px; height: 1290px;">

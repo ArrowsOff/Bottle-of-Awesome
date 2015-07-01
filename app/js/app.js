@@ -4,18 +4,14 @@ var app = angular.module('starter', [
     'cb.x2js',
     'ngLodash',
     'pouchdb',
-    'ImgCache',
     'angular.filter',
     "com.2fdevs.videogular",
     "com.2fdevs.videogular.plugins.controls"
 ]);
 
-app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, PushService, $cordovaStatusbar, AreaService, $ionicHistory) {
-    ImgCache.options.debug = false;
-    ImgCache.options.chromeQuota = 10*1024*1024; // 10MB
-
+app.run(function($ionicPlatform, $ionicHistory, $rootScope, $log, $q, $cordovaStatusbar, ArtistService, PushService, AreaService) {
     $ionicPlatform.ready(function() {
-        // back button action
+        // Back button action to prevent closing the app unintented.
         $ionicPlatform.registerBackButtonAction(function(e){
             if ($rootScope.backButtonPressedOnceToExit) {
                 ionic.Platform.exitApp();
@@ -23,9 +19,7 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
                 $ionicHistory.goBack();
             } else {
                 $rootScope.backButtonPressedOnceToExit = true;
-                window.plugins.toast.showShortBottom(
-                    "Press back button again to exit", function(a){}, function(b){}
-                );
+                window.plugins.toast.showShortBottom("Press back button again to exit", function(a){}, function(b){});
                 setTimeout(function(){
                     $rootScope.backButtonPressedOnceToExit = false;
                 }, 2000);
@@ -42,12 +36,10 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
         if(window.StatusBar) {
             $cordovaStatusbar.styleHex('#eb6772');
         }
-        if(window.plugins) {
-            if (window.plugins.pushNotification && !!!localStorage.pushToken) {
-                PushService.register();
-            } else {
-                $log.log('Push already registered', localStorage.pushToken);
-            }
+        if(window.plugins && window.plugins.pushNotification && !!!localStorage.pushToken) {
+            PushService.register();
+        } else {
+            $log.log('Push already registered', localStorage.pushToken);
         }
 
         // Loading Google Analytics
@@ -58,29 +50,15 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
             $log.warn('Analytics API not available...');
         }
 
-        // Initialize Image Caching
-        var imgDefer = $q.defer();
-
-        // ImgCache.options.skipURIencoding=true;
-        ImgCache.init(function() {
-            $log.info('ImgCache init: success!');
-            imgDefer.resolve();
-        }, function() {
-            $log.info('ImgCache init: error! Check the log for errors');
-            imgDefer.reject();
-        });
-
-        var imgPromise = imgDefer.promise;
         var favouritesPromise;
         var areaPromise;
 
         // This will set artist variable global
         ArtistService.getArtists().then(function(data) {
-
             // remove invalide date and vj
             angular.forEach(data.artist, function(artist, key) {
                 var name = artist.name.__cdata;
-                if (name == "Mc Robbie Rise") {
+                if (name == "Mc Robbie Rise" || name == "STV-Visuals") {
                     data.artist.splice(key, 1);
                 }
             });
@@ -124,7 +102,7 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
             areaPromise = areaDefer.promise;
         });
 
-        $q.all([imgPromise, favouritesPromise, areaPromise]).then(function() {
+        $q.all([favouritesPromise, areaPromise]).then(function() {
             if (!!navigator.splashscreen) {
                 navigator.splashscreen.hide();
             }
@@ -132,13 +110,7 @@ app.run(function($ionicPlatform, $rootScope, $log, $q, ImgCache, ArtistService, 
     });
 });
 
-app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, ImgCacheProvider) {
-
-    // Options for ImgCache
-    ImgCacheProvider.setOption('usePersistentCache', true);
-
-    // Set Init manually so we can wait for device to be ready
-    ImgCacheProvider.manualInit = true;
+app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
     // Enable native scrolling for Android
     if(!ionic.Platform.isIOS()) {

@@ -1,3 +1,1 @@
-app.controller('xomemoriesNextCtrl', function($scope){
-
-});
+app.controller('xomemoriesNextCtrl', function($scope){});

@@ -1,3 +1,1 @@
-app.controller('InfoCtrl', function($scope){
-  	
-});
+app.controller('InfoCtrl', function($scope){});

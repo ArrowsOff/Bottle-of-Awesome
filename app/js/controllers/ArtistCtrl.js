@@ -1,4 +1,4 @@
-app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $sce, ArtistService, SpotifyService, $ionicHistory, TrackingService) {
+app.controller('ArtistCtrl', function($ionicHistory, $scope, $rootScope, $stateParams, $timeout, $log, $sce, SpotifyService, TrackingService) {
 	$scope.spotify = false;
 
 	// Configure Spotify url
@@ -12,12 +12,15 @@ app.controller('ArtistCtrl', function($scope, $rootScope, $stateParams, $log, $s
 			TrackingService.trackView(data.name.__cdata);
 
 			// Get Spotify information
-			SpotifyService.get(data.name.__cdata).then(function(res) {
-				$scope.spotify = true;
-				$scope.url = res.preview_url;
-				$scope.track = res.name;
-				$scope.artistUrl = res.artists[0].external_urls.spotify;
-			});
+			$timeout(function(){
+				SpotifyService.get(data.name.__cdata).then(function(res) {
+					$scope.spotify = true;
+					$scope.url = res.preview_url;
+					$scope.track = res.name;
+					$scope.artistUrl = res.artists[0].external_urls.spotify;
+				});
+			},500);
+
 		}
 	});
 

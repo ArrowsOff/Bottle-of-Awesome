@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.extrema.app" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.extrema.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Extrema Outdoor NL 2015</name>
   <description>
-        An app made by students group Bottle of Awesome.
+        Hallo! Ik ben de officiële app van Extrema Outdoor 2015 en daarmee jouw persoonlijke gids tijdens XO15! Blijf op de hoogte van het laatste nieuws, bekijk de line-up en selecteer je favoriete artiesten. Maak een dagplan aan de hand van de timetable en zoek snel waar jouw favoriete podium zich bevindt op het festivalterrein. Daarnaast heb ik nog een hele toffe functie die XO Memories heet. Een korte uitleg: upload tien van je foto’s en twee van je video’s naar deze app en ik genereer jouw persoonlijke aftermovie. Zo simpel is het! Het filmpje is vervolgens op te slaan en natuurlijk kan je hem ook delen met je vrienden via social media. Niet slecht toch? Dan rest me nog een welgemeend ‘veel pleziertje’. Much love en tot XO15!
     </description>
-  <author email="rickbeumers1994@gmail.com" href="http://xofestival.nl/">
+    <author email="app@extrema.nl" href="http://xofestival.nl/">
       Bottle of Awesome
     </author>
   <content src="index.html"/>

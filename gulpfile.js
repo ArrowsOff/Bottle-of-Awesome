@@ -21,8 +21,8 @@ var paths = {
               './app/lib/moment/min/moment.min.js',
               './app/lib/countdownjs/countdown.min.js',
               './app/lib/moment-countdown/bin/moment-countdown.min.js',
-              './app/lib/imgcache.js/js/imgCache.js',
-              './app/lib/angular-imgcache.js/angular-imgcache.js',
+            //   './app/lib/imgcache.js/js/imgCache.js',
+            //   './app/lib/angular-imgcache.js/angular-imgcache.js',
               './app/lib/angular-filter/dist/angular-filter.min.js',
               './app/lib/videogular/videogular.min.js',
               './app/lib/videogular-controls/vg-controls.min.js',
@@ -36,17 +36,17 @@ gulp.task('default', ['sass', 'scripts', 'scripts:vendor', 'html', 'images', 'fo
 ========================================================*/
 gulp.task('html', function() {
   gulp.src('./app/templates/**/*.html')
-    .pipe(gulp.dest('./www/templates/'))
+    .pipe(gulp.dest('./www/templates/'));
 
   return gulp.src('./app/index.html')
-    .pipe(gulp.dest('./www'))
+    .pipe(gulp.dest('./www'));
 });
 
 /* Fonts
 ========================================================*/
 gulp.task('fonts', function() {
   return gulp.src(paths.fonts)
-    .pipe(gulp.dest('./www/fonts/'))
+    .pipe(gulp.dest('./www/fonts/'));
 });
 
 
@@ -57,7 +57,7 @@ gulp.task('sass', function() {
     .pipe($.sourcemaps.init())
     .pipe($.sass({ errLogToConsole: true }))
     .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(gulp.dest('./www/css/'));
 });
 
 
@@ -82,7 +82,7 @@ gulp.task('scripts:vendor', function() {
     .pipe($.sourcemaps.init())
     .pipe($.concat('vendor.js'))
     .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest('./www/js'))
+    .pipe(gulp.dest('./www/js'));
 });
 
 /* Images
@@ -94,14 +94,14 @@ gulp.task('images', function() {
           svgoPlugins: [{removeViewBox: false}],
           use: [pngquant()]
     }))
-    .pipe(gulp.dest('./www/img'))
+    .pipe(gulp.dest('./www/img'));
 });
 
 /* Data
 ========================================================*/
 gulp.task('data', function() {
   return gulp.src('./app/data/**/*')
-    .pipe(gulp.dest('./www/data'))
+    .pipe(gulp.dest('./www/data'));
 });
 
 /* Watch

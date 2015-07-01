@@ -1,6 +1,5 @@
-<ion-view view-title="" id="news">
+<ion-view view-title="" id="news" ng-init="countdown()">
 <div id="logo">
-    <!-- <img src="img/crinkles/news-cr.svg"> -->
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="512px" height="163.7px" viewBox="0 0 512 163.7" enable-background="new 0 0 512 163.7" xml:space="preserve" style="max-width: 100%; height: 100px;">
         <g>
@@ -66,24 +65,24 @@
                 <div class="countTime">
                     <div class="timerTime">{{counter.days}}</div><div class="betweenTime">:</div><div class="timerTime">{{counter.hours}}</div><div class="betweenTime">:</div><div class="timerTime">{{counter.minutes}}</div><div class="betweenTime">:</div><div class="timerTime">{{counter.seconds}}</div>
                 </div>
-            </div>            
+            </div>
             <div ng-if="festival.value < 0">
                 <h1 class="uppercase bold color-white thanks">See you next year!</h1>
             </div>
         </div>
 
-        <div ng-repeat="item in rss">
+        <div ng-repeat="item in rss.item">
             <div class="item animated news-item fadeIn">
             <div class="news-image absolute"></div>
                 <div class="message">
                     <h2 class="color-red bold uppercase">Extrema outdoor nl</h2>
-                    <p class="twitter-id color-black">@ExtremaOutdoor</p>
+                    <p class="twitter-id color-black"><!-- @ExtremaOutdoor --></p>
 
-                    <p class="date absolute color-green bold absolute">{{toDate(item.pubDate)}}</p>
+                    <p class="date absolute color-green bold absolute">{{::toDate(item.pubdate)}}</p>
 
-                    <p class="content color-black" ng-bind-html="item.description.__cdata"></p>
+                    <p class="content color-black" ng-bind-html="::item.description"></p>
                 </div>
-            </div>            
+            </div>
         </div>
     </div>
 

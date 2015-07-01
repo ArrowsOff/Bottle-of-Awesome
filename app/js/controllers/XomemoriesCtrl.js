@@ -1,3 +1,1 @@
-app.controller('XOmemoriesCtrl', function($scope){
-
-});
+app.controller('XOmemoriesCtrl', function($scope){});

@@ -17,7 +17,6 @@
     "moment-countdown": "icambron/moment-countdown#~0.0.1",
     "moment": "~2.10.3",
     "countdownjs": "mckamey/countdownjs#~2.5.2",
-    "angular-imgcache.js": "~0.1.0",
     "angular-filter": "~0.5.4",
     "videogular-controls": "~1.2.2"
   }

@@ -1,4 +1,4 @@
-app.controller('MapCtrl', function ($scope, $ionicScrollDelegate, $log) {
+app.controller('MapCtrl', function ($ionicScrollDelegate, $scope, $log) {
 
     $scope.mapWidth = (document.getElementById('map').offsetWidth);
     var calcHeight = (document.getElementById('map').offsetHeight);
@@ -7,7 +7,6 @@ app.controller('MapCtrl', function ($scope, $ionicScrollDelegate, $log) {
     var delegate;
     $scope.mapscroll = function() {
         delegate = $ionicScrollDelegate.$getByHandle('mapImage');
-        //$log.log(delegate);
         $log.log(delegate.getScrollPosition());
         delegate.scrollTo(300,270);
         delegate.zoomTo(0.7);

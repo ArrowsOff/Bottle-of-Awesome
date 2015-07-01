@@ -1,4 +1,4 @@
-app.service('SpotifyService', function($rootScope, $http, $log, $q) {
+app.service('SpotifyService', function($http, $log, $q) {
 
 	var SpotifyService = this;
 
@@ -40,58 +40,58 @@ app.service('SpotifyService', function($rootScope, $http, $log, $q) {
 	};
 
 	// This will create a playlist from your favourited artists
-	SpotifyService.createPlaylist = function() {
-		var deferred = $q.defer();
-		var favourites = [];
-		var ids = [];
-		var tracks = [];
-		var favouritesPromise;
-		var artistIdPromise = $q.defer();
-
-		angular.forEach($rootScope.artists.artist, function(artist) {
-			if(artist.favourited) {
-				favourites.push(artist);
-			}
-		});
-
-		favouritesPromise = favourites.map(function(favourite) {
-			var defer = $q.defer();
-
-			getArtistId(favourite.name.__cdata).then(function(data) {
-				if(!!data) {
-					ids.push(data);
-					defer.resolve(data);
-				}
-			}).catch(function(err){
-				defer.resolve();
-			});
-
-			return defer.promise;
-		});
-
-
-		$q.all(favouritesPromise).then(function(data) {
-			artistIdPromise = data.map(function(artist_id) {
-				if(!!artist_id) {
-					var defer = $q.defer();
-
-					getFirstTrack(artist_id).then(function(track) {
-						tracks.push(track);
-						defer.resolve(track);
-					}).catch(function(err){
-						defer.resolve();
-					});
-
-					return defer.promise;
-				}
-			});
-
-			$q.all(artistIdPromise).then(function(data) {
-				deferred.resolve(tracks);
-			});
-		});
-		return deferred.promise;
-	};
+	// SpotifyService.createPlaylist = function() {
+	// 	var deferred = $q.defer();
+	// 	var favourites = [];
+	// 	var ids = [];
+	// 	var tracks = [];
+	// 	var favouritesPromise;
+	// 	var artistIdPromise = $q.defer();
+	//
+	// 	angular.forEach($rootScope.artists.artist, function(artist) {
+	// 		if(artist.favourited) {
+	// 			favourites.push(artist);
+	// 		}
+	// 	});
+	//
+	// 	favouritesPromise = favourites.map(function(favourite) {
+	// 		var defer = $q.defer();
+	//
+	// 		getArtistId(favourite.name.__cdata).then(function(data) {
+	// 			if(!!data) {
+	// 				ids.push(data);
+	// 				defer.resolve(data);
+	// 			}
+	// 		}).catch(function(err){
+	// 			defer.resolve();
+	// 		});
+	//
+	// 		return defer.promise;
+	// 	});
+	//
+	//
+	// 	$q.all(favouritesPromise).then(function(data) {
+	// 		artistIdPromise = data.map(function(artist_id) {
+	// 			if(!!artist_id) {
+	// 				var defer = $q.defer();
+	//
+	// 				getFirstTrack(artist_id).then(function(track) {
+	// 					tracks.push(track);
+	// 					defer.resolve(track);
+	// 				}).catch(function(err){
+	// 					defer.resolve();
+	// 				});
+	//
+	// 				return defer.promise;
+	// 			}
+	// 		});
+	//
+	// 		$q.all(artistIdPromise).then(function(data) {
+	// 			deferred.resolve(tracks);
+	// 		});
+	// 	});
+	// 	return deferred.promise;
+	// };
 
 	function getArtistId(artist_name) {
 		var defer = $q.defer();

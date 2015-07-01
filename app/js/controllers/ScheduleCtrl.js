@@ -1,4 +1,4 @@
-app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
+app.controller('ScheduleCtrl', function($ionicScrollDelegate, $scope, $log) {
     $scope.calcWidthSC = screen.width;
     $scope.calcHeightSC = screen.height;
 
@@ -16,8 +16,6 @@ app.controller('ScheduleCtrl', function($scope, $log, $ionicScrollDelegate) {
 
     // Calculate the height for each artist block on the schedulepage.
     $scope.calculateHeight = function(artist) {
-    //     $log.info('Jo wat?');
-
         var start_time = artist.start_time;
         var end_time = artist.end_time;
         var date1 = new Date(start_time.replace(' ', 'T'));

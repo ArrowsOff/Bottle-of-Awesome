@@ -69,10 +69,5 @@ app.service('DatabaseService', function($rootScope, $log, pouchDB) {
         return database.get(id);
     };
 
-    // Removing document from database
-    DatabaseService.remove = function() {
-
-    };
-
     return DatabaseService;
 });
