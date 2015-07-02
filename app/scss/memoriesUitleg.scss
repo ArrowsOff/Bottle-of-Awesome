@@ -59,22 +59,63 @@
             }
         }
         .step3{
-            
+            p{
+                font-size: 1.2em;
+            }
+            .go{
+                text-decoration: none;
+                line-height: 80px;
+                font-size: 2.3em;
+                background-color: $red;
+                border-radius: 100%;
+                display: block;
+                position: absolute;
+                bottom: 40px;
+                right: 30px;
+                height: 80px;
+                width: 80px;
+            }
         }
 
     }
     .slider-pager{
+        bottom: 30px;
         .active {
             color: $red;
         }
     }
 }
-.slider-pager{
-    bottom: 30px;
-}
-.platform-ios #memories {
+.platform-ios #memoriesUitleg {
 	@media (max-height: 570px) {
+        .step2, .step3 {
+            p{
+                font-size: 1em;
+            }
+        }
 	}
 	@media (max-height: 480px) {
+        .uitlegheader{
+            height: 120px;
+            .icon{
+                width: 50px;
+                margin-bottom: 5px;
+                padding-top: 10px;
+            }
+        }
+        .slider {
+            min-height: 260px;
+        }
+        .slider-slide{
+            padding: 10px 30px;
+        }
+        .step1 {
+            p{
+                margin-bottom: 10px;
+                font-size: 1.1em;
+            }
+        }
+        .step2{
+            padding-top: 20px;
+        }
 	}
 }
