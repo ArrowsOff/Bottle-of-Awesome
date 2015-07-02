@@ -180,15 +180,6 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
             }
         }
     })
-    .state('app.general', {
-        url: '/info/general',
-        views: {
-            "menuContent": {
-                templateUrl:  'templates/info-pages/general.html',
-                controller: 'InfoPageCtrl'
-            }
-        }
-    })
     .state('app.hotelpackages', {
         url: '/info/hotelpackages',
         views: {
