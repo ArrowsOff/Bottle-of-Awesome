@@ -1,0 +1,80 @@
+#memoriesUitleg {
+	.has-header {
+		top: 0;
+	}
+    .uitlegheader {
+        height: 170px;
+	   .icon{
+            width: 70px;
+            margin-bottom: 10px;
+            padding-top: 20px;
+    	}
+        div{
+            &:last-child{
+                padding-bottom: 20px;
+                font-size: 1.46em;
+            }
+        }
+    }
+    .slider-slide{
+        padding: 30px;
+        h4{
+            margin-bottom: 20px;
+        }
+        .step1 p  {
+            line-height: 30px;
+            vertical-align: top;
+            height: 30px;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            .bullet{
+                width: 30px;
+                margin-right: 20px;
+            }
+        }
+        .nextbutton{
+            background-image: url("../img/xomemories/next-icon.svg");
+            background-repeat: no-repeat;
+            display: block;
+            position: absolute;
+            bottom: 40px;
+            right: 30px;
+            height: 40px;
+            width: 40px;
+        }
+        .prevbutton{
+            background-image: url("../img/xomemories/previous-icon.svg");
+            background-repeat: no-repeat;
+            display: block;
+            position: absolute;
+            bottom: 40px;
+            left: 30px;
+            height: 40px;
+            width: 40px;
+        }
+        .step2 {
+            p{
+                height: 80px;
+                font-size: 1.2em;
+            }
+        }
+        .step3{
+            
+        }
+
+    }
+    .slider-pager{
+        .active {
+            color: $red;
+        }
+    }
+}
+.slider-pager{
+    bottom: 30px;
+}
+.platform-ios #memories {
+	@media (max-height: 570px) {
+	}
+	@media (max-height: 480px) {
+	}
+}

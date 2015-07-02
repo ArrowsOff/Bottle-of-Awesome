@@ -243,11 +243,20 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
             }
         }
     })
+    .state('app.xomemoriesUitleg', {
+        url: '/xomemoriesUitleg',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/xomemories/xomemoriesUitleg.html',
+                controller: 'XOmemoriesUitlegCtrl'
+            }
+        }
+    })
     .state('app.xomemories', {
         url: '/xomemories',
         views: {
             "menuContent": {
-                templateUrl:  'templates/xomemories.html',
+                templateUrl:  'templates/xomemories/xomemories.html',
                 controller: 'XOmemoriesCtrl'
             }
         }
@@ -256,7 +265,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         url: '/xomemoriesNext',
         views: {
             "menuContent": {
-                templateUrl:  'templates/xomemoriesNext.html',
+                templateUrl:  'templates/xomemories/xomemoriesNext.html',
                 controller: 'xomemoriesNextCtrl'
             }
         }

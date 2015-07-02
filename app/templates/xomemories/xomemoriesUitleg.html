@@ -1,0 +1,53 @@
+<ion-view view-title="" id="memoriesUitleg">
+    <div id="logo">
+        <img src="img/crinkles/memories-cr.svg">
+    </div>
+    <ion-content scroll="false">
+        <div id="content" ng-style="{'height': memoryHeight+'px'}">
+            <div id="uitlegheader" class="uitlegheader color-bg-blue">
+                <img class="center-image icon" ng-src="img/xomemories/xo_icon.svg">
+                <div class="color-white bold uppercase text-center">xo herbeleven wanneer jij maar wil?</div>
+                <div class="color-white bold uppercase text-center">dat kan met xo memories!</div>
+            </div>
+            <ion-slide-box ng-style="{'height': boxHeight+'px'}" on-slide-changed="slideHasChanged($index)">
+                <ion-slide>
+                    <div class="box step1">
+                        <h4 class="bold uppercase color-black">wat moet je doen:</h4>
+                        <p>
+                            <img class="bullet" ng-src="img/xomemories/imagesgreen-icon.svg"/>
+                            Upload maximaal 10 foto's
+                        </p>
+                        <p>
+                            <img class="bullet" ng-src="img/xomemories/videosyellow-icon.svg"/>
+                            Upload maximaal 2 video's
+                        </p>
+                        <p>
+                            <img class="bullet" ng-src="img/xomemories/quotescolor-icon.svg"/>
+                            Schrijf 2 quotes of teksten
+                        </p>
+                        <a class="nextbutton" ng-click="nextSlide()"></a>
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box step2">
+                        <p class=" text-center">
+                            De foto's en de twee teksten zijn verplicht. Ben je in een creatieve bui en wil je meer schrijven? Dan kun je los gaan op de teksten bij de foto’s!
+                        </p>
+                        <p class="text-center">
+                            En is het geheugen van je telefoon vol? De video's zijn niet verplicht.
+                        </p>
+                        <a class="prevbutton" ng-click="previousSlide()"></a>
+                        <a class="nextbutton" ng-click="nextSlide()"></a>
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box step3">
+                        <h2 class="uppercase color-green bold">that's it!</h2>
+                        <a class="prevbutton" ng-click="previousSlide()"></a>
+                        <a class="go" ng-href="#/app/xomemories"></a>
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </ion-content>
+</ion-view>
