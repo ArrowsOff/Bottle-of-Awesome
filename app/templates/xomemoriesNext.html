@@ -1,0 +1,97 @@
+<ion-view view-title="" id="memoriesNext">
+<div id="logo">
+	<img src="img/crinkles/memories-cr.svg">
+</div>
+<ion-content scroll="true">
+<div id="content" ng-style="{'height': memoryHeight+'px'}">
+	<div class="list">
+        <a class="item add color-bg-purple zindex1" id="quotes" ng-style="{'height': itemHeight+'px'}" ng-click="showQuote=!showQuote; hideQuote=true" ng-hide="hideQuote">
+			<div class="wrap">
+				<img class="center-image icon" ng-src="img/xomemories/quotes_icon.svg">
+				<p class="color-white bold uppercase">ADD QUOTES</p>
+				<p class="color-white uppercase limit">max 2</p>
+			</div>
+		</a>
+        <form class="item quotesform color-bg-purple zindex1 text-center" method="post" ng-show="showQuote" ng-style="{'height': itemHeight+'px'}">
+            <div class="quote">
+                <input class="quote-input color-white" type="text" id="quote1" value="" placeholder="Start typing!">
+                <a class="trash ion-ios-trash color-white" ng-click="clearQuote(1)"></a>
+            </div>
+            <div class="quote">
+                <input class="quote-input color-white" type="text" id="quote2" value="" placeholder="Start typing!">
+                <a class="trash ion-ios-trash color-white" ng-click="clearQuote(2)"></a>
+            </div>
+        </form>
+
+        <a class="item add color-bg-yellow zindex1" id="text" ng-style="{'height': itemHeight+'px'}" ng-click="showText=!showText; hideText=true" ng-hide="hideText">
+            <div class="triangle1 zindex2"></div>
+			<div class="wrap">
+				<img class="center-image icon" ng-src="img/xomemories/text_icon.svg">
+				<p class="color-white bold uppercase">ADD TEXT</p>
+			</div>
+		</a>
+        <form class="item photoform color-bg-yellow zindex1" method="post" ng-show="showText">
+            <div class="triangle1 zindex2"></div>
+            <div class="phototext">
+                <img src="" class="photo"/>
+                <textarea class="photo-input color-white" id="phototext1" placeholder="Start typing!"></textarea>
+                <a class="trash color-white" ng-click="clearPhotoText(1)"><i class="ion-ios-trash"></i></a>
+            </div>
+            <div class="phototext">
+                <img src="" class="photo"/>
+                <textarea class="photo-input color-white" id="phototext2" placeholder="Start typing!"></textarea>
+                <a class="trash color-white" ng-click="clearPhotoText(2)"><i class="ion-ios-trash"></i></a>
+            </div>
+            <div class="phototext">
+                <img src="" class="photo"/>
+                <textarea class="photo-input color-white" id="phototext3" placeholder="Start typing!"></textarea>
+                <a class="trash color-white" ng-click="clearPhotoText(3)"><i class="ion-ios-trash"></i></a>
+            </div>
+            <div class="phototext">
+                <img src="" class="photo"/>
+                <textarea class="photo-input color-white" id="phototext4" placeholder="Start typing!"></textarea>
+                <a class="trash color-white" ng-click="clearPhotoText(4)"><i class="ion-ios-trash"></i></a>
+            </div>
+            <div class="phototext">
+                <img src="" class="photo"/>
+                <textarea class="photo-input color-white" id="phototext5" placeholder="Start typing!"></textarea>
+                <a class="trash color-white" ng-click="clearPhotoText(5)"><i class="ion-ios-trash"></i></a>
+            </div>
+            <div class="phototext">
+                <img src="" class="photo"/>
+                <textarea class="photo-input color-white" id="phototext6" placeholder="Start typing!"></textarea>
+                <a class="trash color-white" ng-click="clearPhotoText(6)"><i class="ion-ios-trash"></i></a>
+            </div>
+            <div class="phototext">
+                <img src="" class="photo"/>
+                <textarea class="photo-input color-white" id="phototext7" placeholder="Start typing!"></textarea>
+                <a class="trash color-white" ng-click="clearPhotoText(7)"><i class="ion-ios-trash"></i></a>
+            </div>
+            <div class="phototext">
+                <img src="" class="photo"/>
+                <textarea class="photo-input color-white" id="phototext8" placeholder="Start typing!"></textarea>
+                <a class="trash color-white" ng-click="clearPhotoText(8)"><i class="ion-ios-trash"></i></a>
+            </div>
+            <div class="phototext">
+                <img src="" class="photo"/>
+                <textarea class="photo-input color-white" id="phototext9" placeholder="Start typing!"></textarea>
+                <a class="trash color-white" ng-click="clearPhotoText(9)"><i class="ion-ios-trash"></i></a>
+            </div>
+            <div class="phototext">
+                <img src="" class="photo"/>
+                <textarea class="photo-input color-white" id="phototext10" placeholder="Start typing!"></textarea>
+                <a class="trash color-white" ng-click="clearPhotoText(10)"><i class="ion-ios-trash"></i></a>
+            </div>
+        </form>
+		<a class="item done color-bg-red zindex1" ng-href="#/app/xomemoriesNext">
+            <div class="triangle2 zindex2"></div>
+			<div class="donewrap">
+                <img class="leftcr" ng-src="img/crinkles/memoleft-cr.svg" />
+    			<p class="color-white bold uppercase">DONE!</p>
+    			<img class="rightcr" ng-src="img/crinkles/memoright-cr.svg" />
+			</div>
+		</a>
+	</div>
+</div>
+</ion-content>
+</ion-view>
