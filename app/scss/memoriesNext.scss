@@ -13,13 +13,13 @@
 		margin:0;
 		padding:0;
 		p{
-			margin: 20px 0 0 0;
+			margin: 10px 0 0 0;
 		}
 		.wrap{
 			position: relative;
 			top: 15%;
 			.icon{
-				width: 90px;
+				width: 80px;
 			}
 			.limit {
 				margin-top: 0!important;
@@ -127,6 +127,38 @@
 			height: 12px;
 		}
 	}
+
+	$trianglesize:10px;
+	.triangle1{
+		width: 0;
+		height: 0;
+		margin-left: auto;
+		margin-right: auto;
+		border-style: solid;
+		border-width: $trianglesize $trianglesize 0 $trianglesize;
+		border-color: $purple transparent transparent transparent;
+	}
+	.triangle2{
+		width: 0;
+		height: 0;
+		margin-left: auto;
+		margin-right: auto;
+		border-style: solid;
+		border-width: $trianglesize $trianglesize 0 $trianglesize;
+		border-color: $yellow transparent transparent transparent;
+	}
+	.zindex2{
+		z-index: 10;
+	}
+	.zindex1{
+		z-index: 0;
+	}
+
+}
+.platform-ios #memoriesNext {
+	.donewrap {
+		top: 25%;
+	}
 	@media (max-height: 570px) {
 		.item {
 			.wrap{
@@ -201,37 +233,5 @@
 				margin-bottom: 20px;
 			}
 		}
-	}
-
-	$trianglesize:10px;
-	.triangle1{
-		width: 0;
-		height: 0;
-		margin-left: auto;
-		margin-right: auto;
-		border-style: solid;
-		border-width: $trianglesize $trianglesize 0 $trianglesize;
-		border-color: $purple transparent transparent transparent;
-	}
-	.triangle2{
-		width: 0;
-		height: 0;
-		margin-left: auto;
-		margin-right: auto;
-		border-style: solid;
-		border-width: $trianglesize $trianglesize 0 $trianglesize;
-		border-color: $yellow transparent transparent transparent;
-	}
-	.zindex2{
-		z-index: 10;
-	}
-	.zindex1{
-		z-index: 0;
-	}
-
-}
-.platform-ios #memoriesNext {
-	.donewrap {
-		top: 25%;
 	}
 }
