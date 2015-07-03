@@ -1,4 +1,4 @@
-app.controller('xomemoriesNextCtrl', function($scope, $rootScope, $log, $http){
+app.controller('xomemoriesNextCtrl', function($scope, $rootScope, $log, $http, $timeout, $location){
     var calcHeight = (document.getElementById('memoriesNext').offsetHeight) -100;
     $scope.memoryHeight = calcHeight;
     $scope.uploadCheck = true;
@@ -62,7 +62,9 @@ app.controller('xomemoriesNextCtrl', function($scope, $rootScope, $log, $http){
                 $log.log("PROGESS:", progress);
             });
         });
-
+        $timeout(function(){
+            $location.path('#/app/news');
+        },2500);
     };
 
 });
