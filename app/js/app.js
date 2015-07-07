@@ -251,6 +251,15 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
                 controller: 'XOmemoriesCtrl'
             }
         }
+    })
+    .state('app.xomemories-zoomview', {
+        url: '/xomemories-zoomview',
+        views: {
+            "menuContent": {
+                templateUrl:  'templates/xomemories-zoomview.html',
+                controller: 'XOmemoriesCtrl'
+            }
+        }
     });
     $urlRouterProvider.otherwise('/app/news');
 });

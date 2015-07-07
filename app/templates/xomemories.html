@@ -7,31 +7,31 @@
 			<div ng-repeat="image in imageFeed" ng-if="$index % 7 === 0">
 				<div class="row">
 					<div class="col col-50" >
-						<div class="top" ng-if="$index < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index].url}})'}">
+						<div class="top" ng-if="$index < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index].url}})'}" ng-click="showImages($index)">
 						</div>
-						<div class="bottom" ng-if="$index + 1 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 1].url}})'}">
+						<div class="bottom" ng-if="$index + 1 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 1].url}})'}" ng-click="showImages($index + 1)">
 						</div>
 					</div>
 
-					<div class="col" ng-if="$index + 2 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 2].url}})'}">
+					<div class="col" ng-if="$index + 2 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 2].url}})'}" ng-click="showImages($index + 2)">
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col" ng-if="$index + 3 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 3].url}})'}">
+					<div class="col" ng-if="$index + 3 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 3].url}})'}" ng-click="showImages($index + 3)">
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col col-50" ng-if="$index + 4 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 4].url}})'}">
+					<div class="col col-50" ng-if="$index + 4 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 4].url}})'}" ng-click="showImages($index + 4)">
 					</div>
 
-					<div class="col" ng-if="$index + 5 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 5].url}})'}">
+					<div class="col" ng-if="$index + 5 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 5].url}})'}" ng-click="showImages($index + 5)">
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col" ng-if="$index + 6 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 6].url}})'}">
+					<div class="col" ng-if="$index + 6 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 6].url}})'}" ng-click="showImages($index + 6)">
 					</div>
 				</div>
 			</div>
