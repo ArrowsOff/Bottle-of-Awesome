@@ -86,7 +86,39 @@
 	.has-header {
 		top: 0;
 	}
-
+	.row {
+		border: 0;
+		height: 200px;
+		width: 100%;
+		.col {
+			display: block;
+			position: relative;
+			border: 0;
+			height: auto;
+			width: 100%;
+			background-position: center center;
+			background-size: cover;
+			.top {
+				position: absolute;
+				height: 50%;
+				width: 100%;
+				background-position: center center;
+				background-size: cover;
+				top: 0;
+			}
+			.bottom {
+				position: absolute;
+				height: 50%;
+				width: 100%;
+				background-position: center center;
+				background-size: cover;
+				bottom: 0;
+			}
+		}
+	}
+	.row + .row {
+		margin-top: 0;
+	}
 	svg {
 		max-width: 100%;
 		padding: 10px;
@@ -173,5 +205,3 @@
 		-webkit-animation-delay: 2s;
 	}
 }
-
-

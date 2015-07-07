@@ -1,82 +1,40 @@
 <ion-view view-title="" id="memories">
-<div id="logo">
-	<img src="img/crinkles/memories-cr.svg">
-</div>
-<ion-content scroll="false">
-<div id="content">
-		<div class="row">
-		  <div class="col col-50">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		  
-		  <div class="col">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
+	<div id="logo">
+		<img src="img/crinkles/memories-cr.svg">
+	</div>
+	<ion-content>
+		<div id="content">
+			<div ng-repeat="image in imageFeed" ng-if="$index % 7 === 0">
+				<div class="row">
+					<div class="col col-50" >
+						<div class="top" ng-if="$index < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index].url}})'}">
+						</div>
+						<div class="bottom" ng-if="$index + 1 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 1].url}})'}">
+						</div>
+					</div>
+
+					<div class="col" ng-if="$index + 2 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 2].url}})'}">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col" ng-if="$index + 3 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 3].url}})'}">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col col-50" ng-if="$index + 4 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 4].url}})'}">
+					</div>
+
+					<div class="col" ng-if="$index + 5 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 5].url}})'}">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col" ng-if="$index + 6 < imageFeed.length" ng-style="{'background-image':'url({{imageFeed[$index + 6].url}})'}">
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="row">
-		  <div class="col col-50">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		  
-		  <div class="col">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col col-50">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		  
-		  <div class="col">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col col-50">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		  
-		  <div class="col">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col col-50">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		  
-		  <div class="col">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col col-50">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		  
-		  <div class="col">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col col-50">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		  
-		  <div class="col">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		</div>
-		<div class="row">
-		  <div class="col col-50">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		  
-		  <div class="col">
-				  <img src="http://www.dogster.com/wp-content/uploads/2015/05/doge.jpg" style="background-color:red;width:100%;height:auto;border:0;display:block;">			  
-		  </div>
-		</div>
-		
-</div>
-</ion-content>
+	</ion-content>
 </ion-view>
